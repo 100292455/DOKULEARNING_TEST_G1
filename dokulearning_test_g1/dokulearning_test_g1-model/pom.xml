@@ -16,6 +16,13 @@
 	<hibernate.version>5.0.1.Final</hibernate.version>
   </properties>
   <dependencies>
+  <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+           
+            <scope>provided</scope>
+        </dependency>
+<!-- 
   	<dependency>
   		<groupId>org.hibernate.javax.persistence</groupId>
   		<artifactId>hibernate-jpa-2.1-api</artifactId>
@@ -25,6 +32,6 @@
   		<groupId>org.hibernate</groupId>
   		<artifactId>hibernate-entitymanager</artifactId>
   		<version>${hibernate.version}</version>
-  	</dependency>
+  	</dependency> -->
   </dependencies>
 </project>

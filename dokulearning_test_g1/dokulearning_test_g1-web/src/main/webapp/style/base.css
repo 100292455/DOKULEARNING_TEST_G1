@@ -1,0 +1,483 @@
+@font-face { font-family: MyCustomFont; src: url("fonts/Avant_Garde_Bk_BT.eot") /* EOT file for IE */}
+@font-face { font-family: MyCustomFont; src: url("fonts/Avant_Garde_Bk_BT.ttf") /* TTF file for CSS3 browsers */}
+
+@font-face { font-family: MyCustomFont2; src: url("fonts/Bank_Gothic_MD_BT.eot") /* EOT file for IE */}
+@font-face { font-family: MyCustomFont2; src: url("fonts/Bank_Gothic_MD_BT.ttf") /* TTF file for CSS3 browsers */}
+
+/*Pagina base*/
+.ui-widget-header { background: #333333; border: 1px solid navy; color: #99CC00; font-weight: bold;}
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover { border: 1px solid navy!important; background: #333333!important; font-weight: bold; color: #99cc00!important; }
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default { color:black; border: 1px solid #CCCCCC; background: url("images/ui-bg_glass_100_f6f6f6_1x400.png") repeat-x scroll 50% 50% #F6F6F6;}
+.ui-widget-overlay { background: none repeat scroll 0 0 grey; opacity: 0.9;}
+
+.SuperiorFija{float:left; min-width: 993px; width:99%; background-color: white; padding-right: 5px;}
+.CentralFija{float: left; min-width: 998px; width: 100%;}
+.Contenido{background-color:#e6e6e6; float: left; min-height: 500px; height: 100%; min-width: 729px; width: 72%; margin-bottom: 10px; margin-top: 10px; border:2px solid #99cc00}
+.BannerDerecha{float: right; width:23.5%; margin-bottom: 10px; margin-top: 10px; margin-right:1%;}
+.BannerIzquierda{float: left; width:1.5%;}
+.BannerInferior{border-top: 1px solid #99CC00; float: left; margin-bottom: 10px; margin-left: 5%; margin-top: 10px; padding-top: 3px; text-align: center; width: 90%; min-width:897px;}
+.BannerSuperior{width: 50%; float:left; padding: 2px 0;}
+.MenuSuperior{ float: left; height: 30px; margin-bottom: 5px; margin-left: 1.5%; margin-top: 8px; min-width: 739px; width: 74%;}
+.BotonesMenu{position: relative; z-index: 2; cursor: pointer; background: none repeat scroll 0 0 #e6e6e6; border: 2px outset Olive; border-radius: 0 25px 0 25px; float: left; font-size: 12px; padding: 4px 14px; font-weight: bold;}
+.submenu1{width:13px; height:13px; position:absolute; top:69px;  left:209px;  border-radius: 150px 150px 150px 150px; background-color:#E0E0E0; text-align:center;}
+.submenu2{width:55px; height:55px; position:absolute; top:82px;  left:205px;  border-radius: 150px 150px 150px 150px; background-color:#D0D0D0; text-align:center; display:none;}
+
+.submenu4{width:91px; height:91px; position:absolute; top:0px; left:-60px; border-radius: 150px 150px 150px 150px; background-color:#BFBFBF; text-align:center; display:none;}
+.submenu5{width:91px; height:91px; position:absolute; top:0px; left:-151px; border-radius: 150px 150px 150px 150px; background-color:#BFBFBF; text-align:center; display:none;}
+
+.JugadoresBolaGrande{font-weight: bold; cursor:pointer; border-bottom:2px solid #99cc00; margin-left: 17px; margin-top: 19px; padding-bottom: 7px; padding-top: 2px; width: 119px;}
+.EquiposBolaGrande{font-weight: bold; cursor:pointer; border-bottom:2px solid #99cc00; margin-left: 17px; margin-top: 2px; padding-bottom: 7px; padding-top: 2px; width: 119px;}
+.EntrenadoresBolaGrande{font-weight: bold; cursor:pointer; border-bottom:2px solid #99cc00; margin-left: 17px; margin-top: 3px; padding-bottom: 6px; padding-top: 2px; width: 119px;}
+.ArbitrosBolaGrande{font-weight: bold; cursor:pointer; margin-left: 17px; margin-top: 6px; padding-bottom: 2px; padding-top: 2px; width: 119px;}
+.OpcionDirecta:hover{color:green; font-size:15px; top:5px;}
+.InfoInferior{font-size: 12px; font-style: italic; font-weight: bold; margin-left: 20px; margin-right: 20px; cursor:pointer; color:white;}
+.ZonaSiguenos{ float: left; height: 32px; margin-top: 10px; width: auto;}
+.TextoSiguenos{ color: white; float: left; font-family: Tahoma,Verdana,Arial,sans-serif; font-size: 15px; font-weight: bold; margin-right: 4px; margin-top: 7px;}
+.ImagenesSiguenos{ width:32px; height:32px; cursor:pointer; margin-left:0px; border:0 none;}
+.DivComparte{ float: left; height: auto; width: auto;}
+.TextoCompartir{ float: left; font-family: Tahoma,Verdana,Arial,sans-serif; font-size: 12px; font-weight: bold; margin-right: 5px; margin-top: 4px;}
+.ImagenesCompartir{ width:20px; height:20px; cursor:pointer; margin-left:2px; border:0 none;}
+/*Fin pagina base*/
+
+/*Home*/
+.HomeSup{height:205px; margin-left: 3.2%; width: 93.7%; margin-top:10px; float:left;}
+.DivTitCromoSup{background:rgba(0,0,0,0.7); width:100%; height:18%;}
+.TitCromoSup{color: white; font-family: MyCustomFont2,Verdana,Arial,sans-serif; font-size: 31px; padding-left: 1%; position: relative; top: -205px; cursor:pointer;}
+.ImgCromo{width:100%; height:100%;}
+.DivTextCromoSup{background:rgba(0,0,0,0.7); width:97%; position:relative; height:28%; padding-left:1%; text-align:justify; padding-right:2%; cursor:pointer;}
+.HomeInf{width:98%; height:100%; float:left; margin-bottom:10px; margin-left:2%;}
+.HomeInfLat{height:277px; float:left; margin-left: 1.3%; margin-top: 10px; width: 31%;}
+.DivTitCromoInf{background:rgba(0,0,0,0.7); width:100%; height:16%; position:relative;}
+.TitCromoInf{color: white; font-family: MyCustomFont2,Verdana,Arial,sans-serif; font-size: 18px; padding-left: 2%; position: relative; top: -277px; cursor:pointer; }
+.DivTextCromoInf{background:rgba(0,0,0,0.7); padding-left: 2%; width:98.2%; position:relative; height:145px; text-align:justify; cursor:pointer;}
+.LetraCromo{font-family: Tahoma,Verdana,Arial,sans-serif; position: relative; color: white; line-height: 17px; width:95%;}
+.LetraCromosSupBase{font-size: 9pt; margin-top: 5px; position: absolute; width:98%;}
+.LetraCromosSupCap{font-size: 12pt; color: lawngreen; font-weight: bold;}
+.LetraCromosInfBase{position:absolute; font-size: 1.6ex;}
+.LetraCromosInfCap{font-size: 1.6ex; color: lawngreen; font-weight: bold;}
+/*Home*/
+
+/*Login*/
+.Logotipo{float: left; width:25%; padding: 10px 0;}
+.Login{float: right; width:25%; height: 96px;  background: url("../images/fondo_login.png") no-repeat scroll 0 0 transparent; margin-top: 2px;}
+.ContenidoLogin{float:right; width:66%; height:100%; padding-left:5px;}
+.DatosLogin{width:100%; height:50%;}
+.IconosDatosLogin{float:left; width:20%; height:100%;}
+.IconoUsuario{height: 50%; width:100%;}
+.IconoContrasenia{height: 50%; width:100%;}
+.TextoDatosLogin{float:left; width:78%; margin-left: 2%; height:100%;}
+.Usuario{height: 50%; width:100%;}
+.Contrasenia{height: 50%; width:100%;}
+.AccesoLogin{width:100%; height:25%;}
+.Recordarme{float:left; height: 100%; width:54%;}
+.Aceptar{float:left; height: 99%; width:44%; margin-left:2%; padding-top:1%;}
+.AccionLogin{width:100%; height:23%;}
+.Accion{float:left; height: 100%; width:20%;}
+.TextoAccion{float:left; background:pink; height: 100%; width:78%; margin-left:2%;}
+.LogoLogin{float:right; width:31%;margin-top:10px;}
+/*Fin login*/
+
+/*Noticias*/
+.PaginaNoticias{margin-top:20px; float: left; height: 100%; width: 92%; margin-left:1%; font-family: Tahoma,Verdana,Arial,sans-serif;}
+.Noticia{width:100%; float:left; border-bottom:1px solid #99cc00;}
+.NoticiaImagen{float:left; width:6%; height:100%; margin-left: 3px; margin-top: 6px;}
+.NoticiaBase{float:left; width:82%; height:100%; margin-left: 10px;}
+.Titulo{font-size: 14px; font-weight: bold; margin-top:10px;}
+.Cuerpo{font-size: 12px; line-height: 17pt; margin-top: 4px; margin-bottom:10px;}
+.NoticiaHora{color: grey; float: left; font-size: 10pt; height: 100%; width: 8%; margin-top: 4px;}
+.NoticiasAnt{float: left; height: 500px; width: 3%; position: relative;}
+.NoticiasSig{float: right; height: 500px; width: 3%; position: relative;}
+.flechaPaginacion{bottom: 0; cursor: pointer; position: absolute; width: 100%;}
+/*Fin noticias*/
+
+/*Valora*/
+.TitularValora{width:50%; height:auto; margin-top:10px; margin-bottom:15px; margin-left:25%; text-align:center; color:navy; font-family: MyCustomFont2,Verdana,Arial,sans-serif; font-size: 19px; font-weight: bold;}
+.CompeticionValora{width:100%; margin:5px;}
+.JornadaValora{width:100%; margin:5px;}
+.TablaPresentacion{ width:96%; margin-left:2%; text-align:center; height:auto; float:left; font-family: Tahoma;}
+.Cabecera{ font-family: MyCustomFont2; background:#333333; color:white; width:100%; height:auto; float:left; padding-bottom: 10px; padding-top: 10px; font-size: 16px; font-weight:bold;}
+.Linea{width:100%; height:auto; float:left;}
+.Par{ background:#d6d6d6;}
+.Impar{ background:#ababab;}
+.Primero{ background:#99cc00;}
+.SuplentePar{ background: none repeat scroll 0 0 rgba(156, 207, 60, 0.4); color: black;}
+.SuplenteImpar{ background: none repeat scroll 0 0 #99CC00; color: black;}
+.EspacTablaValora{ padding-bottom: 4px; padding-top: 4px;}
+.DatoFecha{ width:14%; float:left;}
+.DatoHora{ width:6%; float:left;}
+.DatoResult{ width:13%; float:left; font-weight:bold;}
+.DatoEquipos{ width:21%; float:left;}
+.DatoValora{ width:25%; float:left;}
+.DatoEstado{ width:10%; float:left;}
+.DatoAdministrar{ width:15%; float:left;}
+
+.ClareaDatos{ background: rgba(241,241,241,0.5);}
+.CompartirValora{ float: left; margin-left: 39%; margin-right: 20%; margin-top: 40px; text-align: center; width: auto;}
+.PaginacionValora{ width:66.5%; float:left; margin-top:20px; font-family:Tahoma; }
+.PartesPaginaValora{ height:20px; float:left; min-width:65px;}
+.PartesPaginaValora2{ text-decoration:underline; cursor:pointer;}
+.ValoraNeutro{ height:20px; float:left; font-weight:bold;}
+.TipoValoracion{ font-weight: bold;}
+.ModoVerde{ background-color:rgba(153, 204, 0, 0.50); cursor:pointer;}
+.ModoAmbar{ background-color:rgba(255, 204, 50, 0.50);}
+.ModoAzul{ background-color: rgba(101, 168, 255, 0.50); cursor:pointer;}
+.ModoRojo{ background-color:rgba(255, 0, 0, 0.50); color:white;}
+.ModoGris{ cursor:pointer;}
+.ModoAzul:hover, .ModoVerde:hover, .ModoGris:hover{ text-decoration:underline;}
+.BotonBaseDoku{ top: -25px; width: auto; padding: 2px; position: relative; float: left; font-size: 12px; height: 14px; border: 4px double #99CC00; cursor:pointer; color: white; font-family: MyCustomFont2,Verdana,Arial,sans-serif; font-weight: bold; background-color: #333333; text-align:center;}
+.BotonEspecialValora{ cursor: pointer; font-family: MyCustomFont2,Verdana,Arial,sans-serif; padding: 5px 0; font-weight: bold; height: 22px; text-align: center; border: 4px double #333333; color: #333333; background-color:#99cc00; font-size: 20px; margin-left: 42%; width: 14%;}
+.BotonBaseValora:hover{ background-color: #99CC00; border: 4px double #333333; color: black;}
+.BotonEspecialValora:hover{ background-color: #333333; border: 4px double red; color: #99cc00;}
+.BarraBotonesValora{ float: left; height: 40px; margin-left: 1%; width: 98%; margin-top: 4px;}
+/*Fin Valora*/
+
+/*MuestraValora*/
+.ValoracionesPartido{ float:left; width:98%; margin-left:1%; height:auto; margin-top:10px;}
+.AreaEquipo{ float:left; width:49%; height:auto; border: 1px solid #99CC00; margin-bottom:10px;}
+.NombreEquipo{ color: navy; font-family: MyCustomFont2,Verdana,Arial,sans-serif; font-size: 20px; font-weight: bold; padding-bottom: 10px; padding-top: 10px; text-align: center; width: 100%;}
+.EntrenadorEquipo{ float: right; font-family: Tahoma,Verdana,Arial,sans-serif; font-size: 13px; height: auto; text-align: center; width: 79%;}
+.TablaEquipo{ width:100%; height:auto; padding-top:10px; padding-bottom:10px; float:left;}
+.CabeceraJugador{ width:40%; float:left;}
+.CabeceraDemarcacion{ width:27%; float:left;}
+.CabeceraVotos{ width:32%; float:left; color:#99cc00;}
+.CabeceraEntrenador{ width:56%; float:left;}
+.CabeceraVotosE{ width:43%; float:left; color:#99cc00;}
+.DatoJugador{ width:40%; float:left; font-weight:bold;}
+.DatoDemarcacion{ width:27%; float:left;}
+.DatoNota{ background:rgba(230,230,230,0.5); float: right; font-weight: bold; width: 32%;}
+.DatoEntrenador{ width:56%; float:left; font-weight:bold;}
+.DatoNotaE{ background: rgba(230,230,230,0.5); float: right; font-weight: bold; width: 43%;}
+.ResultadoPartidoValora{ float: right; font-weight:bold; font-family: Tahoma,Verdana,Arial,sans-serif; font-size: 45px; height: auto; text-align: center; vertical-align: sub; margin-left: 2%; margin-right: 2%;}
+.AreaSuperiorValoracion{ float:left; width:98%; height:auto; margin-left:1%;}
+.BasicosValora{ line-height:20px; height: auto; margin-top: 15px; width: 60%; float:left; text-align:center;}
+.ArbitroValora{ border: 1px solid #99CC00; float: left; font-family: Tahoma,Verdana,Arial,sans-serif; height: auto; margin-bottom: 10px; margin-left: 31%; padding-bottom: 10px; padding-top: 10px; text-align: center; width: 38%;}
+/*Fin MuestraValora*/
+
+/*Ranking*/
+.RankingSuperior{ width: 96%; margin-left: 2%; height: auto; float: left;}
+.RankDatosBasicos{ height: 100%; float: left; margin: 10px 0px;}
+.TitDatoRank{ font-family: MyCustomFont2,Verdana,Arial,sans-serif; color: navy; font-size: 18px; font-weight: bold; padding-top: 19px;}
+.SelecDatoRank{ border-left: 1px solid rgb(153, 204, 0); float: right; width:370px; height: auto; margin:10px 0;}
+.RankingInferior{ padding: 10px 0; width: 98%; margin-left: 2%; float: left; border-top: 1px solid rgb(153, 204, 0); height: auto;}
+.RankSelectorRank{ height: auto; width: 18%; float: left; background-color:#333333;}
+.SelecRankMenu{ cursor:pointer; color: white; font-family: MyCustomFont2,Verdana,Arial,sans-serif; font-size: 16px; font-weight: normal; height: auto; padding: 5px 0; width: 100%;border:0.5px solid #E6E6E6;}
+.SelecRankMenu:hover{ background-color:#99cc00;}
+.RankParteCentral{ height: auto; float: left; width: 82%;}
+.ZonaRankIni{ width:100%; height:auto; float:left; margin-top:20px;}
+.Zona4RankIni{ width:49%; height:auto; float:left;}
+.ColorRojo{ cursor:pointer; color:red;}
+.ColorVerde{ cursor:pointer; color:green;}
+.ColorAzul{ cursor:pointer; color:navy;}
+.ColorBlanco{ cursor:pointer; color:white;}
+/*Fin Ranking*/
+
+/*Mejor ranking*/
+.TitMejorActor{ color: navy; font-family: mycustomfont2; font-size: 21px; font-weight: bold; height: auto; padding: 10px 0; text-align: center; width: 100%;}
+.CajaMejorEntrenador{ width:95%; height:auto; margin: 0 auto;}
+.CabMejEntrenador1{ float:left; width:16%;}
+.CabMejEntrenador2{ display:none;}
+.CabMejEntrenador3{ float:left; width:33%;}
+.CabMejEntrenador4{ float:left; width:28%;}
+.CabMejEntrenador5{ color:#99cc00; float:left; width:23%;}
+.DatMejEntrenador1{ float: left; font-weight: bold; width: 16%;}
+.DatMejEntrenador2{ display:none; }
+.DatMejEntrenador3{ float: left; width: 33%;}
+.DatMejEntrenador4{ float: left; width: 28%;}
+.DatMejEntrenador5{ background: rgba(230, 230, 230, 0.5); float: left; font-weight: bold; width: 23%;}
+.CajaMejorArbitro{ width:60%; height:auto; margin: 0 auto;}
+.CabMejArbitro1{ float:left; width:26%;}
+.CabMejArbitro2{ display:none;}
+.CabMejArbitro3{ float:left; width:38%;}
+.CabMejArbitro4{ display:none; }
+.CabMejArbitro5{ color:#99cc00; float:left; width:36%;}
+.DatMejArbitro1{ float: left; font-weight: bold; width: 26%;}
+.DatMejArbitro2{ display:none;}
+.DatMejArbitro3{ float: left; width: 38%;}
+.DatMejArbitro4{ display:none;}
+.DatMejArbitro5{ background: rgba(230, 230, 230, 0.5); float: left; font-weight: bold; width: 36%;}
+.CajaMejorEquipo{ width:60%; height:auto; margin: 0 auto;}
+.CabMejEquipo1{ float:left; width:26%;}
+.CabMejEquipo2{ display:none;}
+.CabMejEquipo3{ float:left; width:38%;}
+.CabMejEquipo4{ display:none; }
+.CabMejEquipo5{ color:#99cc00; float:left; width:36%;}
+.DatMejEquipo1{ float: left; font-weight: bold; width: 26%;}
+.DatMejEquipo2{ display:none;}
+.DatMejEquipo3{ float: left; width: 38%;}
+.DatMejEquipo4{ display:none;}
+.DatMejEquipo5{ background: rgba(230, 230, 230, 0.5); float: left; font-weight: bold; width: 36%;}
+.CajaMejorJugador{ width:93%; height:auto; margin: 0 auto;}
+.CabMejJugador1{ float:left; width:16%;}
+.CabMejJugador2{ float:left; width:16%;}
+.CabMejJugador3{ float:left; width:25%;}
+.CabMejJugador4{ float:left; width:22%;}
+.CabMejJugador5{ color:#99cc00; float:left; width:21%;}
+.DatMejJugador1{ float: left; font-weight: bold; width: 16%;}
+.DatMejJugador2{ float: left; width: 16%;}
+.DatMejJugador3{ float: left; width: 25%;}
+.DatMejJugador4{ float: left; width: 22%;}
+.DatMejJugador5{ background: rgba(230, 230, 230, 0.5); float: left; font-weight: bold; width: 21%;}
+/*Fin mejor ranking*/
+
+/*Buscador*/
+.LetrasBusqueda{ cursor:pointer; font-weight:bold;}
+.ZonaResBusqueda{ width:90%; margin-left:5%; height:auto; border-top:1px solid #99cc00;}
+/*Jugadores solo BBVA*/
+.Tabla110{ margin-left: 10%; margin-top: 20px; width: 80%; margin-bottom:10px;}
+.CabBusc111, .DatoBusc111{ width:23%; float:left;}
+.CabBusc211, .DatoBusc211{ width:28%; float:left;}
+.CabBusc311, .DatoBusc311{ width:24%; float:left;}
+.CabBusc411, .DatoBusc411{ width:25%; float:left;}
+/*Jugadores todas ligas*/
+.Tabla100{ margin-left: 12%; margin-top: 20px; width: 75%; margin-bottom:10px;}
+.CabBusc110, .DatoBusc110{ width:33%; float:left;}
+.CabBusc210, .DatoBusc210{ width:40%; float:left;}
+.CabBusc310, .DatoBusc310{ width:27%; float:left;}
+.CabBusc410, .DatoBusc410{ display:none;}
+/*Entrenadores solo BBVA*/
+.Tabla210{ margin-left: 12%; margin-top: 20px; width: 76%; margin-bottom:10px;}
+.CabBusc121, .DatoBusc121{ width:31%; float:left;}
+.CabBusc221, .DatoBusc221{ width:33%; float:left;}
+.CabBusc321, .DatoBusc321{ display:none;}
+.CabBusc421, .DatoBusc421{ width:36%; float:left;}
+/*Entrenadores todas ligas*/
+.Tabla200{ margin-left: 24%; margin-top: 20px; width: 52%; margin-bottom:10px;}
+.CabBusc120, .DatoBusc120{ width:50%; float:left;}
+.CabBusc220, .DatoBusc220{ width:50%; float:left;}
+.CabBusc320, .DatoBusc320{ display:none;}
+.CabBusc420, .DatoBusc420{ display:none;}
+/*Arbitros*/
+.Tabla310, .Tabla300{ margin-left: 22%; margin-top: 20px; width: 56%; margin-bottom:10px;}
+.CabBusc131, .DatoBusc131, .CabBusc130, .DatoBusc130{ display:none;}
+.CabBusc231, .DatoBusc231, .CabBusc230, .DatoBusc230{ width:50%; float:left;}
+.CabBusc331, .DatoBusc331, .CabBusc330, .DatoBusc330{ width:50%; float:left;}
+.CabBusc431, .DatoBusc431, .CabBusc430, .DatoBusc430{ display:none;}
+/*Equipos*/
+.Tabla410, .Tabla400{ margin-left: 20%; margin-top: 20px; width: 60%; margin-bottom:10px;}
+.CabBusc141, .DatoBusc141, .CabBusc140, .DatoBusc140{ display:none;}
+.CabBusc241, .DatoBusc241, .CabBusc240, .DatoBusc240{ width:33%; float:left;}
+.CabBusc341, .DatoBusc341, .CabBusc340, .DatoBusc340{ width:33%; float:left;}
+.CabBusc441, .DatoBusc441, .CabBusc440, .DatoBusc440{ width:33%; float:left;}
+/*Lightbox*/
+.Tabla111, .Tabla101, .Tabla211, .Tabla201, .Tabla311, .Tabla301, .Tabla411, .Tabla401{  margin-bottom:10px; margin-top: 20px; width: 100%; margin-left: 0px; font-size:12px;}
+/*FinBuscador*/
+
+/*Ranking ideal*/
+.ZonaJugadoresIdeal{width:50%; height:auto; float:left;}
+.ZonaPosicionIdeal{ width:100%; height:auto; margin-bottom:10px; float:left;}
+.ZonaAuxiliarIdeal{ width:100%; height:auto; margin-bottom:30px; float:left;}
+.CabeceraEsp{ font-family: MyCustomFont2; background:#333333; color:white; width:100%; height:auto; float:left; font-size: 16px; font-weight:bold;}
+.CabTitMediaIdeal{ float: left; padding: 10px 0; width: 80%; color:red;}
+.CabNotaMediaIdeal{ background: rgba(230, 230, 230, 0.5); float: right; font-weight: bold; padding: 10px 0; width: 20%;}
+.ZonaMediaIdeal{ border: 2px solid #99CC00; float: left; height: auto; margin-top: 30px; margin-bottom: 30px; padding: 3%; width: 94%;}
+/*Fin ranking ideal*/
+
+/*Fichas*/
+.ZonaNombreFicha{ margin-bottom: 10px; margin-top: 10px; text-align: center; }
+.ZonaInfoFicha{ width:98%; margin-left:1%; height:auto; float: left; margin-bottom:15px; }
+.ZonaComparaFicha{ height:auto; display:table; margin:0 auto;}
+.ZonaComparteFicha{ display: table; margin: 45px auto 10px;}
+.ZonaEstaticaFicha{ display: table; height: auto; margin: 0 auto 10px; width: 65%;}
+.ZonaConsultasFicha{ float: left; height: auto; margin: 20px 0; width: 100%;}
+.FilaSeccionUnica{ background: none repeat scroll 0 0 #333333; color: white; float: left; font-family: MyCustomFont2; font-size: 16px; font-weight: bold; height: auto; width: 100%;}
+.ColumnaPreguntaUnica{ float: left; width: 49%; padding: 10px 0 10px 1%;}
+.ColumnaRespuestaUnica{ color: black; float: left; font-family: tahoma; font-size: 13px; font-weight: normal; padding: 11px 0 11px 1%; width: 49%;}
+.consultasFichaDer{ width:45%; height:auto; float:left;}
+.consultasFichaIzq{ float: right; height: auto; width: 49%;}
+.ValoracionCompeticionFicha{ border: 2px solid #99CC00; height: auto; margin-bottom: 10px; padding: 6px 0; width: 99%; float:right; margin-top:19px;}
+.Ocupa60{ float: left; width: 60%; height: 24px; line-height: 24px;}
+.ZonasFichaEquipo{ width:57%; height:auto; float:left;}
+.DatoFechaDET{ float: left; width: 10%;}
+.DatoJornadaDET{ float: left; width: 11%;}
+.DatoEquipo1DET{ float: left; width: 23%;}
+.DatoEquipo2DET{ float: left; width: 25%;}
+.DatoResultDET{ float: left; width: 15%;}
+.DatoValoraDET{ float: left; width: 16%;}
+.EscudoFichaEquipo{ float: left; height: auto; margin-left: 3%; width: 27%;}
+.PersonalPulsado{ background: #99cc00;}
+/*Fin fichas*/
+
+/*Area personal*/
+.AreaPersonal{ width:100%; margin-top:10px; margin-bottom:10px; color: navy; font-family: MyCustomFont2,Verdana,Arial,sans-erif; font-size: 20px; font-weight: bold; text-align:center;}
+.AreaPersonalBajo{ width:98%; margin-left:1%; float:left;}
+.ParteCentralPersonal{ width:75%; float:left;}
+.FilasPersonal{ width: 100%; height: auto; margin-top: 10px; float:left;}
+.TipoDato{ width:30%; height:23px; float:left; font-weight:bold; line-height:23px;}
+.ContenidoDato{ width:34%; height:auto; float:left;}
+.BotonPersonal{ width:36%; height:auto; float:left;}
+.InputPersonal{ width:90%; height:19px;}
+
+.DatosNuevoUsu{ float:left; margin-left:1%; width:98%; height:auto; margin-bottom: 10px; margin-top: 10px;}
+.NuevoUsuIzq{ float:left; width:50%; height:auto;}
+.FilasNuevoUsu{ float: left; height: auto; margin-bottom: 10px; margin-left: 3%; width: 97%;}
+.NuevoUsuDer{ float:left; width:50%; height:auto;}
+.CaptchaNuevo{ float:left; margin-left:1%; width:98%; height:auto; margin-bottom: 10px;}
+.AceptoNuevo{ float:left; margin-left:5%; width:78%; height:auto; margin-top:5px;}
+.AceptarNuevo{ float:left; margin-left:1%; width:98%; height:auto; margin-top:20px; margin-bottom:10px;}
+.Ocupa50{ width:50%;}
+
+.IframeEquipos{ width:620px !important; padding: 0 !important;}
+
+.IframePassword{ width:470px !important; padding: 0 !important;}
+/*Fin area personal*/
+
+/*Encuestas*/
+.ZonasEncuestas {float:left; width: 80%;margin-left:10%;}
+.SeparadorEncuestas {background: #99cc00; width: 2px; margin: 7px 1%; float: left; height: 500px;}
+.ZonaOtras {float:right; margin-bottom: 10px; margin-top:10px;}
+.TextoOtrasEncuestas {color: navy; font-weight: bold; font-size: 15px; cursor: pointer; text-decoration: underline;}
+.AreaEncuestas {float:left; width:100%;}
+.CajaEncuesta {margin-bottom: 20px; margin-left: 3%; width: 97%; float:left;}
+.EncuestaPregunta {width:100%;}
+.EncuestaRespuestas {width:100%;}
+.TextoPregEncuesta {font-weight:bold; line-height: 20px;}
+.VotacionEncuesta{ float: left; margin-left: 42%; width: 16%;}
+.ResultadosEncuesta {float: right; font-size: 13px; text-decoration: underline; cursor: pointer;}
+.SistemaVotacion {margin-top: 20px; margin-left: 5%; width: 90%;}
+.OpVotacion {margin-left: 10%; width: 80%; float:left;  margin-bottom: 10px;}
+.Texto {width:44%; height: 45px; float:left;}
+.VotosFavorables {background:blue; width:20%; height: 45px; float:left;}
+.VotosTotales {background:white; width:40%; height: 45px; float:left;}
+.NumVotos {float: left; height: 24px; margin-top: 11px; width: 13%; margin-left: 1%;}
+.Color1 {background-color:#275384;}
+.Color2 {background-color:#820000;}
+.Color3 {background-color:#4D7401;}
+.Color4 {background-color:#5C012D;}
+.Color5 {background-color:#007674;}
+.TextoResultadoEncuesta {font-weight: bold; margin-left: 5px; position: relative; font-size: 16px; top: 10px;}
+.TextoNumVotos {font-weight: bold; font-size: 20px; font-family: Tahoma; color: #99cc00;}
+.LineaResultadosGoles {width:100%; border-bottom: 1px solid #D6D6D6; padding: 10px 0 0; float:left;}
+.EncuestaHist {width:80%; padding-bottom: 13px; float:left;}
+.TextEncueHist {font-weight:bold; cursor:pointer; text-decoration:underline;}
+.FechaHist {width:20%; float:left;}
+.TextFechaHist {float: right; color: grey;}
+.AreaResEncu {float:left; margin-left: 3%; width: 94%;}
+.AreaBusEncu {float: left; margin-left: 3%; width:94%;  border-bottom: 1px solid #99CC00; padding-bottom: 20px; margin-bottom:10px;}
+.TablaBusGol {margin-left: 25%; margin-top: 10px; width: 50%; float:left;}
+.BuscEncuestasNorm {display: table; height: auto; margin: 15px auto 0; width:75%}
+.BotonesBuscEnc {float:right; top:0px; margin-bottom: 5px;}
+/*Fin encuestas*/
+
+/*Comparador*/
+.TituloComparador{ height: auto; line-height: 22px; margin-bottom: 10px; margin-left: 2%; margin-top: 10px; width: 96%;}
+.TipoComparador{ height: auto; text-align: center; width: 100%;}
+.TextoTipoComparador{ color: navy; font-family: MyCustomFont2,Verdana,Arial,sans-serif; font-size: 20px; font-weight: bold;}
+.CajaComparador{ border: 1px solid #99CC00; height: auto; margin-left: 2%; width: 96%; float:left; padding:12px 0;}
+.ZonaCajaComparador{ width:100%; height:auto; float:left;}
+.ComparadorActor{ width:38%; height:auto; float:left;}	
+.ZonaCajaCompara{ width: 80%; height: auto; float:left;}
+.ZonaCajaSelecciona{ color: navy; font-size: 12px; margin-top: -16px; cursor: pointer; text-decoration: underline; display:none; font-weight: bold;}
+.ZonaCajaComparaC{ height: auto; margin: 0 auto; width: 45%;}
+.ZonaTablasComp{ float: left; height: auto; margin-bottom: 20px; margin-left: 2%; margin-top: 20px; width: 96%;}
+.ZonaIzquierdaComp{ border: 1px solid #99CC00; height: auto; width: 49%; float: left;}
+.NombreComp{ color: #000080; font-family: MycustomFont2; font-size: 20px; font-weight: bold; height: auto; padding: 5px 0; text-align: center; width: 100%;}
+.ValMediaComp{ height:auto; width:100%; float:left; margin-bottom:20px;}
+.TablaComp{ height:auto; width:100%; float:left; margin-bottom:10px;}
+.EspacTablaComp{ padding-bottom: 4px; padding-top: 4px; height:32px;}
+.SelecActor{ font-weight:bold; text-decoration:underline; cursor:pointer;}
+.ActorSelec{ font-weight:bold;}
+/*Fin comparador*/
+
+
+/*Administrador*/
+.CajaAdministrador{ border: 1px solid #99CC00; height: auto; margin-left: 2%; margin-top: 15px; width: 96%; float:left; padding:12px 0;}
+.DatoEntrenadorAdmin{ width:100%; float:left; font-weight:bold;}
+.CabeceraEntrenadorAdmin{ width:100%; float:left;}
+.TablaEquipoAdmin{ width:70%; height:auto; padding-top:10px; padding-bottom:10px; float:left;margin-left:15%;}
+.DatoJugadorAdmin{ width:100%; float:left; font-weight:bold;}
+.EntrenadorEquipoAdmin{ float: right; font-family: Tahoma,Verdana,Arial,sans-serif; font-size: 13px; height: auto; text-align: center; width: 70%;}
+.DatoAliasAdmin{ width:20%; float:left;}
+.DatoPreguntaAdmin{ width:81%; float:left;text-align:left;margin-left:2%;}
+.DatoNombreAdmin{ width:25%; float:left;}
+.DatoEquipoAdmin{ width:20%; float:left;}
+.DatodemarcAdmin{ width:18%; float:left;}
+.DatoAdministrarJ{ width:17%; float:left;}
+.ColumnaPreguntaUnicaInf{ float: left; width: 39%; padding: 10px 0 10px 1%;}
+.ColumnaRespuestaUnicaInf{ color: black; float: left; font-family: tahoma; font-size: 13px; font-weight: normal; padding: 11px 0 11px 1%; width: 59%;}
+/*Fin administrador*/
+
+
+
+/*Que es VF*/
+.Presentacion{font-size: 14px; line-height: 25px; margin: 20px; text-align: justify;}
+.TituloPresentacion{font-size: 19px; font-weight: bold; text-align: center; color: Navy;}
+.IdearioPresentacion{font-weight: bold; list-style-type: circle;}
+.ImagenPresentacion{background: none repeat scroll 0 0 red; height: 100px; margin: 0 auto; width: 692px;font-size: 20px; font-weight: bold;}
+.FinPresentacion{font-weight: bold; text-align: right; margin-top: 30px;}
+/*Fin Que es VF*/
+
+/*Condiciones legales y de uso*/
+.Legal{line-height: 20px; text-align: justify; margin: 20px;}
+.LineasDatosLegal{line-height:8px;}
+.Titulo1Legal{font-size: 23px; font-weight: bold; text-align: center; margin-bottom: -13px;}
+.Titulo2Legal{font-size: 15px; margin-top: 36px;}
+.TipoDatoLegal{font-weight:bold;}
+/*Fin Condiciones legales y de uso*/
+
+/*Contacto*/
+.Contacto{line-height: 20px; text-align: justify; margin: 0 auto; width:728px;}
+.CamposContacto{margin-bottom: 13px;}
+.IzquierdaContacto{float:left;  margin-left:5px;}
+.DerechaContacto{float:left; margin-left:25px;}
+.CajasContacto{width:170px;}
+.ActuadoresContacto{width:550px; height:118px;}
+/*Fin Contacto*/
+
+/*FAQ*/
+.FAQ{line-height: 20px; text-align: justify; margin-right: 20px;}
+.TitulosFAQ{font-weight: bold; list-style-type: circle;}
+.TextoFAQ {text-indent:20px; font-weight:normal;}
+.ResaltaFAQ{color: navy; cursor: pointer; font-weight: bold; text-decoration:none;}
+/*Fin Contacto*/
+
+
+.BannerInferior2 {background: none repeat scroll 0 0 white; border-top: 1px solid #99CC00; bottom: 0; float: left; margin-left: 5%; margin-top: 10px; min-width: 1024px; padding-bottom: 10px; padding-top: 3px; position: fixed; text-align: center; width: 90%;}
+.CentralFija2 {float: left; margin-bottom: 25px; min-width: 1024px; width: 100%;}
+
+/*Expertos*/
+.fotografiaExperto{
+
+width:15%;
+display:table-cell;
+vertical-align: middle;
+}
+
+.textoInfoExperto
+{
+vertical-align: middle;
+display:table-cell;
+padding-left: 10px;
+}
+
+.InfoExperto
+{
+vertical-align: middle;
+display:table-cell;
+padding-left: 15px;
+}
+
+.Experto1{
+width: 20%;
+font-weight: bold;
+}
+.Experto3{
+width: 30%;
+font-weight: bold;
+}
+
+.Experto2{
+width: 35%;
+}
+/*Fin Expertos*/
+
+/*Nuevo Login */
+.cajaLogin { height: 300px; color: black; float:left;font-family:Tahoma,Verdana,Arial,sans-serif}
+.TituloLogin {font-size: 22px; text-align: center; padding: 8px 0px;}
+.CuerpoLogin {font-size: 13px; float:left;margin-top:3px;margin-bottom:2px}
+.labelLogin {float: left; margin-left: 8px; width: 105px;font-weight:bold}
+.labelRecordar {float: left; margin-left: 8px; font-size:11px}
+#Recordar {float:left;}
+.inputLogin {float: left; margin-bottom: 5px; width: 122px;font-size:11px}
+.BotonLogin {margin-right: 5px; width: 122px; float: left; color: white; font-size: 13px; font-weight: bold; text-align: center; padding: 3px 0px; background: url("../images/botonInactivo.png") no-repeat scroll center top;cursor:pointer}
+.BotonLogin:hover {background: url('../images/botonActivo.png') no-repeat scroll center top;}
+.enlaceLogin{cursor:pointer;color:blue;}

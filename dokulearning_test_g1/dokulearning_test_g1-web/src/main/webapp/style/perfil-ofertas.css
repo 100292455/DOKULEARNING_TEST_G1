@@ -1,0 +1,609 @@
+	
+	*{margin:0px; padding:0px;} 
+
+	/*COLOR DE LOS LATERALES DE LA PAGINA*/
+	
+	/*VERDE rgb(161,194,107)*/
+	/*AZUL rgb(29,102,168)*/
+	/*azul claro : rgb(51,141,222)*/
+	/*verde oscuro : rgb(140,168,93)*/
+	/*dorado: rgb(227,197,25)*/
+	/*azul flecha: rgb(126,162,243)*/
+	/*azul facebook: rgb(91,112,165)*/
+	/*azul twitter: rgb(65,160,220)*/
+	/*rojo google: rgb(196,34,37)*/
+	
+	
+	html{
+		background-color:rgb(29,102,168);
+	}
+	
+	body{
+		font-family: 'Ubuntu', sans-serif;
+		width:1200px;
+		height:100%;
+		margin:auto;
+		border: 2px solid white;
+		background-color:white;
+	}    /* Color de fondo de la pagina */
+
+
+
+	/*-----------------------------------------------------------------------------------------------------*/
+	/*ESTRUCTURA DEL DOCUMENTO*/
+
+	
+	
+	header{      /* Estilo de la cabecera, la cual engloba el logo, título y el inicio de sesión */
+		background: rgb(161,194,107);
+		background-image: -webkit-linear-gradient(top, rgb(161,194,107), rgb(140,168,93));
+		background-image: -moz-linear-gradient(top, rgb(161,194,107), rgb(140,168,93));
+		background-image: -ms-linear-gradient(top, rgb(161,194,107), rgb(140,168,93));
+		background-image: -o-linear-gradient(top, rgb(161,194,107), rgb(140,168,93));
+		background-image: linear-gradient(to bottom, rgb(161,194,107), rgb(140,168,93));
+
+		
+	}
+	section{  /* Estilo del cuerpo de la página */
+		background:white;
+	}
+	
+	footer{    /* Estilo del pie de página */
+		background: rgb(29,102,168);
+		background-image: -webkit-linear-gradient(top, rgb(29,102,168), rgb(91,112,165));
+		background-image: -moz-linear-gradient(top, rgb(29,102,168), rgb(91,112,165));
+		background-image: -ms-linear-gradient(top, rgb(29,102,168), rgb(91,112,165));
+		background-image: -o-linear-gradient(top, rgb(29,102,168), rgb(91,112,165));
+		background-image: linear-gradient(to bottom, rgb(29,102,168), rgb(91,112,165));
+		color:white;
+		text-align: center;
+		font-size:12px;		
+		padding:25px;
+		clear: both;
+	}
+	
+	
+	/*---------------------------------------------------------------------------------------------------*/
+	
+	
+	
+
+	/*---------------------------------------------------------------------------------------------------*/
+	/*ESTILO DE LA CABECERA*/
+	
+	#cabecera-logo, #cabecera-sesion {
+		display:inline-block;
+	}
+	
+		/*---------------------------------------------------------------------------------------------------*/
+		/*ESTILO DEL LOGO DE LA CABECERA*/
+	
+			#cabecera-logo {
+				width:270px;
+				padding:16px 40px;
+				position:relative;
+				top:4px;
+			}
+			
+			
+			header a {
+				text-decoration:none;
+			}
+			
+			header .cabecera {
+				display:inline;
+			}
+			
+			header img.cabecera {
+				width:44px;
+				height:63px;
+			}
+			
+			header h1 {
+				font-family: 'Ubuntu', sans-serif;
+				color:white;
+				position:relative;
+				padding-left:10px;
+				top:-14px;
+				font-size:50px;
+			}
+		
+		/*----------------------------------------------------------------------------------------------*/
+		nav {
+			position:relative;
+			padding:20px;
+			width:550px;
+			float: right;
+			top:20px;
+			left:-226px;
+		}
+		nav ul {
+			position:relative;
+			width:100%;
+			font-size:20px;
+		}
+		nav ul li{
+			display:inline;
+			margin:20px;
+		}
+		nav ul #menu-empresa a{
+			color:white;
+		}
+		
+		nav ul #menu-ofertas a{
+			color:rgb(29,102,168)
+		}
+		
+		nav ul #menu-empresa a:hover{
+			color:rgb(227,197,25);
+		}
+		
+		nav ul #menu-buscar a{
+			color:white;
+		}
+		nav ul #menu-buscar a:hover{
+			color:rgb(227,197,25);
+		}
+		
+		
+		
+		
+		/*----------------------------------------------------------------------------------------------*/
+		/*ESTILO DEL INICIO DE SESION DE LA CABECERA*/
+			
+			#cabecera-sesion { /*div que engloba todo*/
+				padding:16px 10px 16px 10px;
+				background: rgb(161,194,107);
+				background-image: -webkit-linear-gradient(top, rgb(140,168,93), #71874C);
+				background-image: -moz-linear-gradient(top, rgb(140,168,93), #71874C);
+				background-image: -ms-linear-gradient(top, rgb(140,168,93), #71874C);
+				background-image: -o-linear-gradient(top, rgb(140,168,93), #71874C);
+				background-image: linear-gradient(to bottom, rgb(140,168,93), #71874C);
+				border-left:white solid 2px;
+				width:220px;		
+				position:relative;
+				float:right;		
+				left:  590px;
+			}
+		
+		
+			#cabecera-sesion img:first-child { /*imagen de la empresa*/
+				width:65px;
+				height:65px;
+				border-radius:50px;
+				border:white solid 2px;
+				z-index:1;
+			}
+			
+			img.cabecera-sesion,  #cabecera-sesion-men{ /*Imagen y nombre de la empresa*/
+				display:inline-block;
+			}
+			
+			p.cabecera-sesion { /*Nombre de la empresa*/
+				color:white;
+				font-size:18px;
+			}
+			
+			#cabecera-sesion-men{
+				float:right;
+				position:absolute;	
+				margin:30px 0 0px 15px ;
+				color:white;
+				top:0;
+			}
+			
+			#cabecera-sesion-men a {
+				font-size:14px;
+				color:white;
+			 	text-decoration: underline;
+			
+			}
+			
+			#cabecera-sesion-men a:hover {
+				color:rgb(227,197,25);
+			}
+			
+			
+		
+		/*----------------------------------------------------------------------------------------------*/
+		
+		
+		
+
+		
+	
+	/*---------------------------------------------------------------------------------------------------*/
+
+	
+
+
+	/*---------------------------------------------------------------------------------------------------*/
+	/*ESTILO DEL MENU*/
+
+		
+	
+	/*---------------------------------------------------------------------------------------------------*/
+
+
+
+
+	/*---------------------------------------------------------------------------------------------------*/
+	/*ESTILO DEL PIE DE PAGINA*/
+	
+	ul#pie li {  /* Pie de página horizontal */
+		display: inline;
+	}
+
+	ul#pie li a:link, ul#pie li a:visited{  /* Color de los links del pie de página */
+		color:white;
+		padding-left:10px;	
+	}
+	
+	ul#pie li a:hover {/* Color de los links del pie de página cuando pasas el cursor */
+		color:rgb(227,197,25);	
+	}
+
+	/*---------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+	/*---------------------------------------------------------------------------------------------------*/
+	/*ESTILO DE MI EMPRESA */
+	
+	
+		
+	#mi-empresa, #seguidores {
+		display:inline-table;
+	}
+	
+	#mi-empresa {
+		width:958px;
+		border-right: solid white 1px;
+		background-color:rgba(126,162,243,0.1);
+
+	}
+	
+	#mi-empresa > h4 {
+		margin-top:30px;
+		color:rgb(91,112,165);
+		text-align:center;
+		font-size:40px;
+	}
+	
+	#ofertas {
+		width:100%;
+		margin:20px 0;
+	
+	}
+	
+	#ofertas ul li {
+		border-top: solid 2px rgba(81,81,81,0.2);
+		padding-top:15px;
+		margin: 10px 0;
+		list-style: none;
+		height:117px;
+	}
+	
+	.ofertas-descripcion, .ofertas-seguidores, .ofertas-edicion {
+		display:inline-block;
+	}
+	
+		/*----------------------------------------------------------------------------------------*/
+		/*DESCRIPCION DE LA OFERTA*/
+		
+		.ofertas-descripcion {
+			width:80%;
+			font-size:14px;
+			margin:0;
+			padding-left:10px;
+			position: relative;
+			top: -15px;
+		}
+		
+		.ofertas-titulo {
+			color: rgb(81,81,81);
+		}
+		
+		.ofertas-empresa {
+			font-size:14px;
+			color:rgb(91,112,165);
+		}
+		
+		.ofertas-empresa, .ofertas-lugar {
+			margin-top:5px;
+			display:inline;
+		}
+		
+		.ofertas-lugar {
+			margin-left:15px;
+		}
+		
+		.ofertas-resumen {
+			height:52px;
+			margin:10px 0;
+			overflow:auto;
+		}
+		
+		.ofertas-tipo-contrato, .ofertas-jornada, .ofertas-salario {
+			display:inline;
+			padding-right:10px;
+			top: 10px;
+		}
+		
+	.campos_busqueda{
+		position: relative;
+		bottom: 14px;
+		font-size: 12px;
+		font-family: 'Ubuntu', sans-serif;
+	}
+	
+	.campos_filtro{
+		position: relative;
+		bottom: 14px;
+		font-size: 12px;
+		font-family: 'Ubuntu', sans-serif;
+		
+	}
+		
+		
+		.ofertas-jornada, .ofertas-salario {
+			padding-left:10px;
+		}
+		
+		
+		
+		/*----------------------------------------------------------------------------------------*/
+		
+		
+	
+		/*----------------------------------------------------------------------------------------*/
+		/*SEGUIDORES DE LA OFERTA*/
+		
+		
+		
+		
+		
+		
+		
+		/*----------------------------------------------------------------------------------------*/
+	
+	
+	
+		/*----------------------------------------------------------------------------------------*/
+		/*REDES SOCIALES DE LA OFERTA*/
+		
+		.ofertas-edicion {
+			width:18%;
+			/*background-color:rgba(126, 162, 243, 0.1);*/
+			text-align:center;
+			padding: 29px 0;
+			margin:0;
+			position:relative;
+			top:-90px;
+		}
+		
+		.edicion-icon {
+			padding:1px;
+			margin:5px;
+			width:45px;
+			width:45px;
+			border-radius: 50px;
+			border:solid white 1px;
+
+		}
+		
+		.edicion-icon:hover {
+			-moz-box-shadow: 0 0 15px #ccc; 
+			-webkit-box-shadow: 0 0 15px #ccc; 
+			box-shadow: 0 0 15px #ccc; 
+		}
+		
+		
+		
+		/*----------------------------------------------------------------------------------------*/
+		
+
+	/*----------------------------------------------------------------------------------------------------*/
+	
+	
+	
+	
+	
+	
+	/*-------------------------------------------------------------------------------------------------------*/
+	
+	/*ESTILO DE LOS SEGUIDORES	*/
+	
+	#seguidores {
+		
+		float: right;
+		
+		width: 200px;
+		margin-left:15px;
+		position:relative;
+		top: 3px;
+		left:-5px;
+		padding:10px;
+	}
+	
+	#seguidores h5 {
+		font-size:20px;
+		text-align:center;
+		padding:20px 0;
+		text-transform: uppercase;
+		color: rgb(81,81,81);
+	}
+	
+	#seguidores ul {
+		position:relative;
+		height:100%;
+		overflow:auto;
+	}
+	#seguidores li{
+		border-top: solid 2px rgba(81,81,81,0.4);
+		padding-top:5px;
+		margin-bottom:5px;
+		list-style:none;
+	}
+	
+	img.seguidores-foto {
+		width:50px;
+		height:50px;
+		border-radius:50px;
+		border:inset 3px rgb(161,194,107) ;
+	}
+	
+	.seguidores-foto, .seguidores-info {
+		display:inline;
+	}
+	
+	p.seguidores-info {
+		font-size:14px;
+		position:relative;
+		top:-20px;
+	}
+	
+	/*-------------------------------------------------------------------------------------------------------*/
+	
+	
+	
+	
+	
+	
+	/*-------------------------------------------------------------------------------------------------------*/
+	
+	/*ESTILO DEL TOP 5 VISITED*/
+	
+	
+	.img1{
+		height: 30px;
+		width: 30px;
+		position: relative;
+		float: left;
+		left: 10px;
+		top: -20px;
+		
+	}
+	
+	.img2{
+		height: 30px;
+		width: 30px;
+		position: relative;
+		float: left;
+		left: 30px;
+		top: -20px;
+
+	}
+	
+	.img3{
+		height: 30px;
+		width: 30px;
+		position: relative;
+		float: left;
+		top: 20px;
+		right: 50px;
+
+	}
+	
+	.img4{
+		height: 30px;
+		width: 30px;
+		position: relative;
+		float: left;
+		top: 20px;
+		right: 30px;		
+
+	}
+	
+	#titulo1{
+		    text-decoration: none;
+		    color: black;
+		    
+	}
+	
+	#titulo2{
+		    text-decoration: none;
+		    color: black;
+		    
+	}
+	
+	#titulo3{
+		    text-decoration: none;
+		    color: black;
+		    
+	}
+	
+	#titulo4{
+		    text-decoration: none;
+		    color: black;
+		    
+	}
+	
+	#titulo5{
+		    text-decoration: none;
+		    color: black;
+		    
+	}
+	#titulo6{
+		    text-decoration: none;
+		    color: black;
+		    
+	}
+	#titulo7{
+		    text-decoration: none;
+		    color: black;
+		    
+	}
+	#titulo8{
+		    text-decoration: none;
+		    color: black;
+		    
+	}
+	#titulo9{
+		    text-decoration: none;
+		    color: black;
+		    
+	}
+	#titulo10{
+		    text-decoration: none;
+		    color: black;
+		    
+	}
+	
+	
+	
+	
+	/*-------------------------------------------------------------------------------------------------------*/
+	.estrella{
+		width: 30px;
+		height: 30px;
+		position: relative;
+		left: 575px;
+		bottom: 20px;
+		
+	}
+	
+	.estrella:hover{
+		opacity: 0.3;
+	}
+
+	/*-----------------------------------------------------------------------------------------------*/
+		
+	/*ESTILO DEL MENU INICIO SESION*/
+		
+		
+
+	/*-----------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+

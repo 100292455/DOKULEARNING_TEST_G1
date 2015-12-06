@@ -1,0 +1,664 @@
+		
+*{margin:0px; padding:0px;} 
+
+	/*COLOR DE LOS LATERALES DE LA PAGINA*/
+	
+	/*VERDE rgb(161,194,107)*/
+	/*AZUL rgb(29,102,168)*/
+	/*azul claro : rgb(51,141,222)*/
+	/*verde oscuro : rgb(140,168,93)*/
+	/*dorado: rgb(227,197,25)*/
+	/*azul flecha: rgb(126,162,243)*/
+	/*azul facebook: rgb(91,112,165)*/
+	/*azul twitter: rgb(65,160,220)*/
+	/*rojo google: rgb(196,34,37)*/
+	/*verde mas oscuro: 71874C*/
+	
+	
+	html{
+		background-color:rgb(29,102,168);
+	}
+	
+	body{
+		font-family: 'Ubuntu', sans-serif;
+		width:1200px;
+		height:100%;
+		margin:auto;
+		border: 2px solid white;
+		background-color:white;
+		
+	}    /* Color de fondo de la pagina */
+
+
+
+		/*-----------------------------------------------------------------------------------------------------*/
+	/*ESTRUCTURA DEL DOCUMENTO*/
+
+	
+	header{      /* Estilo de la cabecera, la cual engloba el logo, título y el inicio de sesión */
+			background: rgb(161,194,107);
+			background-image: -webkit-linear-gradient(top, rgb(161,194,107), rgb(140,168,93));
+			background-image: -moz-linear-gradient(top, rgb(161,194,107), rgb(140,168,93));
+			background-image: -ms-linear-gradient(top, rgb(161,194,107), rgb(140,168,93));
+			background-image: -o-linear-gradient(top, rgb(161,194,107), rgb(140,168,93));
+			background-image: linear-gradient(to bottom, rgb(161,194,107), rgb(140,168,93));
+
+
+		}
+		
+			
+	section{  /* Estilo del cuerpo de la página */
+		background:white;
+	}
+		
+	footer{    /* Estilo del pie de página */
+		background: rgb(29,102,168);
+		background-image: -webkit-linear-gradient(top, rgb(29,102,168), rgb(91,112,165));
+		background-image: -moz-linear-gradient(top, rgb(29,102,168), rgb(91,112,165));
+		background-image: -ms-linear-gradient(top, rgb(29,102,168), rgb(91,112,165));
+		background-image: -o-linear-gradient(top, rgb(29,102,168), rgb(91,112,165));
+		background-image: linear-gradient(to bottom, rgb(29,102,168), rgb(91,112,165));
+		color:white;
+		text-align: center;
+		font-size:12px;		
+		padding:25px;
+	}
+	
+	/*---------------------------------------------------------------------------------------------------*/
+	
+	
+	
+
+	/*---------------------------------------------------------------------------------------------------*/
+	/*ESTILO DE LA CABECERA*/
+	
+	#cabecera-logo, #cabecera-sesion, nav {
+		display:inline-block;
+	}
+	
+		/*---------------------------------------------------------------------------------------------------*/
+		/*ESTILO DEL LOGO DE LA CABECERA*/
+	
+		
+			#cabecera-logo {
+				width:270px;
+				padding:16px 40px;
+				position:relative;
+				top:4px;
+			}
+			
+			header a {
+				text-decoration:none;
+			}
+			
+			header .cabecera {
+				display:inline;
+			}
+			
+			header img.cabecera {
+				width:44px;
+				height:63px;
+			}
+			
+			header h1 {
+				font-family: 'Ubuntu', sans-serif;
+				color:white;
+				position:relative;
+				padding-left:10px;
+				top:-14px;
+				font-size:50px;
+			}
+		
+		/*----------------------------------------------------------------------------------------------*/
+		nav {
+			position:relative;
+			padding:20px;
+			width:330px;
+			
+			top:-20px;
+			left:150px;
+		}
+		nav ul {
+			position:relative;
+			width:100%;
+			font-size:20px;
+		}
+		nav ul li{
+			display:inline;
+			margin:20px;
+		}
+		
+		
+		nav ul li a{
+			color:white;
+		}
+		
+		nav ul li a:hover{
+			color:rgb(227,197,25);
+		}
+		
+		
+		/*----------------------------------------------------------------------------------------------*/
+		/*ESTILO DEL INICIO DE SESION DE LA CABECERA*/
+			
+			#cabecera-sesion { /*div que engloba todo*/
+				padding:16px 10px 16px 10px;
+				background: rgb(161,194,107);
+				background-image: -webkit-linear-gradient(top, rgb(140,168,93), #71874C);
+				background-image: -moz-linear-gradient(top, rgb(140,168,93), #71874C);
+				background-image: -ms-linear-gradient(top, rgb(140,168,93), #71874C);
+				background-image: -o-linear-gradient(top, rgb(140,168,93), #71874C);
+				background-image: linear-gradient(to bottom, rgb(140,168,93), #71874C);
+				border-left:white solid 2px;
+				width:220px;		
+				position:relative;
+				float:right;		
+			}
+		
+			#cabecera-sesion img:first-child { /*imagen de la empresa*/
+				width:65px;
+				height:65px;
+				border-radius:50px;
+				border:white solid 2px;
+				z-index:1;
+			}
+			
+			img.cabecera-sesion,  #cabecera-sesion-men{ /*Imagen y nombre de la empresa*/
+				display:inline-block;
+			}
+			
+			p.cabecera-sesion { /*Nombre de la empresa*/
+				color:white;
+				font-size:18px;
+			}
+			
+			#cabecera-sesion-men{
+				float:right;
+				position:absolute;	
+				margin:30px 0 0px 15px ;
+				color:white;
+				top:0;
+			}
+			
+			#cabecera-sesion-men a {
+				font-size:14px;
+				color:white;
+			 	text-decoration: underline;
+			
+			}
+			
+			#cabecera-sesion-men a:hover {
+				color:rgb(227,197,25);
+			}
+			
+	
+			
+		
+		/*----------------------------------------------------------------------------------------------*/
+		
+		
+		
+
+		
+	
+	/*---------------------------------------------------------------------------------------------------*/
+	/*MENU DE BUSQUEDA*/
+	
+	#busqueda_basica{
+		background: rgba(110,110,110,0.2);
+		height: 105px;
+		width:1200px;
+
+		
+	}
+	
+	.campo{
+		height: 30px;
+		width: 350px;
+		border: none;
+		border-radius: 4px;
+		/*revisar*/
+		box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2) inset, 0px -1px 0px rgba(0, 0, 0, 0.05) inset;
+		font-family: "Ubuntu",sans-serif;
+		font-size: 12px;
+		color: #222;
+		position: relative;
+		top: 10px;
+		left: 25px;
+		padding-left: 20px;
+		margin:2px;
+		margin-left: 5px;
+		background-color: white;
+	}
+	
+	
+	.texto_campo{
+		position: relative;
+		top: 5px;
+		left: 10px;
+		margin-top: 2px;
+		margin-left: 2px;
+	}
+	
+	.texto_blanco{
+		color: white;
+
+	}
+	.busqueda1{
+		width: 450px;
+		height: 80px;
+		background-color:rgb(29,102,168);
+		position: relative;
+		float: left;
+		border-radius: 5px;	
+		/*border: double;
+		border-width: 5px;
+		border-color: black;
+		border-radius: 6px;*/
+		top: 10px;
+		margin-left: 25px;
+
+	}
+	
+	#interes{
+		left: 5px;
+	}
+	
+	#estudios{
+		left: 5px;
+	}
+	
+	#provincias_in{
+		left: 5px;
+
+	}
+	
+	#provincias{
+		position: absolute;
+		border: solid;
+		border-width: 1px;
+		width: 350px;
+		font-size: 12px;
+		height: 300px;
+		margin-left: 2px;
+		left: 572px;
+		top: 177px;
+		background-color: white;
+		z-index: 1;
+	}
+	
+	
+	.prov{
+		position: relative;
+		width: 100px;
+		float: left;
+	}
+	
+	#boton_busqueda{
+		position: relative;
+		float: right;
+		top: 35px;
+		right: 70px;
+		font-size: 12px;
+		font-weight: bold;
+		border:solid 1px white;
+		border-radius:2px;
+		padding: 8px 15px 8px 15px;
+		color: #ffffff;
+		background-color:rgb(29,102,168);
+	}
+	
+	#boton_busqueda:hover {
+		color:rgb(29,102,168);
+		background-color:white;
+		border:solid 1px rgb(29,102,168);
+		
+	}
+	
+	#flecha{
+		width: 27px;
+		height: 27px;
+		position: absolute;
+		bottom: 20px;
+		left: 345px;
+		z-index: 1;
+	}
+	
+	#texto_prov{
+		position: absolute;
+		left: 75px;
+		top: 6px;
+		font-size: 14px;
+	}
+
+	/*---------------------------------------------------------------------------------------------------*/
+	/*FILTRO*/
+	
+	#filtro{
+		width: 310px;
+		float: left;
+		height:100%;
+	}
+	
+	
+	.checks{
+		margin-left: 20px;
+	}
+	
+	#salario_slider{
+		width: 200px;
+		left: 50px;
+		top: 20px;
+	}
+	
+	
+	#salNumber{
+		position: relative;
+		width: 100px;
+		left: 50px;
+		top: 10px;
+		
+	}
+	
+	#exp_campo{
+		width: 35px;
+		left: 20px;
+		top: 5px;
+		position: relative;
+	}
+	
+	#estudios_campo{
+		height: 30px;
+		width: 200px;
+		border-radius: 4px;
+		/*revisar*/
+		box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2) inset, 0px -1px 0px rgba(0, 0, 0, 0.05) inset;
+		font-family: "Ubuntu",sans-serif;
+		font-size: 12px;
+		color: #222;
+		position: relative;
+		top: 10px;
+		left: 10px;
+		margin-left: 5px;
+		
+	}
+	
+	#salario_minimo{
+		font-size: 10px;
+		position: relative;
+		float: left;
+		left: 20px;
+		top: 8px;
+		/*
+		top: 1040px;
+		left: 90px;*/
+		
+	}
+	
+	
+	#salario_maximo{
+		font-size: 10px;
+		position: relative;
+		float: left;
+		left: 260px;
+		top: 8px;
+	}
+	/*---------------------------------------------------------------------------------------------------*/
+	/*ESTILO DE OFERTAS*/
+	#lista_ofertas{
+		width: 890px;
+		float:left;
+		/*background-color: rgba(126, 162, 243, 0.1);*/
+
+		
+	}
+	.oferta{
+		width:890px;
+		height: 200px;
+		background-color: rgba(126, 162, 243, 0.1);
+		border-style: none none solid;
+		border-color: #CBD5D6;
+		font-size: 14px;
+	}
+	.cuerpo{
+		width:780px;
+		float: left;
+		height: 175px;
+		/*background-color: rgba(126, 162, 243, 0.1);*/
+	}
+	
+	.iconos{
+		height: 175px;
+		/*background-color: rgba(126, 162, 243, 0.1);*/
+		float: left;
+		height: 100%;
+		width: 100px;	
+	}
+	
+	.inferior{
+		height: 15px;
+		clear:both;
+		position: relative;
+		bottom: 20px;
+		/*background-color: rgba(126, 162, 243, 0.1);*/
+	}
+	.opciones_inferiores{
+		margin-left: 20px;
+		font-size: 12px;
+		top:10px;
+	}
+	
+	
+	.campos_busqueda{
+		position: relative;
+		margin-left:20px;
+		font-size: 12px;
+		font-family: 'Ubuntu', sans-serif;
+	}
+	
+	.campos_filtro{
+		position: relative;
+		margin-left:20px;
+		font-size: 12px;
+		font-family: 'Ubuntu', sans-serif;
+		
+	}
+	
+	.paginas{
+		width: 890px;;
+		height: 30px;
+	}
+	
+	.num_paginas{
+		position: relative;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		float: left;
+		left: 400px;
+		text-decoration: none;
+		
+	}
+	
+	.flechita{
+		margin-top: 3px;
+		width: 10px;
+		height: 15px;
+	}
+	
+	#oferta2{
+		display: none;
+	}
+	
+	#oferta5{
+		display: none;
+	}
+	
+	#boton_filtro{
+		position: relative;
+		float: left;
+		top: 20px;
+		left: 120px;
+		border-radius:2px;
+		background-color:rgb(29,102,168);
+		color: white;
+		border:solid 1px white;
+		font-size: 12px;
+		font-weight: bold;
+		padding: 8px 15px 8px 15px;
+		
+	}
+	
+	
+	#boton_filtro:hover {
+		color:rgb(29,102,168);
+		background-color:white;
+		border:solid 1px rgb(29,102,168);
+		
+	}
+	.ofertas-empresa {
+			font-size:14px;
+			color:rgb(91,112,165);
+			margin-left: 10px;
+		}
+	/*---------------------------------------------------------------------------------------------------*/
+	/*ICONOS*/
+	
+	.img1{
+		height: 30px;
+		width: 30px;
+		position: relative;
+		float: left;
+		top: 40px;
+		left: 10px;
+		
+	}
+	
+	.img2{
+		height: 30px;
+		width: 30px;
+		position: relative;
+		float: left;
+		top: 40px;
+		left: 30px;
+	}
+	
+	.img3{
+		height: 30px;
+		width: 30px;
+		position: relative;
+		float: left;
+		top: 70px;
+		right: 50px;
+	}
+	
+	.img4{
+		height: 30px;
+		width: 30px;
+		position: relative;
+		float: left;
+		top: 40px;
+		left: 60px;
+	}
+	
+	.titulo{
+		    text-decoration: none;
+		    color: black;
+		    
+	}
+	
+	h3.cabecera{
+		margin-left:10px;
+		color: rgb(81,81,81);
+	}
+	
+	.opciones_inferiores{
+	text-decoration: none;
+	
+	}
+	.opciones_inferiores:hover{
+	text-decoration: underline;
+	
+	}
+	.titulo:hover{
+	text-decoration: underline;
+	
+	}
+	
+	.cuerpo:hover{
+				background-color: #D9F0FF;
+
+	}
+
+
+	/*---------------------------------------------------------------------------------------------------*/
+	/*ESTILO DEL PIE DE PAGINA*/
+	
+	ul#pie li {  /* Pie de página horizontal */
+		display: inline;
+		clear: both;
+		
+	}
+
+	ul#pie li a:link, ul#pie li a:visited{  /* Color de los links del pie de página */
+		color:white;
+		padding-left:10px;	
+	}
+	
+	ul#pie li a:hover {/* Color de los links del pie de página cuando pasas el cursor */
+		color:rgb(29,102,168);	
+	}
+
+	/*---------------------------------------------------------------------------------------------------*/
+	
+	.estrella{
+		width: 30px;
+		height: 30px;
+		position: relative;
+		left: 575px;
+		bottom: 20px;
+		
+	}
+	
+	.estrella:hover{
+		opacity: 0.3;
+	}
+
+	/*---------------------------------------------------------------------------------------------------*/
+	/*ESTILO DE LA BUSQUEDA DE EMPLEO */
+	
+	
+	/*----------------------SELECT MENU--------------------*/
+	
+
+	/*-----------------------------------------------------*/
+	
+
+
+	/*----------------------------------------------------------------------------------------------------*/
+	
+	
+	
+	
+	
+	
+	/*-------------------------------------------------------------------------------------------------------*/
+	
+	/*ESTILO DE LA DESCRIPCION GRAFICA MENU*/
+	
+
+	
+	/*-------------------------------------------------------------------------------------------------------*/
+	
+	
+	
+	
+	
+	
+	/*-------------------------------------------------------------------------------------------------------*/
+	
+	/*ESTILO DEL TOP 5 VISITED*/
+
+	
+	
+	
+	/*-------------------------------------------------------------------------------------------------------*/

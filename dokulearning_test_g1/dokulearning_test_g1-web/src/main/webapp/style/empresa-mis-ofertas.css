@@ -1,0 +1,688 @@
+
+	
+	*{margin:0px; padding:0px;} 
+
+	/*COLOR DE LOS LATERALES DE LA PAGINA*/
+	
+	/*VERDE rgb(161,194,107)*/
+	/*AZUL rgb(29,102,168)*/
+	/*azul claro : rgb(51,141,222)*/
+	/*verde oscuro : rgb(140,168,93)*/
+	/*dorado: rgb(227,197,25)*/
+	/*azul flecha: rgb(126,162,243)*/
+	/*azul facebook: rgb(91,112,165)*/
+	/*azul twitter: rgb(65,160,220)*/
+	/*rojo google: rgb(196,34,37)*/
+	
+	
+	html{
+		background:rgb(246,246,246);
+	}
+	
+	body{
+		font-family: 'Ubuntu', sans-serif;
+		width:1200px;
+		height:100%;
+		margin:auto;
+		border: 2px solid white;
+		background-color:white;
+	}    /* Color de fondo de la pagina */
+
+
+
+	/*-----------------------------------------------------------------------------------------------------*/
+	/*ESTRUCTURA DEL DOCUMENTO*/
+
+	
+	header{      /* Estilo de la cabecera, la cual engloba el logo, título y el inicio de sesión */
+		background: rgb(161,194,107);
+		background-image: -webkit-linear-gradient(top, rgb(161,194,107), rgb(140,168,93));
+		background-image: -moz-linear-gradient(top, rgb(161,194,107), rgb(140,168,93));
+		background-image: -ms-linear-gradient(top, rgb(161,194,107), rgb(140,168,93));
+		background-image: -o-linear-gradient(top, rgb(161,194,107), rgb(140,168,93));
+		background-image: linear-gradient(to bottom, rgb(161,194,107), rgb(140,168,93));
+		padding:20px 40px 10px 40px;
+
+		
+	}	
+			
+	section{  /* Estilo del cuerpo de la página */
+		background:white;
+	}
+		
+		footer{    /* Estilo del pie de página */
+		background: rgb(29,102,168);
+		background-image: -webkit-linear-gradient(top, rgb(29,102,168), rgb(91,112,165));
+		background-image: -moz-linear-gradient(top, rgb(29,102,168), rgb(91,112,165));
+		background-image: -ms-linear-gradient(top, rgb(29,102,168), rgb(91,112,165));
+		background-image: -o-linear-gradient(top, rgb(29,102,168), rgb(91,112,165));
+		background-image: linear-gradient(to bottom, rgb(29,102,168), rgb(91,112,165));
+		color:white;
+		text-align: center;
+		font-size:12px;		
+		padding:25px;
+	}
+	
+	/*---------------------------------------------------------------------------------------------------*/
+	
+	
+	
+
+	/*---------------------------------------------------------------------------------------------------*/
+	/*ESTILO DE LA CABECERA*/
+	
+	/*ESTILO DE LA CABECERA*/
+	
+	#cabecera-logo, #cabecera-sesion {
+		display:inline-block;
+	}
+	
+		/*---------------------------------------------------------------------------------------------------*/
+		/*ESTILO DEL LOGO DE LA CABECERA*/
+	
+		
+			#cabecera-logo, #cabecera-sesion, nav {
+				display:inline-block;
+			}
+
+				/*---------------------------------------------------------------------------------------------------*/
+				/*ESTILO DEL LOGO DE LA CABECERA*/
+
+
+					#cabecera-logo {
+						width:270px;
+						padding:16px 40px;
+						position:relative;
+						top:4px;
+					}
+
+					header a {
+						text-decoration:none;
+					}
+
+					header .cabecera {
+						display:inline;
+					}
+
+					header img.cabecera {
+						width:44px;
+						height:63px;
+					}
+
+					header h1 {
+						font-family: 'Ubuntu', sans-serif;
+						color:white;
+						position:relative;
+						padding-left:10px;
+						top:-14px;
+						font-size:50px;
+					}
+
+				/*----------------------------------------------------------------------------------------------*/
+				nav {
+					position:relative;
+					padding:20px;
+					width:330px;
+					float:center;
+					top:-20px;
+					left:150px;
+				}
+				nav ul {
+					position:relative;
+					width:100%;
+					font-size:20px;
+				}
+				nav ul li{
+					display:inline;
+					margin:20px;
+				}
+				nav ul #menu-ofertas a{
+					color:rgb(29,102,168);
+				}
+
+				nav ul #menu-empresa a{
+					color:white;
+				}
+
+				nav ul #menu-empresa a:hover{
+					color:rgb(227,197,25);
+				}
+
+
+					/*----------------------------------------------------------------------------------------------*/
+		/*ESTILO DEL INICIO DE SESION DE LA CABECERA*/
+			
+			#cabecera-sesion { /*div que engloba todo*/
+				padding:16px 10px 16px 10px;
+				background: rgb(161,194,107);
+				background-image: -webkit-linear-gradient(top, rgb(140,168,93), #71874C);
+				background-image: -moz-linear-gradient(top, rgb(140,168,93), #71874C);
+				background-image: -ms-linear-gradient(top, rgb(140,168,93), #71874C);
+				background-image: -o-linear-gradient(top, rgb(140,168,93), #71874C);
+				background-image: linear-gradient(to bottom, rgb(140,168,93), #71874C);
+				border-left:white solid 2px;
+				width:220px;		
+				position:relative;
+				float:right;		
+			}
+		
+			#cabecera-sesion img:first-child { /*imagen de la empresa*/
+				width:65px;
+				height:65px;
+				border-radius:50px;
+				border:white solid 2px;
+				z-index:1;
+			}
+			
+			img.cabecera-sesion,  #cabecera-sesion-men{ /*Imagen y nombre de la empresa*/
+				display:inline-block;
+			}
+			
+			p.cabecera-sesion { /*Nombre de la empresa*/
+				color:white;
+				font-size:18px;
+			}
+			
+			#cabecera-sesion-men{
+				float:right;
+				position:absolute;	
+				margin:30px 0 0px 15px ;
+				color:white;
+				top:0;
+			}
+			
+			#cabecera-sesion-men a {
+				font-size:14px;
+			 	text-decoration: underline;
+			
+			}
+			
+			#cabecera-sesion-men a:hover {
+				color:rgb(227,197,25);
+			}
+			
+			header .cabecera, header .cabecera1 {
+				display:inline;
+			}
+			
+			header h1 {
+				position:relative;
+				color:white;
+				padding:10px;
+				top:-14px;
+				font-size:50px;
+			}
+
+			header p {
+				color:white;
+				padding-left:25px;
+				position:relative;
+				top:-25px;
+				left:350px;
+			}
+			
+			header .cabecera1:hover {
+				color:rgb(29,102,168) ;
+				cursor:pointer;
+			}
+		
+
+		
+	
+	/*---------------------------------------------------------------------------------------------------*/
+
+	
+
+
+	/*---------------------------------------------------------------------------------------------------*/
+	/*ESTILO DEL MENU*/
+
+		
+	
+	/*---------------------------------------------------------------------------------------------------*/
+
+
+
+
+	/*---------------------------------------------------------------------------------------------------*/
+	/*ESTILO DEL PIE DE PAGINA*/
+	
+	ul#pie li {  /* Pie de página horizontal */
+		display: inline;
+	}
+
+	ul#pie li a:link, ul#pie li a:visited{  /* Color de los links del pie de página */
+		color:white;
+		padding-left:10px;	
+	}
+	
+	ul#pie li a:hover {/* Color de los links del pie de página cuando pasas el cursor */
+		color:rgb(227,197,25);	
+	}
+
+	/*---------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+	/*---------------------------------------------------------------------------------------------------*/
+	/*ESTILO DE LOS CURSOS */
+	
+	.mi-empresa {
+		min-height:700px;
+		font-family: 'Ubuntu', sans-serif;
+	}
+	
+	.mi-empresa > h4 {
+		margin:30px 0;
+		color:rgb(29,102,168);
+		text-align:center;
+		font-size:40px;
+	}
+	#mi-empresa {
+		min-height:700px;
+		font-family: 'Ubuntu', sans-serif;
+	}
+	
+	#mi-empresa > h4 {
+		margin:30px 0;
+		color:rgb(29,102,168);
+		text-align:center;
+		font-size:40px;
+	}
+	
+
+	
+	.mi-empresa ul li {
+		border-top: solid 2px rgba(81,81,81,0.2);
+		padding-top:12px;
+		width: 950px;
+		margin: auto;
+		list-style: none;
+		min-height:117px;
+		max-height:220px;
+		
+	}
+		#mi-empresa ul li {
+		border-top: solid 2px rgba(81,81,81,0.2);
+		padding-top:12px;
+		width: 1075px;
+		margin: auto;
+		list-style: none;
+		min-height:117px;
+		max-height:220px;
+		
+	}
+	
+	.ofertas-descripcion, .ofertas-seguidores, .ofertas-edicion {
+		display:inline-block;
+	}
+	
+		/*----------------------------------------------------------------------------------------*/
+		/*DESCRIPCION DEL CURSO*/
+		
+		.ofertas-descripcion {
+			width: 750px;
+			font-size:12px;
+			padding-left:10px;
+		}
+		
+		.ofertas-titulo {
+			color: rgb(81,81,81);
+			font-size: 14px;
+		}
+		
+		.ofertas-empresa {
+			font-size:14px;
+			color:rgb(91,112,165);
+		}
+
+		
+		.ofertas-resumen {
+			height:75px;
+			max-width:680px;
+			margin:10px 0;
+			overflow:auto;
+		}
+		
+		.ofertas-tipo-contrato, .ofertas-jornada, .ofertas-salario {
+			display:inline;
+			padding-right:10px;
+		}
+		
+		.ofertas-tipo-contrato, .ofertas-jornada {
+			border-right:1px solid rgb(81,81,81);
+		}
+		
+		.ofertas-jornada, .ofertas-salario {
+			padding-left:10px;
+		}
+		
+		
+		
+		/*----------------------------------------------------------------------------------------*/
+		
+		
+	
+		/*----------------------------------------------------------------------------------------*/
+		/*VER CONTENIDO CURSO*/
+		
+		.ofertas-seguidores {
+			width:150px;
+			padding:24px 14px 24px 14px;
+			position:relative;
+			top:-25px;
+			background: rgb(29,102,168);
+		}
+		
+		.numero-seguidores {
+			color: white;
+			font-size: 14px;
+			width:100%;
+			text-align:center;
+			position:relative;
+		}
+		
+		
+		.numero-seguidores > a{
+			color:white;
+		}
+		
+		.numero-seguidores > a:visited{
+			color:white;
+		}
+		
+		.numero-seguidores > a:hover {
+			color: rgb(227,197,25);
+		}
+		
+		.numero-seguidores, .ofertas-seguidores > img {
+			display:block;
+			position:relative;
+			margin:auto;
+		}
+		
+		.ofertas-seguidores > img {
+			width:80px;
+			height:80px;
+		}
+		
+		
+		
+		/*----------------------------------------------------------------------------------------*/
+	
+	
+	
+		/*----------------------------------------------------------------------------------------*/
+		/*EDICION DE CURSOS*/
+		
+		.ofertas-edicion {
+			height:68px;
+			width:120px;
+			background-color: rgb(207,207,207);
+			text-align:center;
+			padding:40px 5px 38px 5px;
+			margin:0;
+			position:relative;
+			top:-40px;
+		}
+		button[name = "editar-curso"]{
+			border:none;
+			cursor:pointer;
+			border-radius: 50px;
+		
+		}
+		
+		.edicion-icon, .eliminar-icon {
+			padding:1px;
+			margin:5px;
+			width:45px;
+			width:45px;
+			border-radius: 50px;
+			border:solid white 1px;
+
+		}
+		
+		.edicion-icon:hover, .eliminar-icon:hover {
+			-moz-box-shadow: 0 0 15px #ccc; 
+			-webkit-box-shadow: 0 0 15px #ccc; 
+			box-shadow: 0 0 15px #ccc; 
+		}
+		
+		
+		
+		/*----------------------------------------------------------------------------------------*/
+		
+
+	/*----------------------------------------------------------------------------------------------------*/
+	
+	
+	
+	
+	
+	
+	/*-------------------------------------------------------------------------------------------------------*/
+	
+	/*ESTILO CONTENIDO CURSOS	*/
+	
+	#descripcion-curso{
+		width: 900px;
+		max-height:200px;
+		margin:auto;
+		background:rgb(246,246,246);
+		border:solid 1px rgb(29,102,168);
+		border-radius:2px;
+		padding: 0 15px 18px 15px;
+	}
+	#descripcion-curso > p:first-child{
+		color:rgb(29,102,168);
+	}
+	
+	#descripcion-curso > p{
+		color:rgb(150,155,164);
+		font-size: 14px;
+		margin-top:10px;
+	}
+	
+	.lista-seccion {
+		width:900px;
+		margin:auto;
+		margin-top:10px;
+	}
+	
+	.lista-seccion > p{
+		color:rgb(29,102,168);
+		margin:10px;
+		font-size:30px;
+	}
+	
+	.lista-seccion li{
+		max-width: 900px;
+		height: 40px;
+		
+	}
+	
+	.leccion {
+		display:inline;
+	}
+	
+	
+	
+	p.leccion {
+		padding:5px 20px;
+	}
+	
+	/*-------------------------------------------------------------------------------------------------------*/
+	
+	
+	
+	
+	
+	
+	/*-------------------------------------------------------------------------------------------------------*/
+	
+	/*VISTA PREVIA*/
+	
+
+	
+	
+	
+
+	
+	/*-------------------------------------------------------------------------------------------------------*/
+
+
+	/*-----------------------------------------------------------------------------------------------*/
+		
+	/*AÑADIR NUEVA OFERTA*/
+		
+	input.añadir-oferta , #añadir-oferta2{
+		width:120px;
+		display:block;
+		margin:30px;
+		background: rgb(29,102,168);
+		border-radius: 10px;
+		color: #ffffff;
+		font-size: 14px;
+		border:solid 1px white;
+		border-radius:2px;
+		padding: 8px 15px 8px 15px;
+		display:inline;
+	}
+	
+	
+
+	
+	input.añadir-oferta:hover  , #añadir-oferta2:hover{
+		background: white;
+		color: rgb(29,102,168);
+		border:solid 1px rgb(29,102,168);
+		
+	}
+	
+	#añadir{ /* Diseño del div que engloba la opcion de añadir nuevas ofertas de trabajo */
+	    padding:6px;
+	    width:750px;
+		margin:auto;
+		background-color:white;
+		border-radius:4px;
+		
+	}
+	
+	#añadir h2{ /*Titulo del registro para añadir*/
+	    margin-top:20px;
+	    font-size: 25px;
+	    text-transform: uppercase;
+		color:rgb(29,102,168);
+	    margin-bottom: 20px;
+		text-align:center;
+	}
+	
+	.nombre{ /*Poner en negrita todos los apartador del registro*/
+		margin-bottom: 10px;
+	    font-weight: bold;
+		font-size:14px;
+	}
+	
+	.aster{ /*Poner los asteriscos de campo obligatorio en rojo y negrita*/
+		font-weight: bolder;
+		color:red;
+	}
+	
+	#añadir-form > div {
+		margin-top:15px;
+		margin-right:10px;
+		margin-left:10px;
+	}
+	
+	#añadir-form > div > div {
+		width:340px;
+		height:120px;
+		display:inline-block;
+		border-bottom:solid 1px rgb(220,220,220);
+
+	}
+	
+	#formul6 {
+	text-align:center;
+	}
+	
+	#formul4{
+		border-top:solid 1px rgb(220,220,220);
+		width:680px;
+		padding-top:10px
+	}
+
+	p[id=mens1], p[id=mens2], p[id=mens3], p[id=mens4], p[id=mens5], p[id=mens6], p[id=mens7]{/* Mensajes de alerta */
+		border:solid 1px rgb(251,75,77);
+		border-radius: 25px;
+		padding:5px;
+		position:absolute;		
+		text-align:center;
+		width:300px;
+		background-color:white;
+		font-size:12px;
+		color:rgb(251,75,77);
+	}
+	
+	input[id=añadir-titulo],select[id=dificultad-curso], select[id=tematica-curso],input[id=spinner],input[id=añadir-precio]{
+			border-radius: 4px;
+			border: none;
+			box-shadow: 0 1px 2px rgba(0,0,0,0.2) inset, 0 -1px 0 rgba(0,0,0,0.05) inset;
+			font-family: 'Ubuntu', sans-serif;	
+			font-size: 12px;
+			color: #222222;
+			height: 28px;
+			width: 250px;
+			padding-left: 20px;
+			margin:10px;
+			margin-top:40px;
+	}
+	input[id=imagen-curso]{
+		font-size: 12px;
+		margin-top:40px;
+		
+	}
+
+	
+	textarea#añadir-descripcion{
+		width:500px;
+		width:580px;
+		max-height:200px;
+		font-size:12px;
+		margin:10px 0;
+		border-radius: 4px;
+		border: none;
+		overflow:auto;
+		box-shadow: 0 1px 2px rgba(0,0,0,0.2) inset, 0 -1px 0 rgba(0,0,0,0.05) inset;
+		font-family: 'Ubuntu', sans-serif;	
+		color: #222222;
+		height: 28px;
+		padding:10px 0;
+		margin-top:40px;
+		padding-left: 30px;
+	}
+	
+	input#añadirboton {
+		width:120px;
+		margin:10px auto;
+		display:block;
+		background: rgb(29,102,168);
+		border-radius: 10px;
+		color: #ffffff;
+		font-size: 12px;
+		border:solid 1px white;
+		border-radius:2px;
+		padding: 8px 15px 8px 15px;
+	}
+	
+	input#añadirboton:hover {
+		background: white;
+		color: rgb(29,102,168);
+		border:solid 1px rgb(29,102,168);
+		
+	}
+
+	/*-----------------------------------------------------------------------------------------------*/

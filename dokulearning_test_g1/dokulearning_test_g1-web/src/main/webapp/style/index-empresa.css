@@ -1,0 +1,557 @@
+	
+	*{margin:0px; padding:0px;} 
+
+	/*COLOR DE LOS LATERALES DE LA PAGINA*/
+	
+	/*VERDE rgb(161,194,107)*/
+	/*AZUL rgb(29,102,168)*/
+	/*azul claro : rgb(51,141,222)*/
+	/*verde oscuro : rgb(140,168,93)*/
+	/*dorado: rgb(227,197,25)*/
+	/*azul flecha: rgb(126,162,243)*/
+	/*azul facebook: rgb(91,112,165)*/
+	/*azul twitter: rgb(65,160,220)*/
+	/*rojo google: rgb(196,34,37)*/
+	
+	
+	html{
+		background-color:rgb(29,102,168);
+	}
+	
+	body{
+		font-family: 'Ubuntu', sans-serif;
+		width:1200px;
+		height:100%;
+		margin:auto;
+		border: 2px solid white;
+	}    /* Color de fondo de la pagina */
+
+
+
+	/*-----------------------------------------------------------------------------------------------------*/
+	/*ESTRUCTURA DEL DOCUMENTO*/
+
+	
+header{      /* Estilo de la cabecera, la cual engloba el logo, título y el inicio de sesión */
+		background: rgb(161,194,107);
+		background-image: -webkit-linear-gradient(top, rgb(161,194,107), rgb(140,168,93));
+		background-image: -moz-linear-gradient(top, rgb(161,194,107), rgb(140,168,93));
+		background-image: -ms-linear-gradient(top, rgb(161,194,107), rgb(140,168,93));
+		background-image: -o-linear-gradient(top, rgb(161,194,107), rgb(140,168,93));
+		background-image: linear-gradient(to bottom, rgb(161,194,107), rgb(140,168,93));
+
+		
+	}
+	
+
+			
+	section{  /* Estilo del cuerpo de la página */
+		background:white;
+		
+	}
+		
+	footer{    /* Estilo del pie de página */
+		background: rgb(29,102,168);
+		background-image: -webkit-linear-gradient(top, rgb(29,102,168), rgb(91,112,165));
+		background-image: -moz-linear-gradient(top, rgb(29,102,168), rgb(91,112,165));
+		background-image: -ms-linear-gradient(top, rgb(29,102,168), rgb(91,112,165));
+		background-image: -o-linear-gradient(top, rgb(29,102,168), rgb(91,112,165));
+		background-image: linear-gradient(to bottom, rgb(29,102,168), rgb(91,112,165));
+		color:white;
+		text-align: center;
+		font-size:12px;		
+		padding:25px;
+	}
+	
+	/*---------------------------------------------------------------------------------------------------*/
+	
+	
+	
+
+	/*---------------------------------------------------------------------------------------------------*/
+	/*ESTILO DE LA CABECERA*/
+	
+	#cabecera-logo, #cabecera-sesion, nav {
+		display:inline-block;
+	}
+	
+		/*---------------------------------------------------------------------------------------------------*/
+		/*ESTILO DEL LOGO DE LA CABECERA*/
+	
+		
+			#cabecera-logo {
+				width:270px;
+				padding:16px 40px;
+				position:relative;
+				top:4px;
+			}
+			
+			header a {
+				text-decoration:none;
+			}
+			
+			header .cabecera {
+				display:inline;
+			}
+			
+			header img.cabecera {
+				width:44px;
+				height:63px;
+			}
+			
+			header h1 {
+				font-family: 'Ubuntu', sans-serif;
+				color:white;
+				position:relative;
+				padding-left:10px;
+				top:-14px;
+				font-size:50px;
+			}
+		
+		/*----------------------------------------------------------------------------------------------*/
+		nav {
+			position:relative;
+			padding:20px;
+			width:330px;
+			
+			top:-20px;
+			left:150px;
+		}
+		nav ul {
+			position:relative;
+			width:100%;
+			font-size:20px;
+		}
+		nav ul li{
+			display:inline;
+			margin:20px;
+		}
+		
+		
+		nav ul li a{
+			color:white;
+		}
+		
+		nav ul li a:hover{
+			color:rgb(227,197,25);
+		}
+		
+		
+		/*----------------------------------------------------------------------------------------------*/
+		/*ESTILO DEL INICIO DE SESION DE LA CABECERA*/
+			
+			#cabecera-sesion { /*div que engloba todo*/
+				padding:16px 10px 16px 10px;
+				background: rgb(161,194,107);
+				background-image: -webkit-linear-gradient(top, rgb(140,168,93), #71874C);
+				background-image: -moz-linear-gradient(top, rgb(140,168,93), #71874C);
+				background-image: -ms-linear-gradient(top, rgb(140,168,93), #71874C);
+				background-image: -o-linear-gradient(top, rgb(140,168,93), #71874C);
+				background-image: linear-gradient(to bottom, rgb(140,168,93), #71874C);
+				border-left:white solid 2px;
+				width:220px;		
+				position:relative;
+				float:right;		
+			}
+		
+			#cabecera-sesion img:first-child { /*imagen de la empresa*/
+				width:65px;
+				height:65px;
+				border-radius:50px;
+				border:white solid 2px;
+				z-index:1;
+			}
+			
+			img.cabecera-sesion,  #cabecera-sesion-men{ /*Imagen y nombre de la empresa*/
+				display:inline-block;
+			}
+			
+			p.cabecera-sesion { /*Nombre de la empresa*/
+				color:white;
+				font-size:18px;
+			}
+			
+			#cabecera-sesion-men{
+				float:right;
+				position:absolute;	
+				margin:30px 0 0px 15px ;
+				color:white;
+				top:0;
+			}
+			
+			#cabecera-sesion-men a {
+				font-size:14px;
+				color:white;
+			 	text-decoration: underline;
+			
+			}
+			
+			#cabecera-sesion-men a:hover {
+				color:rgb(227,197,25);
+			}
+			
+			
+		
+		/*----------------------------------------------------------------------------------------------*/
+		
+	
+	/*---------------------------------------------------------------------------------------------------*/
+
+	
+
+
+	/*---------------------------------------------------------------------------------------------------*/
+	/*ESTILO DEL MENU*/
+
+		
+	
+	/*---------------------------------------------------------------------------------------------------*/
+
+
+
+
+	/*---------------------------------------------------------------------------------------------------*/
+	/*ESTILO DEL PIE DE PAGINA*/
+	
+	ul#pie li {  /* Pie de página horizontal */
+		display: inline;
+	}
+
+	ul#pie li a:link, ul#pie li a:visited{  /* Color de los links del pie de página */
+		color:white;
+		padding-left:10px;	
+	}
+	
+	ul#pie li a:hover {/* Color de los links del pie de página cuando pasas el cursor */
+		color:rgb(227,197,25);	
+	}
+
+	/*---------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+	/*---------------------------------------------------------------------------------------------------*/
+	/*ESTILO DE LA BUSQUEDA DE EMPLEO */
+	
+	
+		#buscar {
+			padding:20px;
+			background: rgba(110,110,110,0.2);
+	
+			
+		}
+		
+		#buscar-empleo, #buscar-provincia, #buscar-botones {
+			display:inline-table;
+		}
+	
+		/*------------------------------------------------------------------------------------------------*/
+		/*ESTILO DE BUSCAR-EMPLEO*/
+		
+		#buscar-empleo {
+			padding:15px;
+			border-radius: 5px;	
+			width: 400px;
+			color: white;
+			height:63px;
+			background-color:rgb(29,102,168);
+			}
+		
+		#buscar-empleo p {
+			padding-bottom:10px;
+		}
+		
+		input[name=empleo] {
+			border-radius: 4px;
+			border: none;
+			box-shadow: 0 1px 2px rgba(0,0,0,0.2) inset, 0 -1px 0 rgba(0,0,0,0.05) inset;
+			font-family: 'Ubuntu', sans-serif;	
+			font-size: 12px;
+			color: #222222;
+			height: 28px;
+			width: 370px;
+			padding-left: 20px;
+			margin:2px;
+		}
+		
+		/*------------------------------------------------------------------------------------------------*/
+		
+		
+		
+		/*------------------------------------------------------------------------------------------------*/
+		/*ESTILO DE BUSCAR-PROVINCIA*/
+		
+		#buscar-provincia {
+			padding:15px;
+			border-radius: 5px;	
+			width: 400px;
+			color: white;
+			height:60px;
+			background-color:rgb(29,102,168);			
+		}
+		
+		#buscar-provincia p {
+			padding-bottom:10px;
+		}
+		
+		#provincia {
+			width: 370px;
+
+		}
+		
+		.overflow-select {
+			overflow:auto;
+			height:300px;
+		}
+		
+		/*------------------------------------------------------------------------------------------------*/
+
+		
+		/*------------------------------------------------------------------------------------------------*/
+		/*ESTILO DE BUSCAR-PROVINCIA*/
+		
+		#buscar-botones {
+		padding:15px 10px;
+		width: 210px;
+		text-align: center;
+		position:relative;
+		top:10px;
+		}
+		
+		input[name="buscar"] {
+			border:solid 1px white;
+			border-radius:2px;
+			padding: 8px 15px 8px 15px;
+			color: #ffffff;
+			background-color:rgb(29,102,168);
+
+		}
+		
+		input[name="buscar"]:hover {
+			color:rgb(29,102,168);
+			background-color:white;
+			border:solid 1px rgb(29,102,168);
+			
+		}
+		
+		#buscar-botones a {
+			padding:10px 0;
+			color:rgb(29,102,168);
+			font-size:12px;
+		}
+		
+		#buscar-botones a:hover {
+			color:rgb(51,141,222);
+		}
+		
+	
+		
+		/*------------------------------------------------------------------------------------------------*/
+	
+
+	/*----------------------------------------------------------------------------------------------------*/
+	
+	
+	
+	
+	
+	
+	/*-------------------------------------------------------------------------------------------------------*/
+	
+	/*ESTILO DE LA DESCRIPCION GRAFICA MENU*/
+	
+	#descripcion {
+		padding:20px 0;
+		width:1170px;
+		margin:auto;
+	}
+	
+	
+	#descipcion-video, #descripcion-img {
+			display:inline-block;
+	}
+	
+	
+	
+	#descripcion-img{
+		width:425px;
+		position:relative;
+		top:-21px;
+	}
+	
+
+	#descripcion-img a {
+		text-decoration: none;
+		color:white;
+	}
+	#descripcion-img a:hover {
+		text-decoration: none;
+		color:rgb(29,102,168);
+	}
+	
+	
+	#descripcion-img p.descripcion-img {
+		background-color:rgb(29,102,168);
+		padding:18px 15px;
+		text-align:left;
+		height:100%;
+		color:rgb(250,255,255);
+		font-size:17px;
+		-webkit-transition: all 0.5s ease;
+	     -moz-transition: all 0.5s ease;
+	       -o-transition: all 0.5s ease;
+	      -ms-transition: all 0.5s ease;
+	          transition: all 0.5s ease;
+		
+	}
+	
+	#descripcion-img p.descripcion-img:hover {
+		background-color:rgba(29,102,168,0.6);
+
+		
+	}
+
+	
+	/*-------------------------------------------------------------------------------------------------------*/
+	
+	
+	
+	
+	
+	
+	/*-------------------------------------------------------------------------------------------------------*/
+	
+	/*ESTILO DEL TOP 5 VISITED*/
+	
+	#topvisited {
+		padding:30px 0;
+		background: rgba(110,110,110,0.2);
+		background-image: -webkit-linear-gradient(top, rgba(110,110,110,0.2), s);
+		background-image: -moz-linear-gradient(top, rgba(110,110,110,0.2), white);
+		background-image: -ms-linear-gradient(top, rgba(110,110,110,0.2), white);
+		background-image: -o-linear-gradient(top, rgba(110,110,110,0.2), white);
+		background-image: linear-gradient(to bottom, rgba(110,110,110,0.2), white);
+		
+	}
+	
+	
+		/*-----------------------------------------------------------------------------------------------*/
+		
+		/*ESTILO DEL TOP 5 VISITED TITULO*/
+	
+	
+		#topvisited-tit {
+			margin-bottom:20px;
+			text-align:center;
+			
+		}
+		
+		#tit-slick{
+			margin:auto;
+			padding:10px 20px;
+			width:120px;
+			color:rgb(29,102,168);
+			background-color:white;
+			border:solid 1px rgb(29,102,168);
+		}
+		
+		#topvisited-tit h4 {
+			margin-bottom:10px;
+			font-size:25px;
+			color:rgb(91,112,165);
+		
+		}
+		.top-visted {
+			display:block;
+		}
+		
+	
+		/*-----------------------------------------------------------------------------------------------*/
+		
+		
+		
+		
+		
+		
+		
+		/*-----------------------------------------------------------------------------------------------*/
+		
+		/*ESTILO DEL TOP 5 VISITED IMAGENES*/
+		
+		
+		img.top-visited {
+			width:217px;
+			height:173px;
+			border:solid white 1px ;
+		
+		}
+		
+		p.top-visited {
+			margin-top:5px;
+			width:217px;
+			text-align:center;
+		}
+		.your-class {
+			margin:auto;
+			width:1100px;
+		}
+		
+		
+
+		/*-----------------------------------------------------------------------------------------------*/
+		
+	
+	/*-------------------------------------------------------------------------------------------------------*/
+
+
+	/*-----------------------------------------------------------------------------------------------*/
+		
+	/*ESTILO DE LAS REDES SOCIALES*/
+		
+		#redes-sociales {
+			border-bottom:white solid 1px;
+			border-top:white solid 1px;
+			padding:20px 0;
+		}
+		
+		#redes-sociales ul {
+			text-align:center;
+			list-style:none;
+		}
+		
+		#redes-sociales ul li {
+			display:inline-block;
+			padding: 0 50px;
+		}
+		
+		#redes-sociales h4 {
+			margin-bottom:20px;
+			font-size:25px;
+			text-align:center;
+			color:rgb(91,112,165);
+		}
+		
+	
+		
+			/*azul facebook: rgb(91,112,165)*/
+			/*azul twitter: rgb(65,160,220)*/
+			/*rojo google: rgb(196,34,37)*/
+		
+		
+		
+	
+
+	/*-----------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+

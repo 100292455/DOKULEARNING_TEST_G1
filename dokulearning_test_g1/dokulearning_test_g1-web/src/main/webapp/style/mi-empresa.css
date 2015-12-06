@@ -1,0 +1,453 @@
+
+	
+	*{margin:0px; padding:0px;} 
+
+	/*COLOR DE LOS LATERALES DE LA PAGINA*/
+	
+	/*VERDE rgb(161,194,107)*/
+	/*AZUL rgb(29,102,168)*/
+	/*azul claro : rgb(51,141,222)*/
+	/*verde oscuro : rgb(140,168,93)*/
+	/*dorado: rgb(227,197,25)*/
+	/*azul flecha: rgb(126,162,243)*/
+	/*azul facebook: rgb(91,112,165)*/
+	/*azul twitter: rgb(65,160,220)*/
+	/*rojo google: rgb(196,34,37)*/
+	/*verde mas oscuro: 71874C*/
+	
+	
+	html{
+		background:rgb(246,246,246);
+	}
+	
+	body{
+		font-family: 'Ubuntu', sans-serif;
+		width:1200px;
+		height:100%;
+		margin:auto;
+		border: 2px solid white;
+		background-color:white;
+		
+	}    /* Color de fondo de la pagina */
+
+
+
+	/*-----------------------------------------------------------------------------------------------------*/
+	/*ESTRUCTURA DEL DOCUMENTO*/
+
+	
+	header{      /* Estilo de la cabecera, la cual engloba el logo, título y el inicio de sesión */
+		background: rgb(161,194,107);
+		background-image: -webkit-linear-gradient(top, rgb(161,194,107), rgb(140,168,93));
+		background-image: -moz-linear-gradient(top, rgb(161,194,107), rgb(140,168,93));
+		background-image: -ms-linear-gradient(top, rgb(161,194,107), rgb(140,168,93));
+		background-image: -o-linear-gradient(top, rgb(161,194,107), rgb(140,168,93));
+		background-image: linear-gradient(to bottom, rgb(161,194,107), rgb(140,168,93));
+		padding:20px 40px 10px 40px;
+		
+	}
+		
+			
+	section{  /* Estilo del cuerpo de la página */
+		background:white;
+	}
+		
+	footer{    /* Estilo del pie de página */
+		background: rgb(29,102,168);
+		color:white;
+		text-align: center;
+		font-size:12px;		
+		padding:25px;
+	}
+	
+	/*---------------------------------------------------------------------------------------------------*/
+	
+	
+	
+
+	/*---------------------------------------------------------------------------------------------------*/
+	/*ESTILO DE LA CABECERA*/
+	
+	#cabecera-logo, #cabecera-sesion, nav {
+		display:inline-block;
+	}
+	
+		/*---------------------------------------------------------------------------------------------------*/
+		/*ESTILO DEL LOGO DE LA CABECERA*/
+	
+		
+			#cabecera-logo {
+				width:270px;
+				padding:16px 40px;
+				position:relative;
+				top:4px;
+			}
+			
+			header a {
+				text-decoration:none;
+			}
+			
+			header .cabecera {
+				display:inline;
+			}
+			
+			header img.cabecera {
+				width:44px;
+				height:63px;
+			}
+			
+			header h1 {
+				font-family: 'Ubuntu', sans-serif;
+				color:white;
+				position:relative;
+				padding-left:10px;
+				top:-14px;
+				font-size:50px;
+			}
+		
+		/*----------------------------------------------------------------------------------------------*/
+		nav {
+			position:relative;
+			padding:20px;
+			width:330px;
+			float:center;
+			top:-20px;
+			left:150px;
+		}
+		nav ul {
+			position:relative;
+			width:100%;
+			font-size:20px;
+		}
+		nav ul li{
+			display:inline;
+			margin:20px;
+		}
+		nav ul #menu-empresa a{
+			color:rgb(29,102,168);
+		}
+		
+		nav ul #menu-ofertas a{
+			color:white;
+		}
+		
+		nav ul #menu-ofertas a:hover{
+			color:rgb(227,197,25);
+		}
+		
+		
+		/*----------------------------------------------------------------------------------------------*/
+		/*ESTILO DEL INICIO DE SESION DE LA CABECERA*/
+			
+			#cabecera-sesion { /*div que engloba todo*/
+				padding:16px 10px 16px 10px;
+				background: rgb(161,194,107);
+				background-image: -webkit-linear-gradient(top, rgb(140,168,93), #71874C);
+				background-image: -moz-linear-gradient(top, rgb(140,168,93), #71874C);
+				background-image: -ms-linear-gradient(top, rgb(140,168,93), #71874C);
+				background-image: -o-linear-gradient(top, rgb(140,168,93), #71874C);
+				background-image: linear-gradient(to bottom, rgb(140,168,93), #71874C);
+				border-left:white solid 2px;
+				width:220px;		
+				position:relative;
+				float:right;		
+			}
+		
+			#cabecera-sesion img:first-child { /*imagen de la empresa*/
+				width:65px;
+				height:65px;
+				border-radius:50px;
+				border:white solid 2px;
+				z-index:1;
+			}
+			
+			img.cabecera-sesion,  #cabecera-sesion-men{ /*Imagen y nombre de la empresa*/
+				display:inline-block;
+			}
+			
+			p.cabecera-sesion { /*Nombre de la empresa*/
+				color:white;
+				font-size:18px;
+			}
+			
+			#cabecera-sesion-men{
+				float:right;
+				position:absolute;	
+				margin:30px 0 0px 15px ;
+				color:white;
+				top:0;
+			}
+			
+			#cabecera-sesion-men a {
+				font-size:14px;
+				color:white;
+			 	text-decoration: underline;
+			
+			}
+			
+			#cabecera-sesion-men a:hover {
+				color:rgb(227,197,25);
+			}
+			
+			header .cabecera, header .cabecera1 {
+				display:inline;
+			}
+			
+			header h1 {
+				position:relative;
+				color:white;
+				padding:10px;
+				top:-14px;
+				font-size:50px;
+			}
+
+			header p {
+				color:white;
+				padding-left:25px;
+				position:relative;
+				top:-25px;
+				left:350px;
+			}
+			
+			header .cabecera1:hover {
+				color:rgb(29,102,168) ;
+				cursor:pointer;
+			}
+			
+		
+		/*----------------------------------------------------------------------------------------------*/
+		
+		
+		
+
+		
+	
+	/*---------------------------------------------------------------------------------------------------*/
+
+	
+
+
+	/*---------------------------------------------------------------------------------------------------*/
+	/*ESTILO DEL MENU*/
+
+		
+	
+	/*---------------------------------------------------------------------------------------------------*/
+
+
+
+
+	/*---------------------------------------------------------------------------------------------------*/
+	/*ESTILO DEL PIE DE PAGINA*/
+	
+	ul#pie li {  /* Pie de página horizontal */
+		display: inline;
+	}
+
+	ul#pie li a:link, ul#pie li a:visited{  /* Color de los links del pie de página */
+		color:white;
+		padding-left:10px;	
+	}
+	
+	ul#pie li a:hover {/* Color de los links del pie de página cuando pasas el cursor */
+		color:rgb(227,197,25);	
+	}
+
+	/*---------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+	/*---------------------------------------------------------------------------------------------------*/
+	/*ESTILO DE MI EMPRESA */
+	
+	
+		
+	
+	
+	#mi-empresa {
+		width:1200px;
+		min-height:700px;
+		border-rigth: solid white 1px;
+
+	}
+	
+	#mi-empresa > h4 {
+		margin:20px 0;
+		color:rgb(29,102,168);
+		text-align:center;
+		font-size:40px;
+	}
+	
+		/*----------------------------------------------------------------------------------------*/
+		/*INFORMACION PRINCIPAL DE MI EMPRESA*/
+		
+		#informacion-empresa {
+			background:rgb(246,246,246);
+			padding:0 10px 10px 10px ;
+
+		}
+		
+		#informacion-empresa-basica > h5{
+			font-size:20px;
+			padding:20px;
+			color: rgb(81,81,81);
+			
+		}
+		
+		#informacion-empresa-imagen  {
+			width:300px;
+			height:400px;
+			text-align:center;
+			margin:auto;
+			position:relative;
+			left:50px;
+			margin-top:100px;
+		}
+		
+		#informacion-empresa-imagen img {
+			border-radius:50%;
+			border:inset 3px rgb(161,194,107);
+			width:200px;
+			height:200px;
+			margin:auto;
+		}
+		#informacion-empresa-imagen img, #informacion-empresa-imagen input {
+			margin-top:10px;
+		}
+		
+		
+		
+		#informacion-empresa-imagen , #informacion-empresa-basica {
+			display:inline-block;
+		}
+		
+		#informacion-empresa-basica {
+			margin-left:30px;
+			width:700px;
+			font-size:12px;
+			float:right;
+			
+		}
+		
+		#informacion-empresa-basica input {
+			width:80%;
+			font-size:14px;
+			margin:5px 0px 5px 15px;
+			margin-bottom:1%;
+			border-radius: 4px;
+			border: none;
+			box-shadow: 0 1px 2px rgba(0,0,0,0.2) inset, 0 -1px 0 rgba(0,0,0,0.05) inset;
+			font-family: 'Ubuntu', sans-serif;	
+			font-size: 12px;
+			color: #222222;
+			height: 28px;
+			padding-left: 30px;
+			margin:2px;
+		}
+		
+		#edit-descripcion {
+			width:80%;
+			height: 100px;
+			font-size:14px;
+			resize: none;
+			margin:5px 0px 5px 15px;
+			margin-bottom:1%;
+			border-radius: 4px;
+			border: none;
+			box-shadow: 0 1px 2px rgba(0,0,0,0.2) inset, 0 -1px 0 rgba(0,0,0,0.05) inset;
+			font-family: 'Ubuntu', sans-serif;	
+			font-size: 12px;
+			color: #222222;
+			height: 100px;
+			padding-left: 30px;
+			padding-top:10px;
+			margin:2px;
+		}
+		
+		#informacion-empresa-basica li {
+			display:block;
+			list-style:none;
+			padding: 5px 0;
+			border-top: solid 1px rgba(81,81,81,0.4);
+		}
+		
+		/*----------------------------------------------------------------------------------------*/
+		
+		
+	
+		/*----------------------------------------------------------------------------------------*/
+		/*DESCRIPCION DE MI EMPRESA*/
+		
+		
+
+		
+		/*----------------------------------------------------------------------------------------*/
+	
+	
+	
+
+		
+
+	/*----------------------------------------------------------------------------------------------------*/
+	
+	
+	
+	
+	
+	
+	/*-------------------------------------------------------------------------------------------------------*/
+	
+	/*ESTILO DE LOS SEGUIDORES	*/
+	
+	
+	
+	/*-------------------------------------------------------------------------------------------------------*/
+	
+	
+	
+	
+	
+	
+	/*-------------------------------------------------------------------------------------------------------*/
+	
+	/*VISTA PREVIA*/
+	#dialog-button{
+		width:150px;
+		margin:auto;
+	}
+	
+	#añadirboton {
+		width:120px;
+		margin:20px;
+		background: rgb(29,102,168);
+		border-radius: 10px;
+		color: #ffffff;
+		font-size: 12px;
+		border:solid 1px white;
+		border-radius:2px;
+		padding: 8px 15px 8px 15px;
+		
+	}
+	
+	#añadirboton:hover {
+		background: white;
+		color: rgb(29,102,168);
+		border:solid 1px rgb(29,102,168);
+		cursor:pointer;
+		
+	}
+	
+	/*-------------------------------------------------------------------------------------------------------*/
+
+
+	/*-----------------------------------------------------------------------------------------------*/
+		
+	/*ESTILO DEL MENU INICIO SESION*/
+		
+		
+
+	/*-----------------------------------------------------------------------------------------------*/
+
