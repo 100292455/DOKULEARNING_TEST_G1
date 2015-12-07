@@ -139,13 +139,13 @@ public class AltaLeccionServlet extends HttpServlet {
 			sesion.setAttribute("lecciones", listaLecciones);
 			sesion.setAttribute("leccion", l);
 			mensaje = m;
-			sesion.setAttribute("mensaje", mensaje);
+			sesion.setAttribute("mensajeLecciones", mensaje);
 			
 		}else{
 			Collection<Leccion> listaLecciones = lecDao.recuperarLeccionesPorSeccion(id_seccion);
 			sesion.setAttribute("lecciones", listaLecciones);
 			mensaje = m;
-			sesion.setAttribute("mensaje", mensaje);
+			sesion.setAttribute("mensajeLecciones", mensaje);
 		}
 			
 			config2.getServletContext().getRequestDispatcher(pagina).forward(request, response);
@@ -169,7 +169,7 @@ public class AltaLeccionServlet extends HttpServlet {
 		String m = "";
 		
 		if (titulo.equals("") || titulo.equals(null) || descripcion.equals("") || descripcion.equals(null)) {
-			m ="Fallo al crear nuevo curso. ";
+			m ="Fallo al crear nueva leccion. ";
 		}
 		
 		return m;

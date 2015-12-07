@@ -142,7 +142,7 @@ public class SesionServlet extends HttpServlet {
 			sesion.setAttribute("cursoscreados", cursosCreados);
 			Collection<Matricula> listadoMatricula = matDao.recuperarMatriculaPorAlumno(u.getID_usuario());
 			sesion.setAttribute("matriculas", listadoMatricula);
-			//context.setAttribute("matriculas", matriculas);
+			sesion.setAttribute("mensajeInicio", mensaje);
 			//context.setAttribute("secciones", secciones);
 			//context.setAttribute("lecciones", lecciones);
 
@@ -150,7 +150,7 @@ public class SesionServlet extends HttpServlet {
 		}else{
 			
 			mensaje = "No existen usuarios registrados con esos datos.";
-			request.setAttribute("mensaje", mensaje);
+			sesion.setAttribute("mensajeInicio", mensaje);
 		}
 		Collection<Curso> listaCursos = curDao.buscarTodosLosCursos();
 		sesion.setAttribute("cursos", listaCursos);

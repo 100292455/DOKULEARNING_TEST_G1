@@ -95,12 +95,12 @@ public class AltaSeccionServlet extends HttpServlet {
 			}
 			sesion.setAttribute("secciones", listaSeccionesCursoActual);
 			mensaje = m;
-			sesion.setAttribute("mensaje", mensaje);
+			sesion.setAttribute("mensajeSecciones", mensaje);
 			
 		}else{
 			
 			mensaje = m;
-			sesion.setAttribute("mensaje", mensaje);
+			sesion.setAttribute("mensajeSecciones", mensaje);
 		}
 			
 			config2.getServletContext().getRequestDispatcher(pagina).forward(request, response);

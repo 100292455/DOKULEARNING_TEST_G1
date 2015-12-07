@@ -72,9 +72,9 @@
 						<p>Actualmente, todas las ciencias aportan problemas que son estudiados por matemáticos, al mismo tiempo que aparecen nuevos problemas dentro de las propias matemáticas. Por ejemplo, el físico Richard Feynman propuso la integral de caminos como fundamento de la mecánica cuántica, combinando el razonamiento matemático y el enfoque de la física, pero todavía no se ha logrado una definición plenamente satisfactoria en términos matemáticos. Similarmente, la teoría de cuerdas, una teoría científica en desarrollo que trata de unificar las cuatro fuerzas fundamentales de la física, sigue inspirando a las más modernas matemáticas.</p>
 					</div>
 					<c:choose>
-						<c:when test="${not empty mensaje }">
-							<c:out value="${mensaje}"/>
-							<c:set var="mensaje" scope="session" value="${mensaje}"/>
+						<c:when test="${not empty mensajeCupones }">
+							<c:out value="${mensajeCupones}"/>
+							<c:set var="mensajeCupones" scope="session" value="${mensajeCupones}"/>
 						</c:when>
 						<c:otherwise>
 						</c:otherwise>

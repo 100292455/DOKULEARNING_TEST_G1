@@ -176,12 +176,14 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			sesion.setAttribute("acceso", "ok");
 			Collection<Curso> cursos = curDao.buscarTodosLosCursos();
 			sesion.setAttribute("cursos", cursos);
+			String mensaje="";
+			sesion.setAttribute("mensajeRegistro", mensaje);
 			config2.getServletContext().getRequestDispatcher(ENTRADA_ALUMNO_JSP).forward(request, response);
 			
 		}else{
 			
 			String mensaje = "Ya existe un usuario con ese email. Por favor, elija otro";
-			sesion.setAttribute("mensaje", mensaje);
+			sesion.setAttribute("mensajeRegistro", mensaje);
 			sesion.setAttribute("usuario", usuario);
 			config2.getServletContext().getRequestDispatcher(FORMULARIO_USUARIO_JSP).forward(request, response);
 		}

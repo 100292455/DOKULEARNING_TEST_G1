@@ -88,7 +88,7 @@ public class AltaCuponesServlet extends HttpServlet {
 		Curso c = curDao.recuperarCursoPorNombre(nombreCurso);
 		if(cupDao.recuperarCuponPorCurso(c).size()!=0){
 			mensaje = "Error al crear cupon. Ya existe otro cupon para este curso.";
-			sesion.setAttribute("mensaje", mensaje);
+			sesion.setAttribute("mensajeCupones", mensaje);
 		}
 		//Si el cupon a crear presenta todos los datos necesarios para crearlo y no hay otro cupon en ese curso, entonces:
 		else if (m.equals(null) || m.equals("")){
@@ -106,7 +106,7 @@ public class AltaCuponesServlet extends HttpServlet {
 			if (tipo_cupon2==0) {
 				if(descuento>0.7*precioInicial){
 					m="Error al crear el cupon. El valor del cupon es mayor que los beneficios que usted obtendria";
-					sesion.setAttribute("mensaje", m);
+					sesion.setAttribute("mensajeCupones", m);
 				}
 				else {
 					c.setPrecio_final(precioInicial-descuento);
@@ -124,7 +124,7 @@ public class AltaCuponesServlet extends HttpServlet {
 			else{
 				if((descuento*0.01)*precioInicial>0.7*precioInicial){
 					m="Error al crear el cupon. El valor del cupon es mayor que los beneficios que usted obtendria";
-					sesion.setAttribute("mensaje", m);
+					sesion.setAttribute("mensajeCupones", m);
 				}
 				
 				else {
@@ -170,13 +170,13 @@ public class AltaCuponesServlet extends HttpServlet {
 			//sesion.setAttribute("cupones", listadoCupones);
 			Collection<Curso> listadoCursos = curDao.buscarTodosLosCursos();
 			sesion.setAttribute("cursos", listadoCursos);
-			sesion.setAttribute("mensaje", m);
+			sesion.setAttribute("mensajeCupones", m);
 		
 		//Si falta algun dato de los introducidos por el formulario para crear el cupon, enviamos un mensaje de error a dicha pagina	
 		}else{
 			
 			mensaje = m;
-			sesion.setAttribute("mensaje", mensaje);
+			sesion.setAttribute("mensajeCupones", mensaje);
 			
 		}
 			

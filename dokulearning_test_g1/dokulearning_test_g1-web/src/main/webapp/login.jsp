@@ -60,8 +60,8 @@
 			<div id = "formulario">
 				<div id = "formulario-2">					
 						<c:choose>
-							<c:when test="${not empty mensaje }">
-								<p class="error">${mensaje }</p>
+							<c:when test="${not empty mensajeInicio }">
+								<p class="error">${mensajeInicio }</p>
 							</c:when>
 							<c:otherwise>
 								<p>Introduce tu usuario y clave para entrar</p>

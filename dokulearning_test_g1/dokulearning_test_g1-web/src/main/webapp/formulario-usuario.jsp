@@ -87,8 +87,8 @@
 				
 				<div id="cuestionario">
 					<c:choose>
-					<c:when test="${not empty mensaje }">
-								<p class="error">${mensaje }</p>
+					<c:when test="${not empty mensajeRegistro }">
+								<p class="error">${mensajeRegistro }</p>
 							</c:when>
 							<c:otherwise>
 							</c:otherwise>
