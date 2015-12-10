@@ -22,7 +22,6 @@ public class AlumnoWSBanco {
 	}
 	
 	public Double ConciliarWSBanco(String codPedido){
-		System.out.println("codigo: "+codPedido);
 		String precioConciliadoStr = service.path("conciliar").path(codPedido).path("xml").request().accept(MediaType.TEXT_PLAIN).get(String.class);
 		Double precioConciliado = Double.parseDouble(precioConciliadoStr);
 		return precioConciliado;

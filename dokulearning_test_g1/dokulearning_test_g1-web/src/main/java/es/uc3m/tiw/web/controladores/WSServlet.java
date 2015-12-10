@@ -69,7 +69,7 @@ public class WSServlet extends HttpServlet {
 
 			Calendar c=Calendar.getInstance();
 			int year = c.get(Calendar.YEAR);
-			int month = c.get(Calendar.MONTH);  
+			int month = c.get(Calendar.MONTH)+1;  
 			int day = c.get(Calendar.DATE);
 			int hours = c.get(Calendar.HOUR_OF_DAY);
 			int seconds = c.get(Calendar.SECOND);
