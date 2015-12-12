@@ -2,7 +2,6 @@ package es.uc3m.tiw.model;
 
 import static javax.persistence.GenerationType.AUTO;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -20,7 +19,19 @@ public class Matricula {
 	@OneToOne
 	private Curso curso;
 	private int precio_pagado;
+	private double beneficioProfe;
+	private double beneficioPortal;
 	
+	
+
+	public double getBeneficioPortal() {
+		return beneficioPortal;
+	}
+
+	public void setBeneficioPortal(double beneficioPortal) {
+		this.beneficioPortal = beneficioPortal;
+	}
+
 	public Matricula() {
 		super();
 
@@ -28,6 +39,7 @@ public class Matricula {
 	
 	public Matricula(Usuario alumno, Curso curso, int precio_pagado) {
 		super();
+		this.ID_matricula = ID_matricula;
 		this.alumno = alumno;
 		this.curso = curso;
 		this.precio_pagado = precio_pagado;
@@ -55,6 +67,14 @@ public class Matricula {
 	}
 	public void setPrecio_pagado(int precio_pagado) {
 		this.precio_pagado = precio_pagado;
+	}
+	
+	public double getBeneficioProfe() {
+		return beneficioProfe;
+	}
+
+	public void setBeneficioProfe(double beneficioProfe) {
+		this.beneficioProfe = beneficioProfe;
 	}
 	
 }

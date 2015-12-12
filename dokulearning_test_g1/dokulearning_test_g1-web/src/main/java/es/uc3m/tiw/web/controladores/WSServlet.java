@@ -82,8 +82,8 @@ public class WSServlet extends HttpServlet {
 			String codigo_pago = "ORDER"+year+month+day+hours+seconds+miliseconds+PM_AMStr;
 			String cod_operacionBanc = ws.PedidoWSBanco(precio, tarjeta, codigo_pago);
 			if(cod_operacionBanc.equals("fail") == false) {
-				Pedido nuevoPedido = new Pedido(precioInt, 0.0, tarjeta, codigo_pago, cod_operacionBanc, curso, 0);
-				try {
+				Pedido nuevoPedido = new Pedido(precioInt, 0.0, tarjeta, cod_operacionBanc, codigo_pago, curso, 0);
+				try {  
 					pedDao.guardarPedido(nuevoPedido);
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
