@@ -84,6 +84,16 @@
 											<p class = "ofertas-salario">Avanzado.</p>
 										</c:otherwise>
 									</c:choose>
+									
+									<c:choose>
+										<c:when test="${curso.TIPO_destacado == 0 }">
+											<div class ="ofertas-seguidores">
+											    <img src = "images/deseado.png" alt = "Error en la imagen">
+											    <p class = "numero-seguidores"><a  href="GestionDeseados?IdCurso=${curso.ID_curso }&Pagina=ListadoCursos&Tipo=Alta">Añadir curso a deseados.</a></p>
+										        </div>
+										</c:when>
+								    </c:choose>
+								    
 									<div class = "ofertas-seguidores">
 									<img src = "images/edicion/seguidores-icon.png" alt = "Error en la imagen">
 									<p class = "numero-seguidores"><a  href="contenidoCursos?nombreCurso=${curso.DES_titulo }">Ver Contenidos</a></p>

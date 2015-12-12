@@ -60,7 +60,7 @@ public class GestionDeseadosServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		request.setAttribute("selectedTab", "2");
 		String idCursoStr = request.getParameter("IdCurso");
 		String pagina_entrada = request.getParameter("Pagina");
 		String tipo = request.getParameter("Tipo");
@@ -73,6 +73,9 @@ public class GestionDeseadosServlet extends HttpServlet {
 			pagina_salida = LISTADO_CURSOS_JSP;
 		}
 		
+		if(pagina_entrada.equals("misCursos")){
+			pagina_salida = "/misCursos.jsp";
+		}
 		HttpSession sesion = request.getSession();
 		
 		if(tipo.equals("Alta")){
@@ -82,6 +85,14 @@ public class GestionDeseadosServlet extends HttpServlet {
 		int idCurso = Integer.parseInt(idCursoStr);
 		
 		Curso deseado = curDao.recuperarCursoPorPK(idCurso);
+		deseado.setTIPO_destacado(1);
+		try {
+			curDao.modificarCurso(deseado);
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
 		Deseo deseo = new Deseo(user, deseado);
 		
 		try {
@@ -90,12 +101,43 @@ public class GestionDeseadosServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+		Collection <Curso> cursosactualizados=curDao.buscarTodosLosCursos();
 		Collection<Deseo> listaCursosDeseados = desDao.recuperarCursosDeseadosPorUsuario(user.getID_usuario());
+		sesion.setAttribute("cursos",cursosactualizados);
 		sesion.setAttribute("listadeseos", listaCursosDeseados);
 		
 		}
 		
+		if(tipo.equals("Baja")){
+			
+			Usuario user = (Usuario) sesion.getAttribute("usuario");
+			
+			int idCurso = Integer.parseInt(idCursoStr);
+			
+			
+			
+			Deseo deseoborrar=desDao.recuperarDeseoporCurso(idCurso);
+		    try {
+				desDao.borrarDeseo(deseoborrar);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		    
+		    Curso deseado = curDao.recuperarCursoPorPK(idCurso);
+			deseado.setTIPO_destacado(0);
+			try {
+				curDao.modificarCurso(deseado);
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			
+			Collection <Curso> cursosactualizados=curDao.buscarTodosLosCursos();
+			sesion.setAttribute("cursos",cursosactualizados);
+		    Collection<Deseo> listaCursosDeseados = desDao.recuperarCursosDeseadosPorUsuario(user.getID_usuario());
+			sesion.setAttribute("listadeseos", listaCursosDeseados);
+		}
 		config2.getServletContext().getRequestDispatcher(pagina_salida).forward(request, response);
 	}
 

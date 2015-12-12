@@ -45,4 +45,7 @@ public class DeseoDAOImpl implements DeseoDAO {
 	public Collection<Deseo> recuperarCursosDeseadosPorUsuario(int idUsuario){
 		return em.createQuery("select d from Deseo d where d.usuario.ID_usuario="+idUsuario, Deseo.class).getResultList();
 	}
+	public  Deseo recuperarDeseoporCurso(int idcurso){
+		return em.createQuery("select d from Deseo d where d.cursoDeseado.ID_curso="+idcurso, Deseo.class).getSingleResult();
+	}
 }

@@ -14,4 +14,6 @@ public interface DeseoDAO {
 	public abstract Collection<Deseo> buscarTodosLosDeseos();
 	
 	public abstract Collection<Deseo> recuperarCursosDeseadosPorUsuario(int idUsuario);
+	
+	public abstract Deseo recuperarDeseoporCurso(int idcurso);
 }

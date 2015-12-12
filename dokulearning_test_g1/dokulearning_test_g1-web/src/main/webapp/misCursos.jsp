@@ -265,9 +265,11 @@
 			 
  			<!-- LISTA DE DESEOS -->
 			  
-			  <div id="tabs-3">
+			    <div id="tabs-3">
 			 	<div class = "mi-empresa">
 				<h4>LISTA DE DESEOS</h4>
+			
+					<input type="hidden" id="selectedTabInput" value="${requestScope.selectedTab}">
 						<ul>
 							<c:forEach items="${sessionScope.listadeseos }" var="deseo">
 								<li id = "oferta-ejemplo${deseo.cursoDeseado.ID_curso}">
@@ -294,10 +296,17 @@
 										</c:otherwise>
 										</c:choose>
 									</div>
-									<div class = "ofertas-seguidores">
+									
+								<div class = "ofertas-seguidores">
 										<img src = "images/edicion/seguidores-icon.png" alt = "Error en la imagen">
 										<p class = "numero-seguidores"><a  href="contenidoCursos?nombreCurso=${deseo.cursoDeseado.DES_titulo }">Ver Contenidos</a></p>
-									</div>
+								</div>
+									
+								<div class = "ofertas-edicion">
+							    <img class="eliminar-icon" src="images/edicion/trash.png" alt="Error en la imagen">
+							    <p class = "numero-seguidores"><a  href="GestionDeseados?IdCurso=${deseo.cursoDeseado.ID_curso}&Pagina=misCursos&Tipo=Baja">Eliminar deseo.</a></p>
+						        </div>
+									
 								</li>
 							</c:forEach>
 						</ul>			 

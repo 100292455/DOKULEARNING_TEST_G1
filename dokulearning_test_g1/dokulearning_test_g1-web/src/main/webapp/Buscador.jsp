@@ -127,10 +127,14 @@
 							<img src="images/cursoImages/curso_${curso.ID_curso }.jpg"
 								alt="Error en la imagen del curso ${curso.ID_curso }">
 						</div>
-						<div class = "ofertas-seguidores">
-							<img src = "images/deseado.png" alt = "Error en la imagen">
-							<p class = "numero-seguidores"><a  href="GestionDeseados?IdCurso=${curso.ID_curso }&Pagina=Buscador&Tipo=Alta">Añadir curso a la lista de deseados.</a></p>
-						</div>
+						<c:choose>
+										<c:when test="${curso.TIPO_destacado == 0 }">
+											<div class ="ofertas-seguidores">
+											    <img src = "images/deseado.png" alt = "Error en la imagen">
+											    <p class = "numero-seguidores"><a  href="GestionDeseados?IdCurso=${curso.ID_curso }&Pagina=Buscador&Tipo=Alta">Añadir curso a deseados.</a></p>
+										        </div>
+										</c:when>
+						</c:choose>
 						
 					 <!-- *** -->
 						</li>
