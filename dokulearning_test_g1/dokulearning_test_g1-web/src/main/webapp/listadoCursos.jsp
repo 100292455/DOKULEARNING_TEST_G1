@@ -61,17 +61,17 @@
 										<c:when test="${curso.TIPO_estado == 2 }">
 											<p class = "ofertas-titulo">${curso.DES_titulo }</p>
 											<p class = "ofertas-empresa">Impartido por: ${curso.profesor.nombre }</p>
-									<p class = "ofertas-resumen">${curso.DES_descripcion }</p>
-									<p class = "ofertas-tipo-contrato">${curso.horas } hrs.</p>
-									<p class = "ofertas-jornada">Precio inicial: ${curso.precio_inicial } €.</p>
-									<p class = "ofertas-jornada">Precio final: ${curso.precio_final } €.</p>
-									<c:choose>
-										<c:when test="${empty curso.fechaFinDescuento }">
-										</c:when>
-										<c:otherwise>
-											<p class = "ofertas-jornada">fin descuento: ${curso.fechaFinDescuento }</p>
-										</c:otherwise>
-									</c:choose>
+											<p class = "ofertas-resumen">${curso.DES_descripcion }</p>
+											<p class = "ofertas-tipo-contrato">${curso.horas } hrs.</p>
+											<p class = "ofertas-jornada">Precio inicial: ${curso.precio_inicial } €.</p>
+											<p class = "ofertas-jornada">Precio final: ${curso.precio_final } €.</p>
+										<c:choose>
+											<c:when test="${empty curso.fechaFinDescuento }">
+											</c:when>
+											<c:otherwise>
+												<p class = "ofertas-jornada">fin descuento: ${curso.fechaFinDescuento }</p>
+											</c:otherwise>
+										</c:choose>
 									
 									<c:choose>
 										<c:when test="${curso.TIPO_dificultad == 0 }">

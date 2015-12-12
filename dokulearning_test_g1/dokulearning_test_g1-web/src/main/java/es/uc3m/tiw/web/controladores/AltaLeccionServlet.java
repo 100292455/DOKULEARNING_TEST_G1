@@ -122,10 +122,7 @@ public class AltaLeccionServlet extends HttpServlet {
 	            fileSaveDir.mkdir();
 	        }
 	         
-	        for (Part part : request.getParts()) {
-	            String fileName = "leccion_"+l.getID_leccion()+".jpg";
-	            part.write(savePath + File.separator + fileName);
-	        }
+	       
 			
 			pagina = "/contenidoCurso.jsp";
 			Collection<Leccion> listaLecciones = lecDao.recuperarLeccionesPorSeccion(id_seccion);
