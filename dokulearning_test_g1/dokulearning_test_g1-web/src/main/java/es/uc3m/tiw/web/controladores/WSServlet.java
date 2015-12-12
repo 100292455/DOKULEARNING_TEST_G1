@@ -13,18 +13,24 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.transaction.UserTransaction;
 
 import es.uc3m.tiw.model.Curso;
+import es.uc3m.tiw.model.Matricula;
 import es.uc3m.tiw.model.Pedido;
+import es.uc3m.tiw.model.Usuario;
+import es.uc3m.tiw.model.dao.CursoDAO;
 import es.uc3m.tiw.model.dao.CursoDAOImpl;
+import es.uc3m.tiw.model.dao.MatriculaDAO;
+import es.uc3m.tiw.model.dao.MatriculaDAOImpl;
 import es.uc3m.tiw.model.dao.PedidoDAOImpl;
 import es.uc3m.tiw.web.rest.AlumnoWSBanco;
 
 @WebServlet("/WebService")
 public class WSServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static final String FACTURA_JSP = "/WStest.jsp";
+	private static final String FACTURA_JSP = "/misCursos.jsp";
 	private static final String CONCILIAR_JSP = "/WSconciliar.jsp";
 	private ServletConfig config2;
 	private AlumnoWSBanco ws;
@@ -35,6 +41,7 @@ public class WSServlet extends HttpServlet {
 	private UserTransaction ut;
 	private PedidoDAOImpl pedDao;
 	private CursoDAOImpl curDao;
+	private MatriculaDAO matDao;
 
 	@Override
 	/**
@@ -43,6 +50,8 @@ public class WSServlet extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		config2 = config;
 		pedDao = new PedidoDAOImpl(em, ut);
+		curDao = new CursoDAOImpl(em, ut);
+		matDao = new MatriculaDAOImpl(em, ut);
 		curDao = new CursoDAOImpl(em, ut);
 		ws = new AlumnoWSBanco();
 	}	
@@ -57,15 +66,30 @@ public class WSServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		String filtro = request.getParameter("filtro");
+		HttpSession sesion = request.getSession();
 
 		if(filtro.equals("Facturar")) {
 			String tarjeta = request.getParameter("tarjeta");
-			String precio = request.getParameter("precio");
-			String idCursoStr = request.getParameter("curso");
+			
+			//Coger el titulo del curso y coger su ID
+			String nombreCurso = (String) sesion.getAttribute("nombreCurso");
+			Curso curso = null;
+			try {
+				curso=curDao.recuperarCursoPorNombre(nombreCurso);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			//Coger el precio final del curso de la BBDD
+			int precioInt = curso.getPrecio_final();
+			
+			//Coger el ID del usuario
+			Usuario user = (Usuario) sesion.getAttribute("usuario");
+			
+			String precio = Integer.toString(precioInt);
 
-			Double precioInt = Double.parseDouble(precio);
-			int pk = Integer.parseInt(idCursoStr);
-			Curso curso = curDao.recuperarCursoPorPK(pk);
+			Double precioDouble = Double.parseDouble(precio);
+			int pk = curso.getID_curso();
 
 			Calendar c=Calendar.getInstance();
 			int year = c.get(Calendar.YEAR);
@@ -82,15 +106,34 @@ public class WSServlet extends HttpServlet {
 			String codigo_pago = "ORDER"+year+month+day+hours+seconds+miliseconds+PM_AMStr;
 			String cod_operacionBanc = ws.PedidoWSBanco(precio, tarjeta, codigo_pago);
 			if(cod_operacionBanc.equals("fail") == false) {
-				Pedido nuevoPedido = new Pedido(precioInt, 0.0, tarjeta, cod_operacionBanc, codigo_pago, curso, 0);
+				Pedido nuevoPedido = new Pedido(precioDouble, 0.0, tarjeta, cod_operacionBanc, codigo_pago, curso, 0);
 				try {  
 					pedDao.guardarPedido(nuevoPedido);
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
+				
+				int precio_pagado = curso.getPrecio_final();
+				Matricula matricula = new Matricula (user, curso, precio_pagado);
+				try { 
+					matricula=matDao.guardarMatricula(matricula);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				Collection<Matricula> listadoMatricula = matDao.recuperarMatriculaPorAlumno(user.getID_usuario());
+				curso.setMatriculas(listadoMatricula);
+				try {
+					curDao.modificarCurso(curso);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				sesion.setAttribute("matriculas", listadoMatricula);
 			}
-			request.setAttribute("curso", idCursoStr); 
+			request.setAttribute("curso", Integer.toString(pk)); 
 			request.setAttribute("mensaje", cod_operacionBanc);
 			config2.getServletContext().getRequestDispatcher(FACTURA_JSP).forward(request, response);
 		}

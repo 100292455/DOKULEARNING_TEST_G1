@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
 	//crear usuario
 	
@@ -8,22 +7,17 @@ $(document).ready(function(){
 	/* Al pulsar el boton anadir 	*/
   
   	$("input[type=submit]").click(function(){
-  			validar();
+  		comprobarTarjeta();
 	  });
 
   
 
 });		
 
-	function validar(){
+	function comprobarTarjeta(){
 		
 			var nombre = $("#nombre").val();
-			var apellidos =  $("#apellidos").val();
-			var correo = $("#correo").val();
-			var telefono = $("#telefono").val();
-			var contraseña1 = $("#password1").val();
-			var contraseña2 = $("#password2").val();
-			expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+			var tajeta =  $("#numero").val();
 			
 			var validacion = true; /*variable para crear la oferta*/
 			
@@ -35,65 +29,13 @@ $(document).ready(function(){
 	         }
 				
 		
-			if (apellidos == "" || apellidos == null || apellidos == ''){   /* Si no introduce el titulo enseña el mensaje de error y pone la variable validacion a false*/
+			if (tarjeta == "" || tarjeta == null || tarjeta == ''){   /* Si no introduce el titulo enseña el mensaje de error y pone la variable validacion a false*/
 		         $("#mens2").show();
 		         validacion=false;
 		
 		     }else{
 		         $("#mens2").hide();      /* Si si lo introduce, esconde el mensaje */
 		         }
-				
-
-			if (correo == "" || correo == null || correo == '' ||  !expr.test(correo)){   /* Si no introduce el titulo enseña el mensaje de error y pone la variable validacion a false*/
-		         $("#mens4").show();
-		         validacion=false;
-		
-		     }else{
-		         $("#mens4").hide();      /* Si si lo introduce, esconde el mensaje */
-		         }
-			
-			if ( !(/^\d{9}$/.test(telefono)) || telefono == "" || telefono == null || telefono == ''){   /* Si no introduce el titulo enseña el mensaje de error y pone la variable validacion a false*/
-		         $("#mens5").show();
-		         validacion=false;
-		
-		     }else{
-		         $("#mens5").hide();      /* Si si lo introduce, esconde el mensaje */
-		         }
-			
-			
-		
-
-			if (contraseña2 == "" || contraseña2 == null || contraseña2 == ''){   /* Si no introduce el titulo enseña el mensaje de error y pone la variable validacion a false*/
-		         $("#mens10").show();
-		         validacion=false;
-		
-		     }else{
-		         $("#mens10").hide();      /* Si si lo introduce, esconde el mensaje */
-		         }
-		
-			if (contraseña1 == "" || contraseña1 == null || contraseña1 == ''){   /* Si no introduce el titulo enseña el mensaje de error y pone la variable validacion a false*/
-		         $("#mens9").show();
-		         validacion=false;
-		
-		     }else{
-		         $("#mens9").hide();      /* Si si lo introduce, esconde el mensaje */
-		         }
-		
-			if($("#acepto").is(':checked')) {  
-		         $("#mens3").hide();      /* Si si lo introduce, esconde el mensaje */
-	        } else {  
-		         $("#mens3").show();
-		         validacion = false;
-	        } 
-		if(contraseña2 != contraseña1){
-			
-			validacion=false;
-		}
-		$('body, html').animate({
-			scrollTop: '200px'
-		}, 300);
 		
 			return validacion;
 	}
-		
-			
