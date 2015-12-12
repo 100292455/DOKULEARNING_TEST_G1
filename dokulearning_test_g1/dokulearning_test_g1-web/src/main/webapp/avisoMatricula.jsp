@@ -28,37 +28,7 @@
 	
 	
 	<body>
-		
-	
-		<header>
-                
-                <a href="index.jsp">    
-                    
-                    <img class = "cabecera" src="images/logo.png" alt="Error en la imagen">    
-                
-                    <h1 class = "cabecera">DOKU</h1>
-                
-                </a>
-                
-                    <a href = "misCursos.jsp"><p class = "cabecera1" id = "cabecera-empresa">MIS CURSOS</p></a>
-                    
-                    <p class = "cabecera">|</p>
-                        
-                    <a href = "miPerfilAlumno.jsp"><p class = "cabecera1" id = "cabecera-usuario">MI PERFIL</p></a>
-                    
-                    <p class = "cabecera">|</p>
-                        
-                    <a href = "listadoCursos.jsp"><p class = "cabecera1" id = "cabecera-usuario">CURSOS</p></a>
-                
-                    
-                <p class = "cabecera">|</p>
-                        
-                    <a href = "sesion?accion=salir"><p class = "cabecera1" id = "cabecera-usuario">SALIR</p></a>
-                    
-                    
-            
-            </header>
-
+		<jsp:include page="cabecera.jsp" flush="true"/>
 			<!--MENU-->
 	
 			

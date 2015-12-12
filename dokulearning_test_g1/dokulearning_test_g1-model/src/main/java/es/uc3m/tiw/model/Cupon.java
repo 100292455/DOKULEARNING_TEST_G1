@@ -25,22 +25,37 @@ public class Cupon {
 	private int TIPO_cupon;
 	@OneToOne
 	private Curso curso;
+	private String nombreCupon;
 	
 	
 	
 	public Cupon() {
 		super();
 	}
-	public Cupon(String fecha_fin, Usuario profesor,
-			int descuento, int tipo_cupon, Curso curso) {
+
+	
+	public Cupon(String fecha_vto_cupon, Usuario profesor, int descuento,
+			int tIPO_cupon, Curso curso, String nombreCupon) {
 		super();
-		this.fecha_vto_cupon = fecha_fin;
+		this.fecha_vto_cupon = fecha_vto_cupon;
 		this.profesor = profesor;
 		this.descuento = descuento;
-		this.TIPO_cupon = tipo_cupon;
+		TIPO_cupon = tIPO_cupon;
 		this.curso = curso;
+		this.nombreCupon = nombreCupon;
 	}
-	
+
+
+	public String getNombreCupon() {
+		return nombreCupon;
+	}
+
+
+	public void setNombreCupon(String nombreCupon) {
+		this.nombreCupon = nombreCupon;
+	}
+
+
 	public int getID_cupon() {
 		return ID_cupon;
 	}

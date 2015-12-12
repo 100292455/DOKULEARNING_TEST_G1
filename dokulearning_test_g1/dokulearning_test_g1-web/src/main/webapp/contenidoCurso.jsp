@@ -28,32 +28,7 @@
 	
 	<body>
 		
-	<header>
-         	 	<a href="miPerfilAlumno.jsp">    
-                    
-                    <img class = "cabecera" src="images/logo.png" alt="Error en la imagen">    
-                
-                    <h1 class = "cabecera">DOKU</h1>
-                
-                </a>
-                
-                    <a href = "misCursos.jsp"><p class = "cabecera1" id = "cabecera-empresa">MIS CURSOS</p></a>
-                    
-                    <p class = "cabecera">|</p>
-                        
-                    <a href = "miPerfilAlumno.jsp"><p class = "cabecera1" id = "cabecera-usuario">MI PERFIL</p></a>
-                    
-                    <p class = "cabecera">|</p>
-                        
-                    <a href = "listadoCursos.jsp"><p class = "cabecera1" id = "cabecera-usuario">CURSOS</p></a>
-                
-                    
-               <p class = "cabecera">|</p>
-                        
-                    <a href = "sesion?accion=salir"><p class = "cabecera1" id = "cabecera-usuario">SALIR</p></a>
-                    
-            
-            </header>
+	<jsp:include page="cabecera.jsp" flush="true"/>
 
 			<!--CUERPO DE LA PAGINA-->
 	
@@ -75,6 +50,7 @@
 						<c:when test="${not empty mensajeCupones }">
 							<c:out value="${mensajeCupones}"/>
 							<c:set var="mensajeCupones" scope="session" value="${mensajeCupones}"/>
+							<c:set var="mensajeCupones" scope="session" value=""/>
 						</c:when>
 						<c:otherwise>
 						</c:otherwise>
@@ -83,7 +59,7 @@
 							<ul class ="lista-seccion"> 	
 							<li id = "oferta-ejemplo">
 								<div class = "ofertas-descripcion">
-									<p class = "ofertas-titulo">Cupon ${cupon.ID_cupon }</p>
+									<p class = "ofertas-titulo">Cupon ${cupon.nombreCupon }</p>
 									<c:choose>
 										<c:when test="${cupon.TIPO_cupon == 0 }">
 											<p class = "ofertas-titulo">Descuento Fijo: ${cupon.descuento }euros de descuento</p>

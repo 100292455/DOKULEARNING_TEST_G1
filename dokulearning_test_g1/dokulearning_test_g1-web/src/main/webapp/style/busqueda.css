@@ -42,7 +42,7 @@
 		background-image: -ms-linear-gradient(top, rgb(161,194,107), rgb(140,168,93));
 		background-image: -o-linear-gradient(top, rgb(161,194,107), rgb(140,168,93));
 		background-image: linear-gradient(to bottom, rgb(161,194,107), rgb(140,168,93));	
-		padding:20px 40px 10px 40px;
+		padding:20px 40px 10px 20px;
 		
 	}
 		

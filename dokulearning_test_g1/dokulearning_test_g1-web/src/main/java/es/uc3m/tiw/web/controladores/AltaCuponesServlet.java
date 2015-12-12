@@ -1,6 +1,7 @@
 package es.uc3m.tiw.web.controladores;
 
 import java.io.IOException;
+import java.util.Calendar;
 import java.util.Collection;
 
 import javax.annotation.Resource;
@@ -97,7 +98,20 @@ public class AltaCuponesServlet extends HttpServlet {
 			System.out.println("-------------------------------------tipo_cupon2"+tipo_cupon2);
 			
 			//Creamos el cupon
-			Cupon cuponNuevo = new Cupon(fecha_fin, user, precio2, tipo_cupon2, c);
+			
+			Calendar cal=Calendar.getInstance();
+			int year = cal.get(Calendar.YEAR);
+			int month = cal.get(Calendar.MONTH);  
+			int day = cal.get(Calendar.DATE);
+			int hours = cal.get(Calendar.HOUR_OF_DAY);
+			int seconds = cal.get(Calendar.SECOND);
+			int miliseconds = cal.get(Calendar.MILLISECOND);
+			int PM_AM = cal.get(Calendar.AM_PM);
+			String PM_AMStr = "";
+			if (PM_AM == 0){PM_AMStr = "AM";}
+			else {PM_AMStr = "PM";}
+			String nombreCupon = "Cupon"+year+month+day+hours+seconds+miliseconds+PM_AMStr;
+			Cupon cuponNuevo = new Cupon(fecha_fin, user, precio2, tipo_cupon2, c, nombreCupon);
 			
 			//modificar precio del curso
 			int precioInicial = c.getPrecio_inicial();
