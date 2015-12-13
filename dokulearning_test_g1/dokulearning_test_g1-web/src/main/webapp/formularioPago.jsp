@@ -29,7 +29,9 @@
 
 		<script src="script/jquery-ui-1.11.2.custom/external/jquery/jquery.js"></script>
 		<script src="script/jquery-ui-1.11.2.custom/jquery-ui.js"></script>
-		
+		<style type="text/css">
+			.error {color: red;}
+		</style>
 
 	</head>
 	
@@ -79,7 +81,14 @@
 				<h4>Pago de Matricula</h4>
 
 				<form method="get" action="WebService" onsubmit="return comprobarTarjeta();">
-								
+					<c:choose>
+							<c:when test="${not empty mensajePago }">
+								<p class="error">${mensajePago }</p>
+							</c:when>
+							<c:otherwise>
+								<p>Introduce tus datos para formalizar la matricula del curso</p>
+							</c:otherwise>
+						</c:choose>
 					<div id="form-name" class="form-pago-class">
 							<!--Nombre-->
 							<p><span class=obligatorio>Nombre (como aparece en tu tarjeta)</span><span class=aster>*</span><span class=obligatorio>:</span></p>
@@ -89,7 +98,7 @@
 							<!--Tarjeta-->
 					<div id="form-number" class="form-pago-class">		
 							<p><span class=obligatorio>Numero de tarjeta (sin guiones o espacios)</span><span class=aster>*</span><span class=obligatorio>:</span></p>
-							<input  type="text" name="tarjeta" id="numero" placeholder="A234123412341234" />					
+							<input  type="text" name="numero" id="numero" placeholder="A234123412341234" />					
 							<p id="mens2" class = "mens">Te falta rellenar el numero de la tarjeta*</p>							
 					</div>						
 					
