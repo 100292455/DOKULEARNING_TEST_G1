@@ -2,6 +2,7 @@ package es.uc3m.tiw.model;
 
 import static javax.persistence.GenerationType.AUTO;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
 
@@ -15,7 +16,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="curso")
-public class Curso {
+public class Curso implements Serializable {
 	
 	@Id
  	@GeneratedValue(strategy = AUTO)
@@ -39,6 +40,9 @@ public class Curso {
 	
 	@OneToMany(cascade=CascadeType.ALL)
 	private Collection<Seccion> secciones;
+	
+	@OneToMany(cascade=CascadeType.ALL)
+	private Collection<Mensaje> mensaje;
 	
 	int TIPO_estado;
 	String FechaFinDescuento;
@@ -179,4 +183,15 @@ public class Curso {
 	public void setSecciones(Collection<Seccion> secciones) {
 		this.secciones = secciones;
 	}
+
+
+	public Collection<Mensaje> getMensaje() {
+		return mensaje;
+	}
+
+
+	public void setMensaje(Collection<Mensaje> mensaje) {
+		this.mensaje = mensaje;
+	}
+	
 }

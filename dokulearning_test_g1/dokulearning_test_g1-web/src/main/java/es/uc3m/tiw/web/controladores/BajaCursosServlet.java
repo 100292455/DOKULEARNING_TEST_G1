@@ -21,6 +21,9 @@ import es.uc3m.tiw.model.Cupon;
 import es.uc3m.tiw.model.Matricula;
 import es.uc3m.tiw.model.Promocion;
 import es.uc3m.tiw.model.Usuario;
+import es.uc3m.tiw.model.Deseo;
+import es.uc3m.tiw.model.dao.DeseoDAO;
+import es.uc3m.tiw.model.dao.DeseoDAOImpl;
 import es.uc3m.tiw.model.dao.CuponDAO;
 import es.uc3m.tiw.model.dao.CuponDAOImpl;
 import es.uc3m.tiw.model.dao.CursoDAO;
@@ -44,6 +47,7 @@ public class BajaCursosServlet extends HttpServlet {
 	private CuponDAO cupDao;
 	private CursoDAO curDao;
 	private MatriculaDAO matDao;
+	private DeseoDAO desDao;
 	@Override
 	public void init(ServletConfig config) throws ServletException {
 		config2 = config;
@@ -51,6 +55,7 @@ public class BajaCursosServlet extends HttpServlet {
 		curDao = new CursoDAOImpl(em, ut);
 		promDao = new PromocionDAOImpl(em, ut);
 		matDao = new MatriculaDAOImpl(em, ut);
+		desDao = new DeseoDAOImpl(em, ut);
 
 	}
 	
@@ -59,6 +64,7 @@ public class BajaCursosServlet extends HttpServlet {
 		curDao = null;
 		promDao = null;
 		matDao = null;
+		desDao = null;
 	}
        
 
@@ -79,19 +85,40 @@ public class BajaCursosServlet extends HttpServlet {
 		String pagina = "";
 		pagina = GESTION_CURSOS_JSP;
 		
+	      //no se pierda la pestaña
+			request.setAttribute("selectedTab", "1");
+		
 		HttpSession sesion = request.getSession();	
 		Usuario user = (Usuario) sesion.getAttribute("usuario");
 		String idCursoStr = request.getParameter("IdCurso");
 		int idCurso = Integer.parseInt(idCursoStr);
 		Curso curso=curDao.recuperarCursoPorPK(idCurso);
+		
+		/*Borramos curso de deseados si existe*/
+		Deseo deseoEliminar=null;
+		try {
+			deseoEliminar=desDao.recuperarDeseoporCurso(idCurso);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		try {
+			desDao.borrarDeseo(deseoEliminar);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("---------------------------------");
+		pagina = ENTRADA_JSP;
+		
+		//Borramos el curso
 		try {
 			curDao.borrarCurso(curso);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		pagina = ENTRADA_JSP;
 		
 		/*ACTUALIZAMOS LAS LISTAS DE CURSOS DE LA SESION*/
 		Collection<Curso> listadoCursos = curDao.buscarTodosLosCursos();
@@ -102,6 +129,9 @@ public class BajaCursosServlet extends HttpServlet {
 		
 		Collection<Matricula> listadoMatricula = matDao.recuperarMatriculaPorAlumno(user.getID_usuario());
 		sesion.setAttribute("matriculas", listadoMatricula);
+		
+		Collection<Deseo> listaCursosDeseados = desDao.recuperarCursosDeseadosPorUsuario(user.getID_usuario());
+		sesion.setAttribute("listadeseos", listaCursosDeseados);
 		
 		config2.getServletContext().getRequestDispatcher(pagina).forward(request, response);
 		

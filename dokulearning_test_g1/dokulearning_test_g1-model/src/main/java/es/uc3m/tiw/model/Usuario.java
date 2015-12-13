@@ -2,6 +2,7 @@ package es.uc3m.tiw.model;
 
 import static javax.persistence.GenerationType.AUTO;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -12,7 +13,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="usuario")
-public class Usuario {
+public class Usuario implements Serializable{
 	
 	@Id
  	@GeneratedValue(strategy = AUTO)

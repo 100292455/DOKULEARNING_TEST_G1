@@ -1,0 +1,458 @@
+
+	
+	*{margin:0px; padding:0px;} 
+
+	/*COLOR DE LOS LATERALES DE LA PAGINA*/
+	
+	/*VERDE rgb(161,194,107)*/
+	/*AZUL rgb(29,102,168)*/
+	/*azul claro : rgb(51,141,222)*/
+	/*verde oscuro : rgb(140,168,93)*/
+	/*dorado: rgb(227,197,25)*/
+	/*azul flecha: rgb(126,162,243)*/
+	/*azul facebook: rgb(91,112,165)*/
+	/*azul twitter: rgb(65,160,220)*/
+	/*rojo google: rgb(196,34,37)*/
+	
+	
+	html{
+		background:rgb(246,246,246);
+	}
+	
+	body{
+		font-family: 'Ubuntu', sans-serif;
+		width:1200px;
+		margin:auto;
+		border: 2px solid white;
+		background-color:white;
+	}    /* Color de fondo de la pagina */
+
+
+
+	/*-----------------------------------------------------------------------------------------------------*/
+	/*ESTRUCTURA DEL DOCUMENTO*/
+
+	
+	header{      /* Estilo de la cabecera, la cual engloba el logo, título y el inicio de sesión */
+		background: rgb(161,194,107);
+		background-image: -webkit-linear-gradient(top, rgb(161,194,107), rgb(140,168,93));
+		background-image: -moz-linear-gradient(top, rgb(161,194,107), rgb(140,168,93));
+		background-image: -ms-linear-gradient(top, rgb(161,194,107), rgb(140,168,93));
+		background-image: -o-linear-gradient(top, rgb(161,194,107), rgb(140,168,93));
+		background-image: linear-gradient(to bottom, rgb(161,194,107), rgb(140,168,93));
+		padding:20px 40px 10px 40px;
+
+		
+	}	
+			
+	section{  /* Estilo del cuerpo de la página */
+		background:white;
+	}
+		
+		footer{    /* Estilo del pie de página */
+		background: rgb(29,102,168);
+		color:white;
+		text-align: center;
+		font-size:12px;		
+		padding:25px;
+	}
+	
+	/*---------------------------------------------------------------------------------------------------*/
+	
+	
+	
+
+	/*---------------------------------------------------------------------------------------------------*/
+	/*ESTILO DE LA CABECERA*/
+	
+	/*ESTILO DE LA CABECERA*/
+	
+	#cabecera-logo, #cabecera-sesion {
+		display:inline-block;
+	}
+	
+		/*---------------------------------------------------------------------------------------------------*/
+		/*ESTILO DEL LOGO DE LA CABECERA*/
+	
+		
+			#cabecera-logo, #cabecera-sesion, nav {
+				display:inline-block;
+			}
+
+				/*---------------------------------------------------------------------------------------------------*/
+				/*ESTILO DEL LOGO DE LA CABECERA*/
+
+
+					#cabecera-logo {
+						width:270px;
+						padding:16px 40px;
+						position:relative;
+						top:4px;
+					}
+
+					header a {
+						text-decoration:none;
+					}
+
+					header .cabecera {
+						display:inline;
+					}
+
+					header img.cabecera {
+						width:44px;
+						height:63px;
+					}
+
+					header h1 {
+						font-family: 'Ubuntu', sans-serif;
+						color:white;
+						position:relative;
+						padding-left:10px;
+						top:-14px;
+						font-size:50px;
+					}
+
+				/*----------------------------------------------------------------------------------------------*/
+
+
+
+					/*----------------------------------------------------------------------------------------------*/
+		/*ESTILO DEL INICIO DE SESION DE LA CABECERA*/
+			
+			#cabecera-sesion { /*div que engloba todo*/
+				padding:16px 10px 16px 10px;
+				background: rgb(161,194,107);
+				background-image: -webkit-linear-gradient(top, rgb(140,168,93), #71874C);
+				background-image: -moz-linear-gradient(top, rgb(140,168,93), #71874C);
+				background-image: -ms-linear-gradient(top, rgb(140,168,93), #71874C);
+				background-image: -o-linear-gradient(top, rgb(140,168,93), #71874C);
+				background-image: linear-gradient(to bottom, rgb(140,168,93), #71874C);
+				border-left:white solid 2px;
+				width:220px;		
+				position:relative;
+				float:right;		
+			}
+		
+			#cabecera-sesion img:first-child { /*imagen de la empresa*/
+				width:65px;
+				height:65px;
+				border-radius:50px;
+				border:white solid 2px;
+				z-index:1;
+			}
+			
+			img.cabecera-sesion,  #cabecera-sesion-men{ /*Imagen y nombre de la empresa*/
+				display:inline-block;
+			}
+			
+			p.cabecera-sesion { /*Nombre de la empresa*/
+				color:white;
+				font-size:18px;
+			}
+			
+			#cabecera-sesion-men{
+				float:right;
+				position:absolute;	
+				margin:30px 0 0px 15px ;
+				color:white;
+				top:0;
+			}
+			
+			#cabecera-sesion-men a {
+				font-size:14px;
+			 	text-decoration: underline;
+			
+			}
+			
+			#cabecera-sesion-men a:hover {
+				color:rgb(227,197,25);
+			}
+			
+			header .cabecera, header .cabecera1 {
+				display:inline;
+			}
+			
+			header h1 {
+				position:relative;
+				color:white;
+				padding:10px;
+				top:-14px;
+				font-size:50px;
+			}
+
+			header p {
+				color:white;
+				padding-left:25px;
+				position:relative;
+				top:-25px;
+				left:350px;
+			}
+			
+			header .cabecera1:hover {
+				color:rgb(29,102,168) ;
+				cursor:pointer;
+			}
+		
+
+		
+	
+	/*---------------------------------------------------------------------------------------------------*/
+
+	
+
+
+	/*---------------------------------------------------------------------------------------------------*/
+	/*ESTILO DEL MENU*/
+
+		
+	
+	/*---------------------------------------------------------------------------------------------------*/
+
+
+
+
+	/*---------------------------------------------------------------------------------------------------*/
+	/*ESTILO DEL PIE DE PAGINA*/
+	
+	ul#pie li {  /* Pie de página horizontal */
+		display: inline;
+	}
+
+	ul#pie li a:link, ul#pie li a:visited{  /* Color de los links del pie de página */
+		color:white;
+		padding-left:10px;	
+	}
+	
+	ul#pie li a:hover {/* Color de los links del pie de página cuando pasas el cursor */
+		color:rgb(227,197,25);	
+	}
+
+	/*---------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+	/*---------------------------------------------------------------------------------------------------*/
+	/*ESTILO FORO */
+	
+
+	
+		/*----------------------------------------------------------------------------------------*/
+		/*FORO*/
+		
+		#contenedor-foro{
+			margin: 70px auto;
+			width:1000px;
+			border:2px  solid rgb(241,241,241);
+		}
+		
+			/*COLORES DE LA PAGINA*/
+	
+	/*VERDE rgb(161,194,107)*/
+	/*AZUL rgb(29,102,168)*/
+	/*azul claro : rgb(51,141,222)*/
+	/*verde oscuro : rgb(140,168,93)*/
+	/*dorado: rgb(227,197,25)*/
+	/*azul flecha: rgb(126,162,243)*/
+	/*azul facebook: rgb(91,112,165)*/
+	/*azul twitter: rgb(65,160,220)*/
+	/*rojo google: rgb(196,34,37)*/
+	
+		
+		#contenedor-foro > h3 {
+			background:rgb(65,160,220);
+			font-size:40px;
+			color:white;
+			text-align:center;
+			padding:30px 0;
+			font-weight:lighter;
+		}
+		
+		
+		
+		/*----------------------------------------------------------------------------------------*/
+		
+		
+	
+		/*----------------------------------------------------------------------------------------*/
+		/*CONTENIDO FORO*/
+
+		
+		#contenedor-mensaje > div{
+			height:60vh;	 	
+			overflow:auto;
+			display:inline-block;
+		}
+		
+
+		
+		
+		/*----------------------------------------------------------------------------------------*/
+	
+	
+	
+		/*----------------------------------------------------------------------------------------*/
+		/*PARTICIPANTES FORO*/
+		
+
+				#contenedor-participantes {
+			width:350px;
+		}
+		
+		#contenedor-participantes > ul {
+			list-style-type: none;
+		}
+		
+		#contenedor-participantes > ul > li{
+			padding:10px;
+			border:1px  solid rgb(241,241,241);
+		}
+		
+		#contenedor-participantes > ul > li >img{
+			border-radius:70px;
+			height:70px;
+			width:70px;
+			border:2px inset rgb(65,160,220);
+		}
+		
+		#contenedor-participantes > ul > li > p {
+			font-size:16px;
+			color:rgb(65,160,220);
+			font-weight:lighter;
+			display:inline;
+			position:relative;
+			top:-30px;
+			margin-left: 10px;
+			max-width: 200px;
+		}
+		
+		
+		/*----------------------------------------------------------------------------------------*/
+		
+
+	/*----------------------------------------------------------------------------------------------------*/
+	
+	
+	
+	
+	
+	
+	/*-------------------------------------------------------------------------------------------------------*/
+	
+	/*CONVERSACION	*/
+	
+
+	
+	#conversacion{
+		overflow:auto;
+		width:640px;
+		height:50vh;	 	
+		border:1px  solid rgb(241,241,241);
+	}
+	
+	#conversacion ul {
+		list-style-type: none;
+	}
+	
+	.remitente{
+		background:rgb(241,241,241);
+		border-radius:20px;
+		display: inline-block;
+		padding: 10px 18px;
+		position: relative;
+		vertical-align: top;
+		width: 60%;
+		color: rgb(104,104,104);
+		margin: 10px 10px;
+  		float: left;   
+		font-weight:lighter;
+	}
+	.emisor{
+		background:rgb(65,160,220);
+		color:white;
+		border-radius:20px;
+ 		display: inline-block;
+		padding: 10px 18px;
+  		position: relative;
+ 		vertical-align: top;
+  		float: right;   
+		width: 60%;
+		margin: 10px 10px;
+		font-weight:lighter;
+	  }
+	  
+	  .remitente >p:first-child{
+	  	color:rgb(140,168,93);
+	  	font-size:12px;
+	  }
+	  .emisor > p:first-child {
+	  	font-size:12px;
+	  }
+
+	
+
+	
+	/*-------------------------------------------------------------------------------------------------------*/
+	
+	
+	
+	
+	
+	
+	/*-------------------------------------------------------------------------------------------------------*/
+	
+	/*ENVIAR MENSAJES*/
+	#contenedor-mensaje{
+		border-left:1px  solid rgb(241,241,241);
+	}
+	
+	input[name=mensaje]{
+		border: none;
+		font-family: 'Ubuntu', sans-serif;	
+		border-bottom:3px  solid rgb(241,241,241);
+		font-size: 16px;
+		color: #222222;
+		height: 35px;
+		width: 400px;
+		padding-left: 40px;
+		margin:10px 40px;
+		margin-right:0;
+		font-weight:lighter;
+	}
+	
+	input[type=submit]{
+		width:120px;
+		margin:10px;
+		background: rgb(161,194,107);
+		border-radius: 10px;
+		color: #ffffff;
+		font-size: 16px;
+		border:solid 1px white;
+		border-radius:2px;
+		padding: 8px 15px 8px 15px;
+		margin-left:0;
+		font-weight:lighter;
+	}
+	
+	input[type=submit]:hover{
+		color: rgb(161,194,107);
+		background: #ffffff;
+		border:solid 1px rgb(161,194,107);
+	}
+	
+	
+	
+
+	
+	/*-------------------------------------------------------------------------------------------------------*/
+
+
+	/*-----------------------------------------------------------------------------------------------*/
+		
+	/*AÑADIR NUEVA OFERTA*/
+		
+
+
+	/*-----------------------------------------------------------------------------------------------*/

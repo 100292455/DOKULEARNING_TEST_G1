@@ -26,6 +26,11 @@
            
             <scope>provided</scope>
         </dependency>
+        <dependency>
+        	<groupId>es.uc3m.tiw.model</groupId>
+        	<artifactId>dokulearning_test_g1-model</artifactId>
+        	<version>1.0</version>
+        </dependency>
     </dependencies>
 
     <build>

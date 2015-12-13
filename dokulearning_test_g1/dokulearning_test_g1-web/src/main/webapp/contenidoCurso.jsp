@@ -40,6 +40,7 @@
 					<div id = "crear-curso">
 						<input type = "button"  value = "Anadir cupon"  class = "anadir-cupon" id="boton-anadir-cupon">
 						<input type = "button"  value = "Anadir seccion"  class = "anadir-cupon" id="boton-anadir-seccion">
+						 <a href = "mensajes"><p>FORO</p></a>
 					</div>
 					<div id = "descripcion-curso">
 						<p>Profesor: Javier</p>

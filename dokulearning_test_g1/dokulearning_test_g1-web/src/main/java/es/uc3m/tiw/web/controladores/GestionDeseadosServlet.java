@@ -85,13 +85,14 @@ public class GestionDeseadosServlet extends HttpServlet {
 		int idCurso = Integer.parseInt(idCursoStr);
 		
 		Curso deseado = curDao.recuperarCursoPorPK(idCurso);
-		deseado.setTIPO_destacado(1);
+		
+		/*deseado.setTIPO_destacado(1);
 		try {
 			curDao.modificarCurso(deseado);
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
-		}
+		}*/
 		
 		Deseo deseo = new Deseo(user, deseado);
 		
