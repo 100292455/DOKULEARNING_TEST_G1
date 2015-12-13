@@ -2,7 +2,7 @@
 <html>
 	<head>
 
-
+ 
 		<!-- Información sobre el documento -->
 	
 		<title>Practica final: Inicio</title>

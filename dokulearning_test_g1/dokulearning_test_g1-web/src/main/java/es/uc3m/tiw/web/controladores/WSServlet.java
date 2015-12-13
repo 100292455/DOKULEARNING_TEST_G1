@@ -67,75 +67,83 @@ public class WSServlet extends HttpServlet {
 
 		String filtro = request.getParameter("filtro");
 		HttpSession sesion = request.getSession();
-
+		String cod_operacionBanc = "";
+		String pagina = "";
 		if(filtro.equals("Facturar")) {
-			String tarjeta = request.getParameter("tarjeta");
-			
-			//Coger el titulo del curso y coger su ID
-			String nombreCurso = (String) sesion.getAttribute("nombreCurso");
-			Curso curso = null;
-			try {
-				curso=curDao.recuperarCursoPorNombre(nombreCurso);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			//Coger el precio final del curso de la BBDD
-			int precioInt = curso.getPrecio_final();
-			
-			//Coger el ID del usuario
-			Usuario user = (Usuario) sesion.getAttribute("usuario");
-			
-			String precio = Integer.toString(precioInt);
-
-			Double precioDouble = Double.parseDouble(precio);
-			int pk = curso.getID_curso();
-
-			Calendar c=Calendar.getInstance();
-			int year = c.get(Calendar.YEAR);
-			int month = c.get(Calendar.MONTH)+1;  
-			int day = c.get(Calendar.DATE);
-			int hours = c.get(Calendar.HOUR_OF_DAY);
-			int seconds = c.get(Calendar.SECOND);
-			int miliseconds = c.get(Calendar.MILLISECOND);
-			int PM_AM = c.get(Calendar.AM_PM);
-			String PM_AMStr = "";
-			if (PM_AM == 0){PM_AMStr = "AM";}
-			else {PM_AMStr = "PM";}
-
-			String codigo_pago = "ORDER"+year+month+day+hours+seconds+miliseconds+PM_AMStr;
-			String cod_operacionBanc = ws.PedidoWSBanco(precio, tarjeta, codigo_pago);
-			if(cod_operacionBanc.equals("fail") == false) {
-				Pedido nuevoPedido = new Pedido(precioDouble, 0.0, tarjeta, cod_operacionBanc, codigo_pago, curso, 0);
-				try {  
-					pedDao.guardarPedido(nuevoPedido);
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				
-				int precio_pagado = curso.getPrecio_final();
-				Matricula matricula = new Matricula (user, curso, precio_pagado);
-				try { 
-					matricula=matDao.guardarMatricula(matricula);
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				Collection<Matricula> listadoMatricula = matDao.recuperarMatriculaPorAlumno(user.getID_usuario());
-				curso.setMatriculas(listadoMatricula);
+			String tarjeta = request.getParameter("numero");
+			System.out.println("Traza tarjeta: " +tarjeta);
+			if(tarjeta.equals("") || tarjeta == null) {
+				cod_operacionBanc = "No se formalizo la matricula. Numero de tarjeta erroneo";
+				pagina = "/formularioPago.jsp";
+			} else{
+				//Coger el titulo del curso y coger su ID
+				String nombreCurso = (String) sesion.getAttribute("nombreCurso");
+				Curso curso = null;
 				try {
-					curDao.modificarCurso(curso);
+					curso=curDao.recuperarCursoPorNombre(nombreCurso);
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				
-				sesion.setAttribute("matriculas", listadoMatricula);
+				//Coger el precio final del curso de la BBDD
+				int precioInt = curso.getPrecio_final();
+
+				//Coger el ID del usuario
+				Usuario user = (Usuario) sesion.getAttribute("usuario");
+
+				String precio = Integer.toString(precioInt);
+
+				Double precioDouble = Double.parseDouble(precio);
+
+				Calendar c=Calendar.getInstance();
+				int year = c.get(Calendar.YEAR);
+				int month = c.get(Calendar.MONTH)+1;  
+				int day = c.get(Calendar.DATE);
+				int hours = c.get(Calendar.HOUR_OF_DAY);
+				int seconds = c.get(Calendar.SECOND);
+				int miliseconds = c.get(Calendar.MILLISECOND);
+				int PM_AM = c.get(Calendar.AM_PM);
+				String PM_AMStr = "";
+				if (PM_AM == 0){PM_AMStr = "AM";}
+				else {PM_AMStr = "PM";}  
+
+				String codigo_pago = "ORDER"+year+month+day+hours+seconds+miliseconds+PM_AMStr;
+				cod_operacionBanc = ws.PedidoWSBanco(precio, tarjeta, codigo_pago);
+				pagina = FACTURA_JSP;
+				if(cod_operacionBanc.equals("fail") == false) {
+					Pedido nuevoPedido = new Pedido(precioDouble, 0.0, tarjeta, cod_operacionBanc, codigo_pago, curso, 0);
+					try {  
+						pedDao.guardarPedido(nuevoPedido);
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+
+					int precio_pagado = curso.getPrecio_final();
+					Matricula matricula = new Matricula (user, curso, precio_pagado);
+					try { 
+						matricula=matDao.guardarMatricula(matricula);
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					Collection<Matricula> listadoMatricula = matDao.recuperarMatriculaPorAlumno(user.getID_usuario());
+					curso.setMatriculas(listadoMatricula);
+					try {
+						curDao.modificarCurso(curso);
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+
+					sesion.setAttribute("matriculas", listadoMatricula);
+				} else if(cod_operacionBanc.equals("fail")){
+					cod_operacionBanc = "No se formalizo la matricula. Numero de tarjeta erroneo";
+					pagina = "/formularioPago.jsp";
+				}
 			}
-			request.setAttribute("curso", Integer.toString(pk)); 
-			request.setAttribute("mensaje", cod_operacionBanc);
-			config2.getServletContext().getRequestDispatcher(FACTURA_JSP).forward(request, response);
+			request.setAttribute("mensajePago", cod_operacionBanc);
+			config2.getServletContext().getRequestDispatcher(pagina).forward(request, response);
 		}
 		if(filtro.equals("Conciliar")) {
 			/* Recuperar de DB -> PEDIDOS WHERE CONCILIACION = 0 */
@@ -154,7 +162,7 @@ public class WSServlet extends HttpServlet {
 					e.printStackTrace();
 				}
 			}
-				
+
 			config2.getServletContext().getRequestDispatcher(CONCILIAR_JSP).forward(request, response);	
 		}
 	}
