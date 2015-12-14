@@ -55,11 +55,11 @@ public class CursoDAOImpl implements CursoDAO {
 	}
 	
 	public Collection<Curso> recuperarCursosPorPrecio(int precio) {
-		return em.createQuery("select c from Curso c where c.precio_final="+precio, Curso.class).getResultList();
+		return em.createQuery("select c from Curso c where c.precio_inicial="+precio, Curso.class).getResultList();
 	}
 	
 	public Collection<Curso> recuperarCursosPorDificultad(int dificultad) {
-		return em.createQuery("select c from Curso c where c.TIPO_difucltad="+dificultad, Curso.class).getResultList();
+		return em.createQuery("select c from Curso c where c.TIPO_dificultad="+dificultad, Curso.class).getResultList();
 	}
 	
 	public Collection<Curso> recuperarCursosPorDescripcion(String descripcion) {
@@ -71,23 +71,23 @@ public class CursoDAOImpl implements CursoDAO {
 	}
 
 	public Collection<Curso> recuperarCursosPorPrecioYDificultad(int precio, int dificultad) {
-		return em.createQuery("select c from Curso c where c.precio_final="+precio+"and c.TIPO_dificultad="+dificultad, Curso.class).getResultList();
+		return em.createQuery("select c from Curso c where c.precio_inicial="+precio+"and c.TIPO_dificultad="+dificultad, Curso.class).getResultList();
 	}
 
 	public Collection<Curso> recuperarCursosPorPrecioYDescripcion(int precio, String descripcion) {
-		return em.createQuery("select c from Curso c where c.precio_final="+precio+"and c.DES_descripcion="+descripcion, Curso.class).getResultList();
+		return em.createQuery("select c from Curso c where c.precio_inicial="+precio+"and c.DES_descripcion="+descripcion, Curso.class).getResultList();
 	}
 
 	public Collection<Curso> recuperarCursosPorDificultadYDescripcion(int dificultad, String descripcion) {
-		return em.createQuery("select c from Curso c where c.DES_descripcion="+descripcion+"and c.TIPO_dificultad="+dificultad, Curso.class).getResultList();
+		return em.createQuery("select c from Curso c where c.tematica="+descripcion+"and c.TIPO_dificultad="+dificultad, Curso.class).getResultList();
 	}
 
 	public Collection<Curso> recuperarCursosPorPrecioYDificultadYDescripcion(int dificultad, String descripcion, int precio) {
-		return em.createQuery("select c from Curso c where c.precio_final="+precio+"and c.TIPO_dificultad="+dificultad+"and c.DES_descripcion="+descripcion, Curso.class).getResultList();
+		return em.createQuery("select c from Curso c where c.precio_inicial="+precio+"and c.TIPO_dificultad="+dificultad+"and c.tematica="+descripcion, Curso.class).getResultList();
 	}
 	
 	public Collection<Curso> recuperarCursosPorPrecioYTematica(int precio, String tematica) {
-		return em.createQuery("select c from Curso c where c.precio_final="+precio+" and c.tematica='"+tematica+"'", Curso.class).getResultList();
+		return em.createQuery("select c from Curso c where c.precio_inicial="+precio+" and c.tematica='"+tematica+"'", Curso.class).getResultList();
 	}
 	
 	public Collection<Curso> recuperarCursosPorDificultadYTematica(int dificultad, String tematica) {
@@ -95,14 +95,14 @@ public class CursoDAOImpl implements CursoDAO {
 	}
 	
 	public Collection<Curso> recuperarCursosPorPrecioYDificultadYTematica(int dificultad, String tematica, int precio) {
-		return em.createQuery("select c from Curso c where c.precio_final="+precio+" and c.TIPO_dificultad="+dificultad+" and c.tematica='"+tematica+"'", Curso.class).getResultList();
+		return em.createQuery("select c from Curso c where c.precio_inicial="+precio+" and c.TIPO_dificultad="+dificultad+" and c.tematica='"+tematica+"'", Curso.class).getResultList();
 	}
 	
 	public Collection<Curso> recuperarCursosPorTematica(String tematica) {
 		return em.createQuery("select c from Curso c where c.tematica='"+tematica+"'", Curso.class).getResultList();
 	}
 	
-	public Collection<Curso> recuperarCursosPorProfesor(int id_profe) {
+	public Collection<Curso> recuperarCursosPorProfesor(int id_profe) { 
 		return em.createQuery("select c from Curso c where c.profesor.ID_usuario="+id_profe, Curso.class).getResultList();
 	}
 }
