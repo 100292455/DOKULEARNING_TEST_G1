@@ -2,11 +2,10 @@ package es.uc3m.tiw.web.controladores;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Collection;
+
 import javax.servlet.http.Part;
 import javax.annotation.Resource;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.servlet.ServletConfig;
@@ -21,11 +20,13 @@ import javax.servlet.http.HttpSession;
 import javax.transaction.UserTransaction;
 
 import es.uc3m.tiw.model.Curso;
+import es.uc3m.tiw.model.Promocion;
 import es.uc3m.tiw.model.Usuario;
 import es.uc3m.tiw.model.dao.CuponDAO;
 import es.uc3m.tiw.model.dao.CursoDAO;
 import es.uc3m.tiw.model.dao.CursoDAOImpl;
 import es.uc3m.tiw.model.dao.PromocionDAO;
+import es.uc3m.tiw.model.dao.PromocionDAOImpl;
 
 
 @WebServlet("/AltaCursos")
@@ -43,11 +44,13 @@ public class AltaCursosServlet extends HttpServlet {
 	private UserTransaction ut;
 	private ServletConfig config2;
 	private CursoDAO curDao;
+	private PromocionDAO promDao;
 	ServletContext context;
 	@Override
 	public void init(ServletConfig config) throws ServletException {
 		config2 = config;
 		curDao = new CursoDAOImpl(em, ut);
+		promDao = new PromocionDAOImpl(em, ut);
 
 	}
 	
@@ -84,7 +87,6 @@ public class AltaCursosServlet extends HttpServlet {
 		String tematicaStr = request.getParameter("tematica");
 		String horasStr = request.getParameter("horas");
 		String precioStr = request.getParameter("precio");
-		String codProfStr = "10";
 		
 		HttpSession sesion = request.getSession();
 		Usuario user = (Usuario) sesion.getAttribute("usuario");
@@ -156,8 +158,27 @@ public class AltaCursosServlet extends HttpServlet {
 		c.setDES_descripcion(descripcion);
 		c.setDES_titulo(titulo);
 		c.setHoras(horas);
-		c.setPrecio_final(precio);
 		c.setPrecio_inicial(precio);
+		Collection<Promocion> promociones = promDao.buscarTodosLosPromociones();
+		if (promociones.isEmpty()==false) {
+			for (Promocion promocion : promociones) {
+				int descuento = promocion.getDescuento();
+				int tipoDescuento = promocion.getTipo_promo();
+				if (tipoDescuento==0) {
+					c.setPrecio_final(c.getPrecio_inicial()-descuento);
+					c.setFechaFinDescuento(promocion.getFecha_fin());
+					break;
+				}
+				else{
+					
+					int descuentoTotal = (int) (c.getPrecio_inicial()-((descuento*0.01)*c.getPrecio_inicial()));
+					c.setPrecio_final(descuentoTotal);
+					c.setFechaFinDescuento(promocion.getFecha_fin());
+					break;
+				}
+			}
+		}
+		
 		c.setTIPO_destacado(0);
 		c.setTIPO_dificultad(dificultad);
 		c.setTIPO_estado(0);
