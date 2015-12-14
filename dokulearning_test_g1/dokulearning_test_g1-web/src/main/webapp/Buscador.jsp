@@ -135,7 +135,7 @@
 													<img src="images/deseado.png" alt="Error en la imagen">
 													<p class="numero-seguidores">
 														<a
-															href="GestionDeseados?IdCurso=${curso.ID_curso }&Pagina=ListadoCursos&Tipo=Alta">Añadir
+															href="GestionDeseados?IdCurso=${curso.ID_curso }&Pagina=Buscador&Tipo=Alta">Añadir
 															curso a deseados.</a>
 													</p>
 												</div>
