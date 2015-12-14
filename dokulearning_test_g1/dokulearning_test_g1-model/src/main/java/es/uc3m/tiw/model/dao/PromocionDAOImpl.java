@@ -58,7 +58,7 @@ public class PromocionDAOImpl implements PromocionDAO {
 	 * @see es.uc3m.tiw.daos.UsuarioDAO#recuperarUsuarioPorPK(java.lang.Integer)
 	 */
 	@Override
-	public Promocion recuperarPromocionPorPK(Long pk){
+	public Promocion recuperarPromocionPorPK(int pk){
 		return em.find(Promocion.class, pk);
 	}
 	/* (non-Javadoc)

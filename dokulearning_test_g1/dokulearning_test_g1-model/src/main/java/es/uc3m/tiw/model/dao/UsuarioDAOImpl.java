@@ -82,4 +82,9 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 		return em.createQuery("select u from Usuario u",Usuario.class).getResultList();
 	}
 	
+	@Override
+	public List<Usuario> recuperarUsuarioPorNombreLista(String nombre) {
+		return em.createQuery("select u from Usuario u where u.email='"+nombre+"'", Usuario.class).getResultList();
+	}
+	
 }

@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet Filter implementation class SesionFiltro
  */
-@WebFilter( urlPatterns = {"/misCursos.jsp","/listadoCursos.jsp","/GestionCupones.jsp","/formularioPago.jsp", "/contenidoCurso.jsp", "/miPerfilAlumno.jsp", "/miPerfilProfesor.jsp", "/avisoMatricula.jsp", "/GestionCursos.jsp" })
+@WebFilter( urlPatterns = {"/misCursos.jsp","/listadoCursos.jsp","/GestionCupones.jsp","/formularioPago.jsp", "/contenidoCurso.jsp", "/miPerfilAlumno.jsp", "/miPerfilProfesor.jsp", "/avisoMatricula.jsp", "/GestionCursos.jsp", "/Foro.jsp" })
 public class SesionFiltro implements Filter {
 
 

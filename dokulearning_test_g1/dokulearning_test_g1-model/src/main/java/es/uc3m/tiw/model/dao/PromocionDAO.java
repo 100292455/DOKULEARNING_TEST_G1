@@ -13,7 +13,7 @@ public interface PromocionDAO {
 
 	public abstract void borrarPromocion(Promocion Promocion) throws Exception;
 
-	public abstract Promocion recuperarPromocionPorPK(Long pk);
+	public abstract Promocion recuperarPromocionPorPK(int pk);
 
 	public abstract Promocion recuperarPromocionPorNombre(String nombre);
 

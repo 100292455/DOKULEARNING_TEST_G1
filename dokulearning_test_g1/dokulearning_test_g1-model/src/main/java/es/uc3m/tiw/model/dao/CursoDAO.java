@@ -11,8 +11,12 @@ public interface CursoDAO {
 
 	public abstract Curso modificarCurso(Curso Curso) throws Exception;
 
+	public abstract Collection<Curso> recuperarCursosPorDestacado(int destacado);
+	
 	public abstract void borrarCurso(Curso Curso) throws Exception;
 
+	public abstract Collection<Curso> recuperarCursosPorDEstado(int estado);
+	
 	public abstract Curso recuperarCursoPorPK(int pk);
 
 	public abstract Curso recuperarCursoPorNombre(String nombre);

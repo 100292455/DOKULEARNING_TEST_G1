@@ -38,6 +38,11 @@ public class CursoDAOImpl implements CursoDAO {
 	}
 	
 	@Override
+	public Collection<Curso> recuperarCursosPorDEstado(int estado) {
+		return em.createQuery("select c from Curso c where c.TIPO_estado="+estado, Curso.class).getResultList();
+	}
+	
+	@Override
 	public void borrarCurso(Curso curso) throws Exception{
 		ut.begin();
 		em.remove(em.merge(curso));
@@ -96,6 +101,10 @@ public class CursoDAOImpl implements CursoDAO {
 	
 	public Collection<Curso> recuperarCursosPorPrecioYDificultadYTematica(int dificultad, String tematica, int precio) {
 		return em.createQuery("select c from Curso c where c.precio_inicial="+precio+" and c.TIPO_dificultad="+dificultad+" and c.tematica='"+tematica+"'", Curso.class).getResultList();
+	}
+	
+	public Collection<Curso> recuperarCursosPorDestacado(int destacado) {
+		return em.createQuery("select c from Curso c where c.TIPO_destacado="+destacado, Curso.class).getResultList();
 	}
 	
 	public Collection<Curso> recuperarCursosPorTematica(String tematica) {
