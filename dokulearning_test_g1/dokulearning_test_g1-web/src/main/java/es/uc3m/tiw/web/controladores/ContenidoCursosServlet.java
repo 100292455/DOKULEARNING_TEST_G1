@@ -115,9 +115,9 @@ public class ContenidoCursosServlet extends HttpServlet {
 		}
 		
 		//Comprobar si el usuario ya esta matriculado en el curso
-		Matricula m = null;
+		Collection<Matricula> MatriculasUsuarioActual = null;
 		try {
-			m = matDao.recuperarMatriculaPorAlumnoYCurso(user.getID_usuario(), contenidoCurso.getID_curso());
+			MatriculasUsuarioActual = matDao.recuperarMatriculaPorAlumnoYCurso(user.getID_usuario(), contenidoCurso.getID_curso());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -141,7 +141,7 @@ public class ContenidoCursosServlet extends HttpServlet {
 		Collection<Leccion> listadoLeccionesIniciales = lecDao.buscarTodosLosLecciones();
 		sesion.setAttribute("lecciones", listadoLeccionesIniciales);
 		//Si el usuario esta matriculado en este curso, el servlet le manda a ver el contenido del curso
-		if (m == null){
+		if (MatriculasUsuarioActual.isEmpty()){
 			//Si el usuario no matriculado en este curso le manda a matricularse
 			sesion.setAttribute("nombreCurso", nombreCurso);
 			config2.getServletContext().getRequestDispatcher(AVISOMATRICULA_JSP).forward(request, response);

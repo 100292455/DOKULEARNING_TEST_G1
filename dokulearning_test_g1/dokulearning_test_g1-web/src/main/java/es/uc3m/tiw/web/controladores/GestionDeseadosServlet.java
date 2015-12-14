@@ -115,15 +115,27 @@ public class GestionDeseadosServlet extends HttpServlet {
 			
 			int idCurso = Integer.parseInt(idCursoStr);
 			
-			
-			
-			Deseo deseoborrar=desDao.recuperarDeseoporCurso(idCurso);
-		    try {
-				desDao.borrarDeseo(deseoborrar);
+			/*Borramos curso de deseados si existe*/
+			Collection<Deseo> deseoEliminar=null;
+			try {
+				deseoEliminar=desDao.recuperarDeseoporCurso(idCurso);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			if (deseoEliminar.isEmpty()==false) {
+				for (Deseo deseo : deseoEliminar) {
+					try {
+						desDao.borrarDeseo(deseo);
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			}
+			
+			
+		    
 		    
 		    Curso deseado = curDao.recuperarCursoPorPK(idCurso);
 			deseado.setTIPO_destacado(0);

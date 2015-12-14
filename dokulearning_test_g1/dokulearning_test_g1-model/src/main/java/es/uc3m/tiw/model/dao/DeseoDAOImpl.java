@@ -5,6 +5,7 @@ import java.util.Collection;
 import javax.persistence.EntityManager;
 import javax.transaction.UserTransaction;
 
+import es.uc3m.tiw.model.Cupon;
 import es.uc3m.tiw.model.Curso;
 import es.uc3m.tiw.model.Deseo;
 
@@ -45,7 +46,15 @@ public class DeseoDAOImpl implements DeseoDAO {
 	public Collection<Deseo> recuperarCursosDeseadosPorUsuario(int idUsuario){
 		return em.createQuery("select d from Deseo d where d.usuario.ID_usuario="+idUsuario, Deseo.class).getResultList();
 	}
-	public  Deseo recuperarDeseoporCurso(int idcurso){
-		return em.createQuery("select d from Deseo d where d.cursoDeseado.ID_curso="+idcurso, Deseo.class).getSingleResult();
+	public  Collection<Deseo> recuperarDeseoporCurso(int idcurso){
+		return em.createQuery("select d from Deseo d where d.cursoDeseado.ID_curso="+idcurso, Deseo.class).getResultList();
+	}
+	
+	@Override
+	public Deseo modificarDeseo(Deseo deseo) throws Exception{
+		ut.begin();
+		em.merge(deseo);
+		ut.commit();
+		return deseo;
 	}
 }

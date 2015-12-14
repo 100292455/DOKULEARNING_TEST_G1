@@ -2,6 +2,7 @@ package es.uc3m.tiw.web.controladores;
 
 import java.io.IOException;
 import java.util.Collection;
+import java.util.Iterator;
 
 import javax.annotation.Resource;
 import javax.persistence.EntityManager;
@@ -95,22 +96,28 @@ public class BajaCursosServlet extends HttpServlet {
 		Curso curso=curDao.recuperarCursoPorPK(idCurso);
 		
 		/*Borramos curso de deseados si existe*/
-		Deseo deseoEliminar=null;
+		Collection<Deseo> deseoEliminar=null;
 		try {
 			deseoEliminar=desDao.recuperarDeseoporCurso(idCurso);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		try {
-			desDao.borrarDeseo(deseoEliminar);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		if (deseoEliminar.isEmpty()==false) {
+			for (Deseo deseo : deseoEliminar) {
+				try {
+					desDao.borrarDeseo(deseo);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
 		}
+		
 		System.out.println("---------------------------------");
 		pagina = ENTRADA_JSP;
+		
+		
 		
 		//Borramos el curso
 		try {
