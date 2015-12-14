@@ -24,7 +24,7 @@
 		<link href="<c:url value="/script/jquery-ui-1.11.2.custom/jquery-ui.css" />" rel="stylesheet">
 		<script src="<c:url value="/script/jquery-ui-1.11.2.custom/external/jquery/jquery.js" />"></script>
 		<script src="<c:url value="/script/jquery-ui-1.11.2.custom/jquery-ui.js" />"></script>
-		<link rel="stylesheet" type="text/css" href="style/busqueda.css">
+		<link rel="stylesheet" type="text/css" href="./style/busqueda.css">
 		<style type="text/css">
 			.error {color: red;}
 		</style>
@@ -61,6 +61,12 @@
 			  <div id="tabs-1">
 			 	<div class = "mi-empresa">
 				<h4>CURSOS MATRICULADOS</h4>
+				
+				        <c:if test="${empty matriculas }">
+							<!-- cursos es un atributo metido en el request por eso no es necesario 
+							ponerle el prefijo param -->
+							<p class="error">Actualmente no existe ningun curso en el que te has matriculado.</p>
+						</c:if>
 						<ul>
 							<c:forEach items="${matriculas }" var="matricula">
 								<li id = "oferta-ejemplo${matricula.curso.ID_curso}">
@@ -100,8 +106,13 @@
 				<!-- CURSOS CREADOS -->
 			  
 			  <div id="tabs-2">
+			 
 			 	<div id = "mi-empresa">
 				<h4>CURSOS CREADOS</h4>
+				 <c:if test="${empty cursoscreados }">
+							
+							<p class="error">Actualmente no existe ningun curso creado.</p>
+			    </c:if>
 					<!-- Usuario con metodo de pago, puede crear curso -->
 					<input type="hidden" id="selectedTabInput" value="${requestScope.selectedTab}">
 					<c:if test="${usuario.tipo_usuario == 1 }">
@@ -269,6 +280,10 @@
 			    <div id="tabs-3">
 			 	<div class = "mi-empresa">
 				<h4>LISTA DE DESEOS</h4>
+				 <c:if test="${empty sessionScope.listadeseos }">
+							
+							<p class="error">Actualmente no existe ningun curso deseado.</p>
+			    </c:if>
 			
 					<input type="hidden" id="selectedTabInput" value="${requestScope.selectedTab}">
 						<ul>
@@ -305,7 +320,7 @@
 									
 								<div class = "ofertas-edicion">
 							    <img class="eliminar-icon" src="images/edicion/trash.png" alt="Error en la imagen">
-							    <p class = "numero-seguidores"><a  href="GestionDeseados?IdCurso=${deseo.cursoDeseado.ID_curso}&Pagina=misCursos&Tipo=Baja">Eliminar deseo.</a></p>
+							    <p class = "numero-seguidores"><a  href="GestionDeseados?IdDeseo=${deseo.ID_deseo}&Pagina=misCursos&Tipo=Baja">Eliminar deseo.</a></p>
 						        </div>
 									
 								</li>

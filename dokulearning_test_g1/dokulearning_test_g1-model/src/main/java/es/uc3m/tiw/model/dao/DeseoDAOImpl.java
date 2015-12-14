@@ -57,4 +57,8 @@ public class DeseoDAOImpl implements DeseoDAO {
 		ut.commit();
 		return deseo;
 	}
+	
+	public Deseo recuperarDeseoporPK(int pk){
+		return em.find(Deseo.class, pk);
+	}
 }

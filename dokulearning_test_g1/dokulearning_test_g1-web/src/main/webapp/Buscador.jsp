@@ -88,57 +88,126 @@
 			</c:when>
 			<c:otherwise>
 				<p class="error">${mensaje }</p>
-				<ul>
-					<!-- <c:forEach items="${cursos }" var="curso"> 
-				<!-- recorremos todos los objetos de la coleccion cursos 
-					y cada objeto devuelto lo asignamos a la variable curso -->
-				<li id="oferta-ejemplo${curso.ID_curso}">
-						<div class="ofertas-descripcion">
-							<!-- TO-DO
-								Esto se deja para pruebas, 
-								Hay que mostrar solo aquellos cursos cuyo TIPO_estado == 2 -->
-							<c:choose>
-								<c:when test="${curso.TIPO_estado == 2 }">
-									<p class="ofertas-titulo">${curso.DES_titulo }</p>
-								</c:when>
-								<c:otherwise>
-									<p class="ofertas-titulo">${curso.DES_titulo }</p>
-								</c:otherwise>
-							</c:choose>
-							<p class="ofertas-empresa">
-								Impartido por:
-								<!-- TO-DO cambiar COD_prof por nombre -->${curso.profesor.ID_usuario }</p>
-							<p class="ofertas-resumen">${curso.tematica }</p>
-							<p class="ofertas-tipo-contrato">${curso.horas }hrs.</p>
-							<p class="ofertas-jornada">${curso.precio_final }euros.</p>
-							<c:choose>
-								<c:when test="${curso.TIPO_dificultad == 0 }">
-									<p class="ofertas-salario">Nivel basico.</p>
-								</c:when>
-								<c:when test="${curso.TIPO_dificultad == 1 }">
-									<p class="ofertas-salario">Nivel intermedio.</p>
-								</c:when>
-								<c:otherwise>
-									<p class="ofertas-salario">Nivel avanzado.</p>
-								</c:otherwise>
-							</c:choose>
-						</div> <!-- TO-DO -->
-						<div class="ofertas-seguidores">
-							<img src="images/cursoImages/curso_${curso.ID_curso }.jpg"
-								alt="Error en la imagen del curso ${curso.ID_curso }">
-						</div>
-						<c:choose>
-										<c:when test="${curso.TIPO_destacado == 0 }">
-											<div class ="ofertas-seguidores">
-											    <img src = "images/deseado.png" alt = "Error en la imagen">
-											    <p class = "numero-seguidores"><a  href="GestionDeseados?IdCurso=${curso.ID_curso }&Pagina=Buscador&Tipo=Alta">Añadir curso a deseados.</a></p>
-										        </div>
-										</c:when>
-						</c:choose>
-						
-					 <!-- *** -->
+								<ul>
+					<c:forEach items="${cursos }" var="curso">
+						<!-- recorremos todos los objetos de la coleccion cursos 
+							y cada objeto devuelto lo asignamos a la variable curso -->
+
+						<li id="oferta-ejemplo${curso.ID_curso}">
+							<div class="ofertas-descripcion">
+								<c:choose>
+									<c:when test="${curso.TIPO_estado == 2 }">
+										<p class="ofertas-titulo">${curso.DES_titulo }</p>
+										<p class="ofertas-empresa">Impartido por:
+											${curso.profesor.nombre }</p>
+										<p class="ofertas-resumen">${curso.DES_descripcion }</p>
+										<p class="ofertas-tipo-contrato">${curso.horas }hrs.</p>
+										<p class="ofertas-jornada">Precio inicial:
+											${curso.precio_inicial } €.</p>
+										<p class="ofertas-jornada">Precio final:
+											${curso.precio_final } €.</p>
+										<c:choose>
+											<c:when test="${empty curso.fechaFinDescuento }">
+											</c:when>
+											<c:otherwise>
+												<p class="ofertas-jornada">fin descuento:
+													${curso.fechaFinDescuento }</p>
+											</c:otherwise>
+										</c:choose>
+
+										<c:choose>
+											<c:when test="${curso.TIPO_dificultad == 0 }">
+												<p class="ofertas-salario">Basico.</p>
+											</c:when>
+											<c:when test="${curso.TIPO_dificultad == 1 }">
+												<p class="ofertas-salario">Intermedio.</p>
+											</c:when>
+											<c:otherwise>
+												<p class="ofertas-salario">Avanzado.</p>
+											</c:otherwise>
+
+										</c:choose>
+
+										<c:choose>
+											<c:when test="${empty sessionScope.listadeseos }">
+
+												<div class="ofertas-seguidores">
+													<img src="images/deseado.png" alt="Error en la imagen">
+													<p class="numero-seguidores">
+														<a
+															href="GestionDeseados?IdCurso=${curso.ID_curso }&Pagina=ListadoCursos&Tipo=Alta">Añadir
+															curso a deseados.</a>
+													</p>
+												</div>
+
+											</c:when>
+											<c:otherwise>
+
+												<c:set var="encontrado" value="0" />
+
+												<c:forEach items="${sessionScope.listadeseos }" var="deseo">
+
+													<c:choose>
+														<c:when
+															test="${curso.ID_curso == deseo.cursoDeseado.ID_curso}">
+										
+														   ${encontrado = 1}
+														 </c:when>
+														 <c:otherwise>
+														 </c:otherwise>
+													</c:choose>
+
+												</c:forEach>
+
+												<c:choose>
+													<c:when test="${encontrado == 1}">
+														
+
+
+													</c:when>
+													<c:otherwise>
+														<div class="ofertas-seguidores">
+															<img src="images/deseado.png" alt="Error en la imagen">
+															<p class="numero-seguidores">
+																<a
+																	href="GestionDeseados?IdCurso=${curso.ID_curso }&Pagina=Buscador&Tipo=Alta">Añadir
+																	curso a deseados.</a>
+															</p>
+														
+														</div>
+													</c:otherwise>
+													</c:choose>
+											</c:otherwise>
+
+										</c:choose>
+
+
+										<div class="ofertas-seguidores">
+											<img src="images/edicion/seguidores-icon.png"
+												alt="Error en la imagen">
+											<p class="numero-seguidores">
+												<a href="contenidoCursos?nombreCurso=${curso.DES_titulo }">Ver
+													Contenidos</a>
+											</p>
+										</div>
+
+									</c:when>
+
+									<c:otherwise>
+										<p class="error">El curso ${curso.DES_titulo } esta
+											pendiente de validacion</p>
+									</c:otherwise>
+
+								</c:choose>
+							</div>
+
+
+
+
+
 						</li>
-					<!-- 				</c:forEach> -->
+
+					</c:forEach>
 				</ul>
 			</c:otherwise> 
 		</c:choose>

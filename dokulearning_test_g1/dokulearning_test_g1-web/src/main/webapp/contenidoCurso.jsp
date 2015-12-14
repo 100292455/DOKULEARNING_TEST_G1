@@ -19,6 +19,7 @@
 		<link href="<c:url value="/script/jquery-ui-1.11.2.custom/jquery-ui.css" />" rel="stylesheet">
 		<script src="<c:url value="/script/jquery-ui-1.11.2.custom/external/jquery/jquery.js" />"></script>
 		<script src="<c:url value="/script/jquery-ui-1.11.2.custom/jquery-ui.js" />"></script>
+		<link rel="stylesheet" type="text/css" href="style/busqueda.css">
 		<style type="text/css">
 			.error {color: red;}
 		</style>
