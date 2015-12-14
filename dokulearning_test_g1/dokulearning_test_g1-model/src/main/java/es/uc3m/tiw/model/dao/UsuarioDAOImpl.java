@@ -74,8 +74,8 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 	}
 	
 	@Override
-	public Usuario buscarPorEmail(String email)throws NoResultException{
-		return em.createQuery("select u from Usuario u where u.email='"+email+"'", Usuario.class).getSingleResult();
+	public Collection<Usuario> buscarPorEmail(String email)throws NoResultException{
+		return em.createQuery("select u from Usuario u where u.email='"+email+"'", Usuario.class).getResultList();
 	}
 	
 	public Collection<Usuario> buscarTodosLosUsuarios(){

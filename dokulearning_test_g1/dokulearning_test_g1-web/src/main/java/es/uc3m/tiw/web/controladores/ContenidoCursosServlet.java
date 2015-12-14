@@ -79,22 +79,24 @@ public class ContenidoCursosServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession sesion = request.getSession();
+		HttpSession sesion = request.getSession();  
 		ServletContext context = sesion.getServletContext();
 		Usuario user = (Usuario) sesion.getAttribute("usuario");
 		String nombreCurso = request.getParameter("nombreCurso");//Coger nombre del curso a matricular
-		Curso contenidoCurso = null;
+		String idCursoStr = request.getParameter("idCurso");   
+		int idCurso = Integer.parseInt(idCursoStr);
+		Curso contenidoCurso = null; 
 		try {
-			contenidoCurso = curDao.recuperarCursoPorNombre(nombreCurso);
+			contenidoCurso = curDao.recuperarCursoPorPK(idCurso);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
+		sesion.setAttribute("nombreCurso", nombreCurso);
+		sesion.setAttribute("idCurso", contenidoCurso.getID_curso());
 		//Si el usuario es el profesor del curso
 		if(user.getID_usuario()==contenidoCurso.getProfesor().getID_usuario()){
-			sesion.setAttribute("nombreCurso", nombreCurso);
-			sesion.setAttribute("idCurso", contenidoCurso.getID_curso());
 			//Cursos relacionados con el curso al que se quiere acceder
 			Collection<Curso> cursosRecomendados = null;
 			try {
@@ -113,6 +115,7 @@ public class ContenidoCursosServlet extends HttpServlet {
 			
 			Collection<Leccion> listadoLeccionesIniciales = lecDao.buscarTodosLosLecciones();
 			sesion.setAttribute("lecciones", listadoLeccionesIniciales);
+			
 			config2.getServletContext().getRequestDispatcher(ENTRADACONTENIDOCURSO_JSP).forward(request, response);
 		}
 		else {
@@ -145,13 +148,10 @@ public class ContenidoCursosServlet extends HttpServlet {
 			//Si el usuario esta matriculado en este curso, el servlet le manda a ver el contenido del curso
 			if (MatriculasUsuarioActual.isEmpty()){
 				//Si el usuario no matriculado en este curso le manda a matricularse
-				sesion.setAttribute("nombreCurso", nombreCurso);
 				config2.getServletContext().getRequestDispatcher(AVISOMATRICULA_JSP).forward(request, response);
 			}
 			
 			else{//Meto el titulo del curso en el contexto
-				sesion.setAttribute("idCurso", contenidoCurso.getID_curso());
-				sesion.setAttribute("nombreCurso", nombreCurso);
 				if(user.getID_usuario()!=contenidoCurso.getProfesor().getID_usuario()){
 					config2.getServletContext().getRequestDispatcher(ENTRADA_CONTENIDO_CURSO_ALUMNO_JSP).forward(request, response);
 				}

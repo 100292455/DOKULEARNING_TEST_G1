@@ -20,6 +20,7 @@ import javax.transaction.UserTransaction;
 import es.uc3m.tiw.model.Curso;
 import es.uc3m.tiw.model.Cupon;
 import es.uc3m.tiw.model.Matricula;
+import es.uc3m.tiw.model.Pedido;
 import es.uc3m.tiw.model.Promocion;
 import es.uc3m.tiw.model.Usuario;
 import es.uc3m.tiw.model.Deseo;
@@ -29,6 +30,8 @@ import es.uc3m.tiw.model.dao.CuponDAO;
 import es.uc3m.tiw.model.dao.CuponDAOImpl;
 import es.uc3m.tiw.model.dao.CursoDAO;
 import es.uc3m.tiw.model.dao.CursoDAOImpl;
+import es.uc3m.tiw.model.dao.PedidoDAO;
+import es.uc3m.tiw.model.dao.PedidoDAOImpl;
 import es.uc3m.tiw.model.dao.PromocionDAO;
 import es.uc3m.tiw.model.dao.PromocionDAOImpl;
 import es.uc3m.tiw.model.dao.MatriculaDAO;
@@ -48,6 +51,7 @@ public class BajaCursosServlet extends HttpServlet {
 	private CuponDAO cupDao;
 	private CursoDAO curDao;
 	private MatriculaDAO matDao;
+	private PedidoDAO pedDao;
 	private DeseoDAO desDao;
 	@Override
 	public void init(ServletConfig config) throws ServletException {
@@ -57,6 +61,7 @@ public class BajaCursosServlet extends HttpServlet {
 		promDao = new PromocionDAOImpl(em, ut);
 		matDao = new MatriculaDAOImpl(em, ut);
 		desDao = new DeseoDAOImpl(em, ut);
+		pedDao = new PedidoDAOImpl(em, ut);
 
 	}
 	
@@ -66,6 +71,7 @@ public class BajaCursosServlet extends HttpServlet {
 		promDao = null;
 		matDao = null;
 		desDao = null;
+		pedDao = null;
 	}
        
 
@@ -101,7 +107,7 @@ public class BajaCursosServlet extends HttpServlet {
 			deseoEliminar=desDao.recuperarDeseoporCurso(idCurso);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			e.printStackTrace();   
 		}
 		if (deseoEliminar.isEmpty()==false) {
 			for (Deseo deseo : deseoEliminar) {
@@ -114,7 +120,44 @@ public class BajaCursosServlet extends HttpServlet {
 			}
 		}
 		
-		System.out.println("---------------------------------");
+		/*Borramos curso de matriculas si existe*/
+		Collection<Matricula> matriculaEliminar=null;
+		try {
+			matriculaEliminar=matDao.recuperarMatriculaPorCurso(idCurso);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if (matriculaEliminar.isEmpty()==false) {
+			for (Matricula matricula : matriculaEliminar) {
+				try {
+					matDao.borrarMatricula(matricula);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+		
+		
+		/*Borramos curso de matriculas si existe*/
+		Collection<Pedido> pedidoEliminar=null;
+		try {
+			pedidoEliminar=pedDao.recuperarPedidoPorCurso(idCurso);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if (pedidoEliminar.isEmpty()==false) {
+			for (Pedido pedido : pedidoEliminar) {
+				try {
+					pedDao.borrarPedido(pedido);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
 		pagina = ENTRADA_JSP;
 		
 		

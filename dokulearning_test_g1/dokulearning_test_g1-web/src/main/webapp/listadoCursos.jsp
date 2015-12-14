@@ -157,7 +157,7 @@
 											<img src="images/edicion/seguidores-icon.png"
 												alt="Error en la imagen">
 											<p class="numero-seguidores">
-												<a href="contenidoCursos?nombreCurso=${curso.DES_titulo }">Ver
+												<a href="contenidoCursos?nombreCurso=${curso.DES_titulo }&idCurso=${curso.ID_curso}">Ver
 													Contenidos</a>
 											</p>
 										</div>

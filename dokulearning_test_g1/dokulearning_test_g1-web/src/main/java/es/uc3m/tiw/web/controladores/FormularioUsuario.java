@@ -156,14 +156,14 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			usuario.setTipo_usuario(1);
 		}
 	
-		Usuario u = null;
+		Collection<Usuario> u = null;
 		try {
 			u=usDao.buscarPorEmail(usuario.getEmail());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		if (u == null){
+		if (u.isEmpty()){
 			try {
 				usuario=usDao.guardarUsuario(usuario);
 			} catch (Exception e) {

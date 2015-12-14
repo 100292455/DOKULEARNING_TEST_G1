@@ -5,6 +5,7 @@ import java.util.Collection;
 import javax.persistence.EntityManager;
 import javax.transaction.UserTransaction;
 
+import es.uc3m.tiw.model.Matricula;
 import es.uc3m.tiw.model.Pedido;
 
 public class PedidoDAOImpl implements PedidoDAO{
@@ -60,6 +61,12 @@ public class PedidoDAOImpl implements PedidoDAO{
 	@Override
 	public Collection<Pedido> recuperarPedidosSinConciliar() {
 		return em.createQuery("select p from Pedido p where p.ESTADO_conciliado="+0,Pedido.class).getResultList();
+	}
+	
+	@Override
+	public  Collection<Pedido> recuperarPedidoPorCurso(int idCurso){
+		return em.createQuery("select p from Pedido p where p.Curso.ID_curso="+idCurso, Pedido.class).getResultList();
+		
 	}
 
 }

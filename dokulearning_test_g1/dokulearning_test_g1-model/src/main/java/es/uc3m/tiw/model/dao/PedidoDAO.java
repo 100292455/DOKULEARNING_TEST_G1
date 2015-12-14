@@ -20,4 +20,6 @@ public interface PedidoDAO {
 	
 	public abstract Collection<Pedido> recuperarPedidosSinConciliar();
 	
+	public abstract Collection<Pedido> recuperarPedidoPorCurso(int idCurso);
+	
 }

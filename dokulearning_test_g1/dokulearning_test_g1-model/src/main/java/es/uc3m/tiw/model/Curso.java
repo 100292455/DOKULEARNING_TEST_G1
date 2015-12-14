@@ -36,9 +36,6 @@ public class Curso implements Serializable {
 	private Collection<Cupon> cupones;
 	
 	@OneToMany(cascade=CascadeType.ALL)
-	private Collection<Matricula> matriculas;
-	
-	@OneToMany(cascade=CascadeType.ALL)
 	private Collection<Seccion> secciones;
 	
 	@OneToMany(cascade=CascadeType.ALL)
@@ -165,16 +162,6 @@ public class Curso implements Serializable {
 		this.cupones = cupones;
 	}
 	
-	public Collection<Matricula> getMatriculas() {
-		return matriculas;
-	}
-
-
-	public void setMatriculas(Collection<Matricula> matriculas) {
-		this.matriculas = matriculas;
-	}
-
-
 	public Collection<Seccion> getSecciones() {
 		return secciones;
 	}

@@ -68,19 +68,19 @@ public class WSServlet extends HttpServlet {
 		String filtro = request.getParameter("filtro");
 		HttpSession sesion = request.getSession();
 		String cod_operacionBanc = "";
-		String pagina = "";
+		String pagina = ""; 
 		if(filtro.equals("Facturar")) {
 			String tarjeta = request.getParameter("numero");
-			System.out.println("Traza tarjeta: " +tarjeta);
 			if(tarjeta.equals("") || tarjeta == null) {
 				cod_operacionBanc = "No se formalizo la matricula. Numero de tarjeta erroneo";
 				pagina = "/formularioPago.jsp";
 			} else{
 				//Coger el titulo del curso y coger su ID
-				String nombreCurso = (String) sesion.getAttribute("nombreCurso");
+				int idCurso = (int) sesion.getAttribute("idCurso");
+				 
 				Curso curso = null;
 				try {
-					curso=curDao.recuperarCursoPorNombre(nombreCurso);
+					curso=curDao.recuperarCursoPorPK(idCurso);
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -123,20 +123,14 @@ public class WSServlet extends HttpServlet {
 					Matricula matricula = new Matricula (user, curso, precio_pagado);
 					try { 
 						matricula=matDao.guardarMatricula(matricula);
-					} catch (Exception e) {
+					} catch (Exception e) {   
 						// TODO Auto-generated catch block
 						e.printStackTrace();
-					}
-					Collection<Matricula> listadoMatricula = matDao.recuperarMatriculaPorAlumno(user.getID_usuario());
-					curso.setMatriculas(listadoMatricula);
-					try {
-						curDao.modificarCurso(curso);
-					} catch (Exception e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-
-					sesion.setAttribute("matriculas", listadoMatricula);
+					}  
+					
+					Collection<Matricula> listadoMatricula2 = matDao.recuperarMatriculaPorAlumno(user.getID_usuario());
+					
+					sesion.setAttribute("matriculas", listadoMatricula2);
 				} else if(cod_operacionBanc.equals("fail")){
 					cod_operacionBanc = "No se formalizo la matricula. Numero de tarjeta erroneo";
 					pagina = "/formularioPago.jsp";

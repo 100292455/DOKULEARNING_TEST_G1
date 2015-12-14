@@ -90,7 +90,7 @@
 							</c:otherwise>
 						</c:choose>
 					<div id="form-name" class="form-pago-class">
-							<!--Nombre-->
+							<!--Nombre--> 
 							<p><span class=obligatorio>Nombre (como aparece en tu tarjeta)</span><span class=aster>*</span><span class=obligatorio>:</span></p>
 							<input  type="text" id="nombre" name="nombre" placeholder="Alejandro Ruiz" />							
 							<p id="mens1" class = "mens">Te falta rellenar el nombre de la tarjeta*</p>							

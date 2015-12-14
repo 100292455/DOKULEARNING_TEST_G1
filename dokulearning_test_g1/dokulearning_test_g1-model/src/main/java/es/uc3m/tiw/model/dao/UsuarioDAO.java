@@ -19,7 +19,7 @@ public interface UsuarioDAO {
 
 	public abstract Usuario buscarPorEmailYpassword(String email, String password);
 	
-	public abstract Usuario buscarPorEmail(String email);
+	public abstract Collection<Usuario> buscarPorEmail(String email);
 
 	public abstract Collection<Usuario> buscarTodosLosUsuarios();
 
