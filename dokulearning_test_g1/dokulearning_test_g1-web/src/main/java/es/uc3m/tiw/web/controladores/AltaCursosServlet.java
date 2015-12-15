@@ -177,6 +177,8 @@ public class AltaCursosServlet extends HttpServlet {
 					break;
 				}
 			}
+		} else{
+			c.setPrecio_final(precio);
 		}
 		
 		c.setTIPO_destacado(0);
